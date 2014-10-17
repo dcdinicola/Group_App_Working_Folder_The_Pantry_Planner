@@ -1,3 +1,5 @@
+//Dan DiNicola
+
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
@@ -5,7 +7,6 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.R;
-
 
 public class PantryPopupActivity extends Activity {
 
@@ -19,7 +20,7 @@ public class PantryPopupActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_pantry_popup, menu);
+        getMenuInflater().inflate(R.menu_pantry_popup, menu);
         return true;
     }
 
