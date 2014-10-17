@@ -45,7 +45,7 @@ public class MainActivity extends Activity {
     }
     // new intent to open RecipeDetailActivity from main
     public void lookUpRecipe (View view) {
-        Intent intent=new Intent(this, ProfileActivity.class);
+        Intent intent=new Intent(this, RecipeDetailActivity.class);
         startActivity (intent);
 
     }
