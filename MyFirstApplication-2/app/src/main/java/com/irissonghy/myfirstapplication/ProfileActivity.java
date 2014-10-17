@@ -3,20 +3,30 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
+import android.R;
 
 
 //code that is part of camera intent
 /*
 private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 private Uri fileUri;*/
+//private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
+//private Uri fileUri;
+
 
 
 
 public class ProfileActivity extends Activity {
+
+    public void showRecipeDetail(View view) {
+        Intent intent=new Intent(this,RecipeDetailActivity.class);
+        startActivity (intent);
+    }
 
 
     //ACTIVITY 1
@@ -31,9 +41,9 @@ public class ProfileActivity extends Activity {
     //user clicks camera icon with id addProfilePic
     //android.developer code to open implicit camera intent
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.main);
 
         // create Intent to take a picture and return control to the calling application
         /*Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -43,7 +53,7 @@ public class ProfileActivity extends Activity {
 
         // start the image capture Intent
         startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);*/
-    }
+    
 
     //android.developer code for camera to receive camera intent result
     /*protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -58,6 +68,34 @@ public class ProfileActivity extends Activity {
                 // Image capture failed, advise user
             }
         }*/
+//    public void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.main);
+//
+//        // create Intent to take a picture and return control to the calling application
+//        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+//
+//        fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
+//        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
+//
+//        // start the image capture Intent
+//        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+//    }
+//
+//    //android.developer code for camera to receive camera intent result
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
+//            if (resultCode == RESULT_OK) {
+//                // Image captured and saved to fileUri specified in the Intent
+//                Toast.makeText(this, "Image saved to:\n" +
+//                        data.getData(), Toast.LENGTH_LONG).show();
+//            } else if (resultCode == RESULT_CANCELED) {
+//                // User cancelled the image capture
+//            } else {
+//                // Image capture failed, advise user
+//            }
+//        }
+
 
 
 

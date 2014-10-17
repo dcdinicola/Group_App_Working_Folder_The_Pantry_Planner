@@ -51,8 +51,8 @@ tools:context="com.irissonghy.myfirstapplication.ProfileActivity">
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp" />
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera" />
+    <!--<uses-permission android:name="android.permission.CAMERA" />-->
+    <!--<uses-feature android:name="android.hardware.camera" />-->
 
 
 
@@ -106,6 +106,7 @@ tools:context="com.irissonghy.myfirstapplication.ProfileActivity">
 <LinearLayout
     android:orientation="horizontal"
     android:layout_width="match_parent"
+    android:onClick="showRecipeDetail"
     android:layout_height="100dp"
     android:layout_gravity="center_horizontal"
     android:weightSum="1">
