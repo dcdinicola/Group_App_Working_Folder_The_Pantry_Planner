@@ -7,13 +7,8 @@ android:weightSum="1"
 android:id="@+id/ProfileLinear"
 tools:context="com.irissonghy.myfirstapplication.ProfileActivity">
 
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center_horizontal"
-    android:weightSum="1">
 
+<<<<<<< Updated upstream
     <ImageView
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -175,5 +170,7 @@ tools:context="com.irissonghy.myfirstapplication.ProfileActivity">
         android:textSize="30dp"
         android:layout_marginTop="30dp" />
 </LinearLayout>
+=======
+>>>>>>> Stashed changes
 
 </LinearLayout>

@@ -32,12 +32,6 @@
             android:textStyle="bold"
             android:textAlignment="center"
             android:autoText="true" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="63dp"
-            android:text="Menu"
-            android:id="@+id/button_hamMenu_1"
-            android:layout_marginLeft="40dp" />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"

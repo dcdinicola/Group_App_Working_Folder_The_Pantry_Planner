@@ -45,6 +45,14 @@ public class LookUpRecipeActivity extends Activity {
         //show drop-down menu
 
     }
+    //Recipe clicked
+    public void recipeOnClick(View view){
+        //get which recipe is clicked
+
+        //go the the recipe's detail page
+        Intent RecipeDetailIntent = new Intent(this, RecipeDetailActivity.class);
+        startActivity(RecipeDetailIntent);
+    }
     //Hamburger menu: handle click
     /*public boolean onMenuItemClick(View view){
         //get which item on the menu is clicked
