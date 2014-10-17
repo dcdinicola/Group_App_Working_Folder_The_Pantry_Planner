@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.provider.MediaStore;
 import android.provider.MediaStore.Files;
+import android.R;
 
 
 import android.view.View;
@@ -19,6 +20,11 @@ public class AddRecipeActivity extends Activity {
      //   super.onCreate(savedInstanceState);
        // setContentView(R.layout.activity_add_recipe);
     //}
+
+    public void showRecipeDetail(View view) {
+        Intent intent=new Intent(this,RecipeDetailActivity.class);
+        startActivity (intent);
+    }
 
 
     @Override

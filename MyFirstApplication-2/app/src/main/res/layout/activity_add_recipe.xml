@@ -113,6 +113,7 @@ android:weightSum="1">
     android:layout_width="150dp"
     android:layout_height="wrap_content"
     android:text="Submit"
+    android:onClick="showRecipeDetail"
     android:id="@+id/AddRecipe_RecipeDetail"
     android:layout_gravity="center_horizontal"
     android:layout_marginTop="15dp"
