@@ -33,15 +33,6 @@
         android:layout_centerHorizontal="true"
         android:gravity="center_vertical" />
 
-    <Spinner
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:id="@+id/spinnerMenu"
-        android:layout_alignParentEnd="false"
-        android:layout_alignParentRight="true"
-        android:clickable="true"
-        android:spinnerMode="dropdown" />
-
     <Space
         android:layout_width="fill_parent"
         android:layout_height="20dp"

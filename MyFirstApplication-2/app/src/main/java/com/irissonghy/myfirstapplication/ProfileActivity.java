@@ -30,6 +30,7 @@ public class ProfileActivity extends Activity {
     //ACTIVITY 2
     //user clicks camera icon with id addProfilePic
     //android.developer code to open implicit camera intent
+
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
