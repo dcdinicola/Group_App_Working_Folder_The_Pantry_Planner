@@ -10,8 +10,9 @@ import android.view.MenuItem;
 
 
 //code that is part of camera intent
+/*
 private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
-private Uri fileUri;
+private Uri fileUri;*/
 
 
 
@@ -34,17 +35,17 @@ public class ProfileActivity extends Activity {
         setContentView(R.layout.main);
 
         // create Intent to take a picture and return control to the calling application
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        /*Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
         fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
         intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
 
         // start the image capture Intent
-        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);*/
     }
 
     //android.developer code for camera to receive camera intent result
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    /*protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
             if (resultCode == RESULT_OK) {
                 // Image captured and saved to fileUri specified in the Intent
@@ -55,7 +56,7 @@ public class ProfileActivity extends Activity {
             } else {
                 // Image capture failed, advise user
             }
-        }
+        }*/
 
 
 

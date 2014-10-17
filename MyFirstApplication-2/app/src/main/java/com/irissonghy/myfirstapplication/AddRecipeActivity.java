@@ -50,7 +50,7 @@ public class AddRecipeActivity extends Activity {
     //ACTIVITY 2
     //user clicks camera icon with id addRecipePic
     //android.developer code to open implicit camera intent
-    public void onCreate(Bundle savedInstanceState) {
+    /*public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
@@ -77,7 +77,7 @@ public class AddRecipeActivity extends Activity {
                 // Image capture failed, advise user
             }
         }
-    }
+    }*/
 
 
     //ACTIVITY 3
