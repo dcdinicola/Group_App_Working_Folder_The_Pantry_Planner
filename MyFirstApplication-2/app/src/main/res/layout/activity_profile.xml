@@ -33,11 +33,6 @@ tools:context="com.irissonghy.myfirstapplication.ProfileActivity">
         android:layout_marginRight="0dp"
         android:layout_marginLeft="5dp" />
 
-    <Spinner
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:id="@+id/spinner"
-        android:layout_marginLeft="50dp" />
 
 </LinearLayout>
 
@@ -142,7 +137,7 @@ tools:context="com.irissonghy.myfirstapplication.ProfileActivity">
         android:layout_width="164dp"
         android:layout_height="100dp"
         android:id="@+id/imageView4"
-        android:src="@drawable/ThaiBailChicken"
+        android:src="@drawable/ic_launcher"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp" />
 
@@ -166,7 +161,7 @@ tools:context="com.irissonghy.myfirstapplication.ProfileActivity">
         android:layout_width="164dp"
         android:layout_height="100dp"
         android:id="@+id/imageView5"
-        android:src="@drawable/caesarsalad"
+        android:src="@drawable/ic_launcher"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp" />
 
