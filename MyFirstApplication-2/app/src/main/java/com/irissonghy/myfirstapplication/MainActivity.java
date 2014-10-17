@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
+import android.view.View;
 import android.R;
 
 
@@ -18,8 +19,30 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Intent mainIntent = getIntent();
     }
+    // new intent to open pantry popup
+    public void showMyPantry(View view) {
+        Intent intent=new Intent(this,PantryPopupActivity.class);
+        startActivity (intent);
+    }
+    // new intent to open AddRecipeActivity from main
+    public void goToAddRecipe (View view) {
+        Intent intent=new Intent(this, AddRecipeActivity.class);
+        startActivity (intent);
 
+    }
 
+    // new intent to open FavoritesActivity from main
+    public void goToFavorites (View view) {
+        Intent intent=new Intent(this, FavoritesActivity.class);
+        startActivity (intent);
+
+    }
+    // new intent to open ProfileActivity from main
+    public void goToProfile (View view) {
+        Intent intent=new Intent(this, ProfileActivity.class);
+        startActivity (intent);
+
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
