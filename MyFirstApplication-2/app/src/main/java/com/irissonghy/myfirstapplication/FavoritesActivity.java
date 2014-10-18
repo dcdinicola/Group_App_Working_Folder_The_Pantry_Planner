@@ -15,7 +15,7 @@ public class FavoritesActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
-        Intent loginIntent = getIntent();
+        Intent intent = getIntent();
     }
 
 
