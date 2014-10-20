@@ -48,6 +48,13 @@ public class FavoritesActivity extends Activity {
         Intent RecipeDetailIntent = new Intent(this, RecipeDetailActivity.class);
         startActivity(RecipeDetailIntent);
     }
+    public void profileOnClick(View view){
+        //get which profile is clicked
+
+        //go the the profile page
+        Intent ProfileIntent = new Intent(this, ProfileActivity.class);
+        startActivity(ProfileIntent);
+    }
     //Pseudocode for Nav Menu
     //START
     //The drop down menu with links to other activities opens

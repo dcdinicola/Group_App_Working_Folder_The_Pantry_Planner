@@ -1,4 +1,3 @@
-
 //The Pantry Planner: Profile Java File (Pseudocode) by Lavanya Kumar
 package com.irissonghy.myfirstapplication;
 

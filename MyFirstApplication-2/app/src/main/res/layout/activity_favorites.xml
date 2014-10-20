@@ -18,8 +18,7 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginLeft="36dp"
-        android:onClick="recipeOnClick" />
+        android:layout_marginLeft="36dp" />
 
     <TextView
         android:layout_width="150dp"
@@ -51,7 +50,9 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/ic_launcher"
+        android:onClick="recipeOnClick"
+        android:clickable="true" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -75,7 +76,8 @@
         android:layout_below="@+id/textViewFav1"
         android:layout_toRightOf="@+id/imageViewFav1"
         android:layout_toEndOf="@+id/imageViewFav1"
-        android:layout_marginLeft="13dp" />
+        android:layout_marginLeft="13dp"
+        android:onClick="profileOnClick" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -124,7 +126,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:onClick="recipeOnClick"
+        android:clickable="true" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -148,7 +152,8 @@
         android:layout_toEndOf="@+id/imageViewFav2"
         android:layout_below="@+id/textViewFav2"
         android:layout_toRightOf="@+id/imageViewFav2"
-        android:layout_marginLeft="13dp" />
+        android:layout_marginLeft="13dp"
+        android:onClick="profileOnClick" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -197,7 +202,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="5dp" />
+        android:layout_marginTop="5dp"
+        android:onClick="recipeOnClick" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -221,7 +227,8 @@
         android:layout_toEndOf="@+id/imageViewFav3"
         android:layout_below="@+id/textViewFav3"
         android:layout_toRightOf="@+id/imageViewFav3"
-        android:layout_marginLeft="13dp" />
+        android:layout_marginLeft="13dp"
+        android:onClick="profileOnClick" />
 
     <TextView
         android:layout_width="fill_parent"
