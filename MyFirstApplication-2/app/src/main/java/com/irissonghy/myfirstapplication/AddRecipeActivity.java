@@ -25,28 +25,47 @@ public class AddRecipeActivity extends Activity {
         startActivity (intent);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_add_recipe, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        // action bar items here
 
-        //noinspection SimplifiableIfStatement
+        int id = item.getItemId();
         if (id == R.id.action_settings) {
+            // launch intent to go to settings screen
+            return true;
+        }
+        else if (id == R.id.activity_profile) {
+            // launch intent to go to user profile
+            Intent intent=new Intent(this,ProfileActivity.class);
+            startActivity (intent);
+
+            return true;
+        }
+        else if (id == R.id.activity_favorites) {
+            // launch intent to go to favorites
+            Intent intent=new Intent(this,FavoritesActivity.class);
+            startActivity (intent);
+            return true;
+        }
+
+        else if (id == R.id.activity_add_recipe) {
+            // launch intent to go to add recipe
+            Intent intent=new Intent(this,AddRecipeActivity.class);
+            startActivity (intent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
     //ACTIVITY 1
     //user interacts with spinner on the top right corner
     //clicking each of the options opens a explicit activity within the application
