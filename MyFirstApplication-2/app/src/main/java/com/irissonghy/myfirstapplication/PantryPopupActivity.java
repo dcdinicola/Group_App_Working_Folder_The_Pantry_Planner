@@ -8,18 +8,19 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class PantryPopupActivity extends Activity{
-
+    ListView PantrylistView;
     public void onCreate (Bundle savedInstanceState) {
-        super.onCreate(Bundle savedInstanceState);
-        //   setContentView(R.layout.activity_pantry_popup);
-
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pantry_popup);
+        PantrylistView = (ListView) findViewById(R.id.PantrylistView);
         //  still having trouble with red "R"s)
-       // String[]veggies= new String[]  {
-       //         "Carrots", "Celery", "Onions", "Potatoes"};
-      //  ArrayAdapter<String> = new ArrayAdapter<String>(getListView.getContext(),android.R.layout.simple_expandable_list_item_1, veggies);
-      //  getListView().setadapter.adapter;
+       String[]veggies= new String[]  {
+        "Carrots", "Celery", "Onions", "Potatoes"};
+      ArrayAdapter<String> adapter = new ArrayAdapter<~>(this,android.R.layout.simple_list_item_1, veggies);
+      PantrylistView.SetAdapter(ArrayAdapter);
     }
 
 
