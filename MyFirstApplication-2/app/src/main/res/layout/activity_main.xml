@@ -11,38 +11,38 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false">
 
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:onClick="goToAddRecipe"
-            android:text="+"
-            android:id="@+id/Add"
-            android:layout_weight="1"
-            android:textSize="30dp"
-            android:textStyle="bold" />
+            android:id="@+id/imageView2"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/plus_sign"
+            android:layout_gravity="left" />
+
+
         <!--will allow user to add a recipe using the add recipe page-->
-
-        <Button
-            android:layout_width= "0dp"
-            android:layout_height="wrap_content"
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:onClick="goToFavorites"
-            android:text="Favorites *"
-            android:id="@+id/Favorites"
-            android:layout_weight="1"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-        <!--will allow user to go to his/her favorites using the favorites page-->
+            android:id="@+id/imageView2"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/btn_star_big_on"
+            android:layout_gravity="left" />
 
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+        <!--will allow user to go to his/her favorites using the favorites page-->
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:onClick="goToProfile"
-            android:text="Profile"
-            android:id="@+id/Profile"
-            android:layout_weight="1"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            android:id="@+id/imageView"
+            android:src="@drawable/profile_icon"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="15dp" />
+
         <!--will allow user to view / edit his / her profile-->
     </LinearLayout>
 
