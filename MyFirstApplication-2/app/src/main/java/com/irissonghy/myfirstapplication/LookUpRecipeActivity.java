@@ -2,7 +2,11 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.content.Intent;
+import android.widget.AdapterView.OnItemClickListener;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,11 +14,49 @@ import android.view.View;
 
 
 public class LookUpRecipeActivity extends Activity {
+    //an array to show the names of the recipes in the listView
+    private static final String[] strs = new String[]{
+            "Chicken Soup", "Beef Tomato","McNuggets","Cheesecake"
+    };
+
+    private ListView lv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_look_up_recipe);
+
+        lv = (ListView) findViewById(R.id.lv);
+        lv.setAdapter(new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1,strs));
+
+        lv.setOnItemClickListener(new OnItemClickListener()
+        {
+            public void onItemClick(AdapterView<?> adapter, View view,
+                                    int position, long id) {
+                switch(position)
+                {
+                    case 0:
+                        Intent newActivity1 = new Intent(LookUpRecipeActivity.this, RecipeDetailActivity.class);
+                        startActivity(newActivity1);
+                        break;
+                    case 1:
+                        Intent newActivity2 = new Intent(LookUpRecipeActivity.this, RecipeDetailActivity.class);
+                        startActivity(newActivity2);
+                        break;
+                    case 2:
+                        Intent newActivity3 = new Intent(LookUpRecipeActivity.this, RecipeDetailActivity.class);
+                        startActivity(newActivity3);
+                        break;
+                    case 3:
+                        Intent newActivity4 = new Intent(LookUpRecipeActivity.this, RecipeDetailActivity.class);
+                        startActivity(newActivity4);
+                        break;
+                }
+
+            }
+        });
+        Intent intent = getIntent();
     }
 
 
@@ -27,13 +69,30 @@ public class LookUpRecipeActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        if (id == R.id.activity_mainpage) {
+            Intent intent=new Intent(this,MainActivity.class);
+            startActivity (intent);
+            return true;
+        }
+        else if (id == R.id.activity_profile) {
+            // launch intent to go to user profile
+            Intent intent=new Intent(this,ProfileActivity.class);
+            startActivity (intent);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+            return true;
+        }
+        else if (id == R.id.activity_favorites) {
+            // launch intent to go to favorites
+            Intent intent=new Intent(this,FavoritesActivity.class);
+            startActivity (intent);
+            return true;
+        }
+
+        else if (id == R.id.activity_add_recipe) {
+            // launch intent to go to add recipe
+            Intent intent=new Intent(this,AddRecipeActivity.class);
+            startActivity (intent);
             return true;
         }
 
@@ -47,9 +106,7 @@ public class LookUpRecipeActivity extends Activity {
     }
     //Recipe clicked
     public void recipeOnClick(View view){
-        //get which recipe is clicked
 
-        //go the the recipe's detail page
         Intent RecipeDetailIntent = new Intent(this, RecipeDetailActivity.class);
         startActivity(RecipeDetailIntent);
     }

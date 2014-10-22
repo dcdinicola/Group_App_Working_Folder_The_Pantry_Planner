@@ -1,6 +1,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.irissonghy.myfirstapplication.LookUpRecipeActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" android:showAsAction="never" />
+    <item
+        android:id="@+id/activity_mainpage"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Main Page"/>
+    <item
+        android:id="@+id/activity_favorites"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="My Favorites"/>
+    <item
+        android:id="@+id/activity_add_recipe"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="Add Recipe"/>
+    <item
+        android:id="@+id/activity_profile"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="My Profile"/>
+
 </menu>

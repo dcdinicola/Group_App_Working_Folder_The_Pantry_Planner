@@ -38,8 +38,9 @@ public class AddRecipeActivity extends Activity {
         // action bar items here
 
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            // launch intent to go to settings screen
+        if (id == R.id.activity_mainpage) {
+            Intent intent=new Intent(this,MainActivity.class);
+            startActivity (intent);
             return true;
         }
         else if (id == R.id.activity_profile) {

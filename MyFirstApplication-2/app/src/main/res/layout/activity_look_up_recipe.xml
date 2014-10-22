@@ -7,191 +7,50 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.irissonghy.myfirstapplication.LookUpRecipeActivity">
 
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:weightSum="1">
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:weightSum="1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Recipe"
+                android:id="@+id/textView_header"
+                android:layout_weight="1.04"
+                android:textColor="#000"
+                android:textSize="22pt"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:autoText="true" />
+        </LinearLayout>
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Recipe"
-            android:id="@+id/textView_header"
-            android:layout_weight="1.04"
-            android:textColor="#000"
-            android:textSize="22pt"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            android:autoText="true" />
-    </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:text="Based on your search..."
-        android:id="@+id/textView_opening"
-        android:textSize="10pt"
-        android:textIsSelectable="true"
-        android:paddingTop="10px"
-        android:layout_marginBottom="10px" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_weight="0.41"
-        android:weightSum="1"
-        android:layout_marginBottom="0dp">
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/imageButton_recipeImage_1"
-            android:background="#b2ff65" />
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="150dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Chicken Soup"
-                android:id="@+id/textView_recipeName_1"
-                android:layout_marginLeft="40px"
-                android:textStyle="bold"
-                android:textSize="11pt" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Tommy"
-                android:id="@+id/textView_recipePoster_1"
-                android:textStyle="italic"
-                android:textSize="8pt"
-                android:layout_below="@+id/textView_recipeName_1"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="40px" />
-            <RatingBar
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/ratingBar_recipeRating_1"
-                android:mirrorForRtl="false"
-                android:numStars="3"
-                android:rating="3"
-                android:layout_alignLeft="@+id/textView_recipePoster_1"
-                android:layout_alignStart="@+id/textView_recipePoster_1"
-                android:layout_marginBottom="10px"
-                android:layout_below="@+id/textView_recipePoster_1" />
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Like"
-                android:id="@+id/button_likeButton_1"
-                android:background="#5c87ff"
-                android:layout_alignRight="@+id/textView_recipePoster_1"
-                android:layout_alignEnd="@+id/textView_recipePoster_1"
-                android:layout_below="@+id/ratingBar_recipeRating_1"
-                android:layout_alignLeft="@+id/ratingBar_recipeRating_1"
-                android:layout_alignStart="@+id/ratingBar_recipeRating_1"
-                android:layout_alignParentBottom="true" />
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:text="Comment"
-                android:id="@+id/commentButton_1"
-                android:layout_below="@+id/ratingBar_recipeRating_1"
-                android:layout_toRightOf="@+id/button_likeButton_1"
-                android:layout_alignBottom="@+id/button_likeButton_1"
-                android:background="#3490ff"
-                android:layout_marginLeft="22dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_weight="0.31"
-        android:weightSum="1">
-        <ImageButton
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:id="@+id/imageButton_recipeImage_2"
-            android:background="#b2ff65" />
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="150dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Beef Bento"
-                android:id="@+id/textView_recipeName_2"
-                android:layout_marginLeft="40px"
-                android:textStyle="bold"
-                android:textSize="11pt" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Tommy"
-                android:id="@+id/textView_recipePoster_2"
-                android:textStyle="italic"
-                android:textSize="8pt"
-                android:layout_below="@+id/textView_recipeName_2"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginLeft="40px" />
-            <RatingBar
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/ratingBar_recipeRating_2"
-                android:mirrorForRtl="false"
-                android:numStars="3"
-                android:rating="3"
-                android:layout_alignLeft="@+id/textView_recipePoster_2"
-                android:layout_alignStart="@+id/textView_recipePoster_2"
-                android:layout_marginBottom="10px"
-                android:layout_below="@+id/textView_recipePoster_2" />
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Like"
-                android:id="@+id/button_likeButton_2"
-                android:background="#5c87ff"
-                android:layout_alignRight="@+id/textView_recipePoster_2"
-                android:layout_alignEnd="@+id/textView_recipePoster_2"
-                android:layout_below="@+id/ratingBar_recipeRating_2"
-                android:layout_alignLeft="@+id/ratingBar_recipeRating_2"
-                android:layout_alignStart="@+id/ratingBar_recipeRating_2"
-                android:layout_alignParentBottom="true" />
-            <Button
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:text="Comment"
-                android:id="@+id/commentButton1"
-                android:layout_below="@+id/ratingBar_recipeRating_2"
-                android:layout_toRightOf="@+id/button_likeButton_2"
-                android:layout_alignBottom="@+id/button_likeButton_2"
-                android:background="#3490ff"
-                android:layout_marginLeft="22dp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
-        </RelativeLayout>
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Based on your search..."
+            android:id="@+id/textView_opening"
+            android:textSize="10pt"
+            android:textIsSelectable="true"
+            android:paddingTop="10px"
+            android:layout_marginBottom="10px" />
 
-</LinearLayout>
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/lv"
+            android:layout_gravity="center_horizontal"
+            android:clickable="true" />
+
+
+    </LinearLayout>
 </RelativeLayout>

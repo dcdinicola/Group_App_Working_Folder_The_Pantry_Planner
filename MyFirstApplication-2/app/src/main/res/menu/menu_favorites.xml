@@ -1,29 +1,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.irissonghy.myfirstapplication.FavoritesActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" android:showAsAction="never" />
-
-
-
-
-
-    <item android:id="@+id/activity_profile"
-        android:title="@string/title_activity_profile"
+    <item
+        android:id="@+id/activity_mainpage"
         android:orderInCategory="100"
         android:showAsAction="never"
-        />
-
-    <item android:id="@+id/activity_favorites"
-        android:title="@string/title_activity_favorites"
+        android:title="Main Page"/>
+    <item
+        android:id="@+id/activity_favorites"
         android:orderInCategory="100"
-        android:showAsAction="never" />
-
-
-    <item android:id="@+id/activity_add_recipe"
-        android:title="@string/title_activity_add_recipe"
+        android:showAsAction="never"
+        android:title="My Favorites"/>
+    <item
+        android:id="@+id/activity_add_recipe"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:showAsAction="never"
+        android:title="Add Recipe"/>
+    <item
+        android:id="@+id/activity_profile"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="My Profile"/>
 
 
 </menu>

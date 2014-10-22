@@ -15,19 +15,16 @@ public class MainActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // action bar items here
-
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            // launch intent to go to settings screen
+        if (id == R.id.activity_mainpage) {
+            Intent intent=new Intent(this,MainActivity.class);
+            startActivity (intent);
             return true;
         }
-
-
         else if (id == R.id.activity_profile) {
             // launch intent to go to user profile
-                Intent intent=new Intent(this,ProfileActivity.class);
-                startActivity (intent);
+            Intent intent=new Intent(this,ProfileActivity.class);
+            startActivity (intent);
 
             return true;
         }
@@ -80,7 +77,7 @@ public class MainActivity extends Activity {
     }
     // new intent to open RecipeDetailActivity from main
     public void lookUpRecipe (View view) {
-        Intent intent=new Intent(this, RecipeDetailActivity.class);
+        Intent intent=new Intent(this, LookUpRecipeActivity.class);
         startActivity (intent);
 
     }

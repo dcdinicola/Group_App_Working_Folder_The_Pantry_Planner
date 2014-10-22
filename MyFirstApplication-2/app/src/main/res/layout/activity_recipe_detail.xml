@@ -140,13 +140,6 @@
                     android:layout_marginTop="10dp"
                     android:textStyle="bold"
                     android:textSize="11pt" />
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Write A Review"
-                    android:id="@+id/button_reviewsButton"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="writeReviewOnClick" />
             </LinearLayout>
         </LinearLayout>
 

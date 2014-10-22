@@ -29,13 +29,30 @@ public class RecipeDetailActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        if (id == R.id.activity_mainpage) {
+            Intent intent=new Intent(this,MainActivity.class);
+            startActivity (intent);
+            return true;
+        }
+        else if (id == R.id.activity_profile) {
+            // launch intent to go to user profile
+            Intent intent=new Intent(this,ProfileActivity.class);
+            startActivity (intent);
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+            return true;
+        }
+        else if (id == R.id.activity_favorites) {
+            // launch intent to go to favorites
+            Intent intent=new Intent(this,FavoritesActivity.class);
+            startActivity (intent);
+            return true;
+        }
+
+        else if (id == R.id.activity_add_recipe) {
+            // launch intent to go to add recipe
+            Intent intent=new Intent(this,AddRecipeActivity.class);
+            startActivity (intent);
             return true;
         }
 
