@@ -3,28 +3,23 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
-import android.app.ExpandableListActivity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.R;
-import android.widget.ExpandableListView;
+import android.widget.ArrayAdapter;
 
-public class PantryPopupActivity extends Activity {
-
-    ExpandableListView exv;
+public class PantryPopupActivity extends Activity{
 
     public void onCreate (Bundle savedInstanceState) {
         super.onCreate(Bundle savedInstanceState);
-        setContentView(R.layout.activity_pantry_popup);
-        exv=(ExpandableListView)findViewById(R.id.ExpandableListView);
-        exv.setAdapter(new MyAdapter((this));
-    }
+        //   setContentView(R.layout.activity_pantry_popup);
 
-    =()
-    }
-
-
+        //  still having trouble with red "R"s)
+        String[]veggies= new String[]  {
+                "Carrots", "Celery", "Onions", "Potatoes"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getListView.getContext(),android.R.layout.simple_expandable_list_item_1, veggies);
+        getListView().setadapter.adapter;
     }
 
 

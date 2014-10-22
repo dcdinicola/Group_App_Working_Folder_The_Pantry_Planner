@@ -1,27 +1,12 @@
 <!-- Dan DiNicola -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     tools:context="com.irissonghy.myfirstapplication.PantryPopupActivity"
     android:id="@+id/pantryPopupRelative">
 
-    <!-- <NumberPicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"
-        android:layout_below="@+id/scrollView"
-        android:layout_centerHorizontal="true" /> -->
 
-    <ExpandableListView
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"
-        android:id="@+id/expandableListView"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:choiceMode="multipleChoice" />
+
 
     <Button
         android:layout_width="wrap_content"
@@ -30,7 +15,7 @@
         android:id="@+id/button2"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center_horizontal"
         android:layout_gravity="center_horizontal|bottom|top"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
@@ -46,21 +31,29 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:gravity="center|center_vertical|fill_vertical" />
-<!-- still unable to get number pickers working without causing a java error.
-    <NumberPicker
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"
-        android:layout_alignTop="@+id/expandableListView"
-        android:layout_toRightOf="@+id/button4"
-        android:layout_toEndOf="@+id/button4" />
 
-    <NumberPicker
+    <ListView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/numberPicker"
-        android:layout_alignTop="@+id/expandableListView"
-        android:layout_toRightOf="@+id/button4"
-        android:layout_toEndOf="@+id/button4" />
+        android:layout_height="400dp"
+        android:id="@+id/listView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    <!-- still unable to get number pickers working without causing a java error.
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker"
+            android:layout_alignTop="@+id/expandableListView"
+            android:layout_toRightOf="@+id/button4"
+            android:layout_toEndOf="@+id/button4" />
 
-</RelativeLayout>
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker"
+            android:layout_alignTop="@+id/expandableListView"
+            android:layout_toRightOf="@+id/button4"
+            android:layout_toEndOf="@+id/button4" />
+
+    </RelativeLayout>

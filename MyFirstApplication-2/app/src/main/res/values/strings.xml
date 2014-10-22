@@ -21,5 +21,7 @@
     <string name="title_activity_pantry_popup">PantryPopupActivity</string>
     <string name="title_activity_add_recipe">AddRecipeActivity</string>
     <string name="title_activity_profile">ProfileActivity</string>
+    <!-- adding string to attempt to remove a pantry popup error -->
+    <string name="veggies">PantryPopupActivity</string>
 
 </resources>
