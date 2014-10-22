@@ -21,6 +21,4 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="My Profile"/>
-
-
 </menu>
