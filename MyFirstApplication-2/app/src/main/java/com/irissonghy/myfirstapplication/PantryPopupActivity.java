@@ -3,24 +3,32 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
-import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ArrayAdapter;
+import android.widget.AdapterView;
 import android.widget.ListView;
+
+//I would like to have the string values replace the item, but am not successful
 
 public class PantryPopupActivity extends Activity{
     ListView PantrylistView;
-    public void onCreate (Bundle savedInstanceState) {
+    protected void onCreate (Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry_popup);
+        Intent intent = getIntent();
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
         //  still having trouble with red "R"s)
        String[]veggies= new String[]  {
         "Carrots", "Celery", "Onions", "Potatoes"};
-      ArrayAdapter<String> adapter = new ArrayAdapter<~>(this,android.R.layout.simple_list_item_1, veggies);
-      PantrylistView.SetAdapter(ArrayAdapter);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, veggies);
+      PantrylistView.setAdapter(adapter);
+     // PantrylistView appears to be functioning.  However, I need to learn how to apply that
+     // to the XML so that the values of the string show up on the list
+
     }
 
 

@@ -15,7 +15,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:onClick="goToAddRecipe"
-            android:id="@+id/imageView2"
+            android:id="@+id/plus_sign"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="15dp"
             android:src="@drawable/plus_sign"
@@ -27,10 +27,10 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:onClick="goToFavorites"
-            android:id="@+id/imageView2"
+            android:id="@+id/star"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/btn_star_big_on"
+            android:src="@android:drawable/btn_star_big_on"
             android:layout_gravity="left" />
 
         <!--will allow user to go to his/her favorites using the favorites page-->
@@ -38,7 +38,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:onClick="goToProfile"
-            android:id="@+id/imageView"
+            android:id="@+id/profile"
             android:src="@drawable/profile_icon"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="15dp" />
