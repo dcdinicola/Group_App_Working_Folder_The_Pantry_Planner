@@ -10,7 +10,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add New Item"
+        android:layout_alignParentTop="true"
         android:id="@+id/buttonaddToPantry"
+        android:layout_centerHorizontal="true"
         android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="top"
@@ -41,24 +43,32 @@
         android:textStyle="bold"
         android:gravity="center|center_vertical|fill_vertical" />
 
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/buttonaddToPantry"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/space" />
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="400dp"
         android:id="@+id/PantrylistView"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/space"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
 
 
-        <NumberPicker
+       <!-- <NumberPicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/numberPicker"
             android:layout_alignTop="@+id/expandableListView"
             android:layout_toRightOf="@+id/button4"
             android:layout_toEndOf="@+id/button4" />
-    <!-- still unable to get number pickers working without causing a java error.
+    still unable to get number pickers working without causing a java error.
            <NumberPicker
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"

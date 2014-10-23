@@ -22,7 +22,9 @@ public class PantryPopupActivity extends Activity{
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
         //  still having trouble with red "R"s)
        String[]veggies= new String[]  {
-        "Carrots", "Celery", "Onions", "Potatoes"};
+        "Carrots", "Celery", "Onions", "Potatoes", "Chicken", "Beef", "Salmon", "Tilapia",
+       "Romaine Lettuce", "Kale", "Spinach", "Brocoli",
+       "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, veggies);
       PantrylistView.setAdapter(adapter);
