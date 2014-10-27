@@ -5,6 +5,15 @@
     tools:context="com.irissonghy.myfirstapplication.PantryPopupActivity"
     android:id="@+id/pantryPopupRelative">
 
+    <TextView
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:text="This page allows you to update the ingredients in your pantry, update quantities of items in your pantry, and choose from those items in order to prepare a delicious meal."
+        android:id="@+id/textView_ingredientsContentText"
+        android:layout_gravity="right"
+        android:paddingLeft="10dp"
+        android:paddingRight="5dp"
+        android:layout_marginTop="5dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -12,10 +21,11 @@
         android:layout_alignParentTop="true"
         android:id="@+id/buttonaddToPantry"
         android:layout_centerHorizontal="true"
-        android:textSize="20sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         android:gravity="top"
-        android:layout_gravity="top" />
+        android:layout_gravity="top"
+        android:layout_marginTop="72dp"/>
 
 
     <Button
@@ -42,6 +52,26 @@
         android:textStyle="bold"
         android:gravity="center|center_vertical|fill_vertical" />
 
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:layout_below="@id/PantrylistView"
+        android:id="@+id/imageView_recipeImage2"
+        android:layout_gravity="left"
+        android:background="#b2ff65"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:hint="Selected Items"
+        android:id="@+id/ItemsforRecipe"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="5dp"
+        android:layout_below="@id/PantrylistView"
+        android:layout_marginBottom="25dp" />
     <Space
         android:layout_width="fill_parent"
         android:layout_height="60dp"
@@ -52,7 +82,7 @@
 
     <ListView
         android:layout_width="wrap_content"
-        android:layout_height="400dp"
+        android:layout_height="250dp"
         android:id="@+id/PantrylistView"
         android:layout_alignTop="@+id/space"
         android:layout_alignParentLeft="true"
