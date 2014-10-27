@@ -117,20 +117,20 @@ public class FavoritesActivity extends Activity {
     }
 
     //Recipe clicked
-    public void recipeOnClick(View view){
+    //public void recipeOnClick(View view){
         //get which recipe is clicked
 
         //go the the recipe's detail page
-        Intent RecipeDetailIntent = new Intent(this, RecipeDetailActivity.class);
-        startActivity(RecipeDetailIntent);
-    }
-    public void profileOnClick(View view){
+       // Intent RecipeDetailIntent = new Intent(this, RecipeDetailActivity.class);
+        //startActivity(RecipeDetailIntent);
+    //}
+    //public void profileOnClick(View view){
         //get which profile is clicked
 
         //go the the profile page
-        Intent ProfileIntent = new Intent(this, ProfileActivity.class);
-        startActivity(ProfileIntent);
-    }
+        //Intent ProfileIntent = new Intent(this, ProfileActivity.class);
+        //startActivity(ProfileIntent);
+    //}
     //Pseudocode for Nav Menu
     //START
     //The drop down menu with links to other activities opens

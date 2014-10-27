@@ -5,7 +5,6 @@
     tools:context="com.irissonghy.myfirstapplication.PantryPopupActivity"
     android:id="@+id/pantryPopupRelative">
 
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -60,8 +59,15 @@
         android:layout_alignParentStart="true" />
 
 
+    <!-- <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker"
+            android:layout_alignTop="@+id/expandableListView"
+            android:layout_toRightOf="@+id/button4"
+            android:layout_toEndOf="@+id/button4" />
 
-       <!-- <NumberPicker
+          <NumberPicker
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/numberPicker"
