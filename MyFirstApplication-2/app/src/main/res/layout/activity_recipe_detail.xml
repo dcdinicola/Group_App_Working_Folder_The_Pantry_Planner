@@ -18,89 +18,72 @@
             android:weightSum="1">
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp">
-
-                <ImageView
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:src = "@drawable/recipe_detail_icon"
-                    android:id="@+id/imageView_recipeDetailIcon" />
-
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp"
+                    android:layout_height="wrap_content"
                     android:text="Recipe Detail"
-                    android:id="@+id/textView_recipeHeader"
-                    android:gravity="center_vertical"
-                    android:textColor="#000"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
+                    android:id="@+id/textView_recipeDetail"
+                    android:layout_gravity="left"
+                    android:textSize="18pt"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="10dp" />
             </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="This is the detail of the recipe... "
-                android:id="@+id/textView_recipeDetailDescription"
-                android:textSize="20sp"
-                android:layout_marginLeft="10dp" />
-
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp">
-
+                android:layout_marginTop="20dp">
                 <ImageView
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:id="@+id/imageView_recipeImage2"
-                    android:src = "@drawable/chicken_soup_picture" />
+                    android:layout_gravity="left"
+
+                    android:background="#b2ff65"
+                    android:layout_marginLeft="10dp" />
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp">
-
+                    android:layout_height="match_parent">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Chicken Soup"
                         android:id="@+id/textView_recipeName_2"
-                        android:textSize="21sp"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="11pt"
                         android:textStyle="bold" />
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tommy"
                         android:id="@+id/textView_recipePoster_2"
-                        android:textSize="18sp" />
+                        android:layout_marginLeft="20dp"
+                        android:textStyle="italic"
+                        android:textSize="8pt" />
                     <RatingBar
-                        android:layout_width="197dp"
-                        android:layout_height="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:id="@+id/ratingBar_recipeRating_2"
-                        style="?android:attr/ratingBarStyleSmall"
-                        android:numStars="4"
-                        android:rating="4" />
+                        android:numStars="3"
+                        android:rating="3"
+                        android:layout_marginLeft="10dp" />
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp">
+                        android:layout_height="wrap_content">
                         <Button
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
+                            android:layout_height="wrap_content"
                             android:text="Favorite"
                             android:id="@+id/button_addToFavorites"
-                            android:onClick="addToFavoritesOnClick"
-                             />
+                            android:layout_marginLeft="10dp"
+                            android:onClick="addToFavoritesOnClick" />
                         <Button
                             android:layout_width="wrap_content"
-                            android:layout_height="40dp"
+                            android:layout_height="wrap_content"
                             android:text="Like"
                             android:id="@+id/button_likeButton2"
                             android:onClick="likeButtonOnClick" />
@@ -111,55 +94,53 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp">
+                android:layout_marginTop="2dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ingredients"
                     android:id="@+id/textView_ingredientsText"
-
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
                     android:textStyle="bold"
-                    android:textSize="21sp" />
+                    android:textSize="11pt" />
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="348dp"
                     android:layout_height="wrap_content"
-                    android:text="Admiration instrument in. Shy saw declared age debating ecstatic man. Call in so want pure rank am dear were. "
+                    android:text="Admiration instrument up do of prosperous in. Shy saw declared age debating ecstatic man. Call in so want pure rank am dear were. "
                     android:id="@+id/textView_ingredientsContentText"
                     android:layout_gravity="right"
-                    android:textSize = "18sp"
-                     />
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    android:layout_marginTop="2dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Directions"
                     android:id="@+id/textView_directionsText"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
                     android:textStyle="bold"
-                    android:textSize="21sp" />
+                    android:textSize="11pt" />
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="348dp"
                     android:layout_height="wrap_content"
                     android:text="Declared age debating ecstatic man. Call in so want pure rank am dear were. "
                     android:id="@+id/textView_directionsContentText"
-                    android:textSize = "18sp"/>
+                    android:layout_gravity="right"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    android:layout_marginTop="2dp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Reviews"
                     android:id="@+id/textView_reviewsText"
-                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
                     android:textStyle="bold"
-                    android:textSize="21sp" />
-                <EditText
-                    android:layout_height="300dp"
-                    android:layout_width = "match_parent"
-                    android:background="#fffcffd8"
-
-                    />
+                    android:textSize="11pt" />
             </LinearLayout>
-
-
         </LinearLayout>
 
 
