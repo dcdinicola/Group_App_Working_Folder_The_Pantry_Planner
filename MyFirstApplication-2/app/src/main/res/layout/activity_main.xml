@@ -11,8 +11,37 @@
         android:layout_height="wrap_content"
         android:baselineAligned="false">
 
-<!-- Removed icons from main Screen -->
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:onClick="goToAddRecipe"
+            android:id="@+id/plus_sign"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/plus_sign"
+            android:layout_gravity="left" />
 
+
+        <!--will allow user to add a recipe using the add recipe page-->
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:onClick="goToFavorites"
+            android:id="@+id/star"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="15dp"
+            android:src="@android:drawable/btn_star_big_on"
+            android:layout_gravity="left" />
+
+        <!--will allow user to go to his/her favorites using the favorites page-->
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:onClick="goToProfile"
+            android:id="@+id/profile"
+            android:src="@drawable/profile_icon"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="15dp" />
 
         <!--will allow user to view / edit his / her profile-->
     </LinearLayout>
@@ -46,7 +75,7 @@
             android:layout_height="50dp"
             android:id="@+id/imageView4"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/down_arrow" />
+            android:src="@drawable/ic_launcher" />
     </LinearLayout>
 
     <LinearLayout
