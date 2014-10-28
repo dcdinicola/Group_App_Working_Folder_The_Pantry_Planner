@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewPP"
         android:typeface="sans"
-        android:textSize="30sp"
+        android:textSize="32dp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:layout_marginTop="72dp" />
@@ -29,10 +29,10 @@
         android:hint="Username"
         android:inputType="text"
         android:textStyle="normal"
-        android:textSize="21sp"
+        android:textSize="21dp"
         android:typeface="sans"
         android:ellipsize="start"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="55dp"
         android:maxLines="1"
         android:focusableInTouchMode="true" />
 
@@ -47,42 +47,38 @@
         android:hint="Password"
         android:inputType="text|textPassword"
         android:textStyle="normal"
-        android:textSize="21sp"
+        android:textSize="21dp"
         android:typeface="sans"
         android:ellipsize="start"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:maxLines="1"
         android:password="true"
         android:focusableInTouchMode="true" />
 
     <TextView
-        android:layout_width="240dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Sign Up?"
         android:id="@+id/textViewSignUp"
-        android:layout_marginTop="32dp"
-        android:textSize="18sp"
+        android:layout_marginTop="36dp"
+        android:textSize="18dp"
         android:typeface="sans"
-        android:textColorLink="#2980b9"
+        android:textColor="#aaa"
         android:layout_gravity="center_horizontal"
-        android:gravity="left"
-        android:autoLink="all"
-        android:linksClickable="true"
-        android:textColor="#2980b9"
-        android:inputType="textUri" />
+        android:gravity="center_horizontal" />
 
     <Button
-        android:layout_width="90pt"
-        android:layout_height="27pt"
+        android:layout_width="200dp"
+        android:layout_height="64dp"
         android:text="LOGIN"
         android:id="@+id/buttonLogin"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="36dp"
-        android:background="@drawable/btnlogin"
+        android:background="#a5c8d9"
         android:textStyle="bold"
         android:textColor="#fff"
         android:typeface="monospace"
-        android:textSize="21sp"
+        android:textSize="21dp"
         android:onClick="logIn"/>
 
 </LinearLayout>

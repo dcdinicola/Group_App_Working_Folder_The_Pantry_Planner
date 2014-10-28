@@ -22,9 +22,7 @@ public class PantryPopupActivity extends Activity{
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
         //  still having trouble with red "R"s)
        String[]veggies= new String[]  {
-        "Carrots", "Celery", "Onions", "Potatoes", "Chicken", "Beef", "Salmon", "Tilapia",
-       "Romaine Lettuce", "Kale", "Spinach", "Brocoli",
-       "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts"};
+        "Carrots", "Celery", "Onions", "Potatoes"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, veggies);
       PantrylistView.setAdapter(adapter);
@@ -37,42 +35,19 @@ public class PantryPopupActivity extends Activity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-<<<<<<< HEAD
         getMenuInflater().inflate(R.menu.menu_pantry_popup, menu);
-=======
-        getMenuInflater().inflate(R.menu.menu_main, menu);
->>>>>>> FETCH_HEAD
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // action bar items here
-
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.activity_mainpage) {
-            Intent intent=new Intent(this,MainActivity.class);
-            startActivity (intent);
-            return true;
-        }
-        else if (id == R.id.activity_profile) {
-            // launch intent to go to user profile
-            Intent intent=new Intent(this,ProfileActivity.class);
-            startActivity (intent);
 
-            return true;
-        }
-        else if (id == R.id.activity_favorites) {
-            // launch intent to go to favorites
-            Intent intent=new Intent(this,FavoritesActivity.class);
-            startActivity (intent);
-            return true;
-        }
-
-        else if (id == R.id.activity_add_recipe) {
-            // launch intent to go to add recipe
-            Intent intent=new Intent(this,AddRecipeActivity.class);
-            startActivity (intent);
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
             return true;
         }
 
