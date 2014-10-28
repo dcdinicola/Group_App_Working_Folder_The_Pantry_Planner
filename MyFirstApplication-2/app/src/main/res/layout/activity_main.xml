@@ -46,7 +46,7 @@
             android:layout_height="50dp"
             android:id="@+id/imageView4"
             android:layout_gravity="center_horizontal"
-            android:src="@drawable/down_arrow" />
+            android:src="ic_launcher.png" />
     </LinearLayout>
 
     <LinearLayout
