@@ -56,7 +56,7 @@
     <ImageView
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:layout_below="@id/PantrylistView"
+        android:layout_below="@+id/PantrylistView"
         android:id="@+id/imageView_recipeImage2"
         android:layout_gravity="left"
         android:background="#b2ff65"
@@ -70,7 +70,7 @@
         android:layout_gravity="center_horizontal"
         android:paddingLeft="20dp"
         android:paddingRight="5dp"
-        android:layout_below="@id/PantrylistView"
+        android:layout_below="@+id/PantrylistView"
         android:layout_marginBottom="25dp" />
     <Space
         android:layout_width="fill_parent"
