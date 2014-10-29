@@ -15,42 +15,57 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:weightSum="1">
+
         <LinearLayout
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
+            android:layout_width="195dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:src = "@drawable/recipe_icon"
+                android:id="@+id/imageView_recipeIcon" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="150dp"
+                android:layout_height="45dp"
                 android:text="Recipe"
-                android:id="@+id/textView_header"
                 android:layout_weight="1.04"
+                android:id="@+id/textView_recipeHeader"
+                android:gravity="center_vertical"
                 android:textColor="#000"
-                android:textSize="22pt"
-                android:textStyle="bold"
                 android:textAlignment="center"
-                android:autoText="true" />
+                android:autoText="true"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Based on your search..."
-            android:id="@+id/textView_opening"
-            android:textSize="10pt"
             android:textIsSelectable="true"
             android:paddingTop="10px"
-            android:layout_marginBottom="10px" />
+            android:layout_marginBottom="10px"
+            android:text="These are what you can cook based on what you have in your pantry... "
+            android:id="@+id/textView_recipeDescription"
+            android:textSize="20sp"
+            android:layout_marginLeft="10dp" />
 
         <ListView
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/lv"
             android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
             android:clickable="true" />
-
-
     </LinearLayout>
+
+
+
 </RelativeLayout>

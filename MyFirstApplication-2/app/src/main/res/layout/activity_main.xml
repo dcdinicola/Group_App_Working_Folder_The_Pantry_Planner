@@ -142,7 +142,8 @@
         android:id="@+id/button4"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:onClick="lookUpRecipe" />
 
     <ImageView
         android:layout_width="wrap_content"
