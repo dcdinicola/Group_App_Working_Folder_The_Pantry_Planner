@@ -5,7 +5,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Login"
-    android:id="@+id/LinearLayoutLogin">
+    android:id="@+id/LinearLayoutLogin"
+    android:background="#462446">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/PantryPlannerLogo"
+        android:layout_marginTop="20dp" />
 
     <TextView
         android:text="@string/app_headline"
@@ -16,7 +25,8 @@
         android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:layout_marginTop="72dp" />
+        android:layout_marginTop="15dp"
+        android:textColor="#fff" />
 
     <EditText
         android:layout_width="250dp"
@@ -27,14 +37,16 @@
         android:focusable="true"
         android:layout_gravity="center_horizontal"
         android:hint="Username"
+        android:textColorHint="#fff"
         android:inputType="text"
         android:textStyle="normal"
         android:textSize="21sp"
         android:typeface="sans"
         android:ellipsize="start"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="30dp"
         android:maxLines="1"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true"
+        android:textColor="#fff" />
 
     <EditText
         android:layout_width="250dp"
@@ -45,6 +57,7 @@
         android:focusable="true"
         android:layout_gravity="center_horizontal"
         android:hint="Password"
+        android:textColorHint="#fff"
         android:inputType="text|textPassword"
         android:textStyle="normal"
         android:textSize="21sp"
@@ -53,7 +66,8 @@
         android:layout_marginTop="24dp"
         android:maxLines="1"
         android:password="true"
-        android:focusableInTouchMode="true" />
+        android:focusableInTouchMode="true"
+        android:textColor="#fff" />
 
     <TextView
         android:layout_width="240dp"
@@ -81,7 +95,7 @@
         android:background="@drawable/btnlogin"
         android:textStyle="bold"
         android:textColor="#fff"
-        android:typeface="monospace"
+        android:typeface="sans"
         android:textSize="21sp"
         android:onClick="logIn"/>
 

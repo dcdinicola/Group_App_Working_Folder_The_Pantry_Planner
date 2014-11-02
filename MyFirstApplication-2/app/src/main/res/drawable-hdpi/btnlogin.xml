@@ -3,19 +3,26 @@
     <item android:state_pressed="true">
         <shape>
             <solid
-                android:color="#D35400"/>
+                android:color="#ffc153"/>
+            <corners
+                android:radius="40dp" />
+
         </shape>
     </item>
     <item android:state_focused="true">
         <shape>
             <solid
-                android:color="#D35400"/>
+                android:color="#ffc153"/>
+            <corners
+                android:radius="10dp" />
         </shape>
     </item>
     <item>
         <shape>
             <solid
-                android:color="#F39C12"/>
+                android:color="#ff6c54"/>
+            <corners
+                android:radius="10dp" />
         </shape>
     </item>
 </selector>
