@@ -3,13 +3,11 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
 import android.view.View;
-
-
 
 
 public class MainActivity extends Activity {
@@ -89,6 +87,7 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
 //    @Override
 //    public boolean onOptionsItemSelected(MenuItem item) {

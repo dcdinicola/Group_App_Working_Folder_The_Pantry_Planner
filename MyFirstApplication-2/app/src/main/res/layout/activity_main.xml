@@ -44,14 +44,14 @@
         android:layout_below="@+id/space"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="5dp"
         android:paddingLeft="10dp"
         android:textColor="#555"
         android:textSize="18sp" />
 
     <Button
         android:layout_width="250dp"
-        android:layout_height="110dp"
+        android:layout_height="100dp"
         android:text="Select From Pantry"
         android:id="@+id/button3"
         android:layout_centerHorizontal="true"
@@ -142,29 +142,28 @@
         android:id="@+id/button4"
         android:layout_below="@+id/textView4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:onClick="lookUpRecipe" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:id="@+id/imageView2"
-        android:src="@drawable/dropdown"
+    <Spinner
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner3"
+        android:layout_below="@+id/textView2"
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
         android:layout_above="@+id/textView4"
-        android:layout_alignRight="@+id/textView"
-        android:layout_alignEnd="@+id/textView" />
+        android:entries="@array/cuisine_type"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:id="@+id/imageView3"
-        android:src="@drawable/dropdown"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_alignRight="@+id/imageView2"
-        android:layout_alignEnd="@+id/imageView2" />
+    <Spinner
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner4"
+        android:layout_below="@+id/textView3"
+        android:layout_alignLeft="@+id/spinner3"
+        android:layout_alignStart="@+id/spinner3"
+        android:layout_above="@+id/button4"
+        android:entries="@array/cooking_level"/>
+
 
 </RelativeLayout>
