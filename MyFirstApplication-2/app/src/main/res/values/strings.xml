@@ -23,18 +23,4 @@
     <!-- adding string to attempt to remove a pantry popup error -->
     <string name="veggies">PantryPopupActivity</string>
 
-    <string-array name="cuisine_type">
-        <item>Italian</item>
-        <item>Thai</item>
-        <item>American</item>
-        <item>Indian</item>
-        <item>Mexican</item>
-    </string-array>
-
-    <string-array name="cooking_level">
-        <item>Easy</item>
-        <item>Medium</item>
-        <item>Difficult</item>
-    </string-array>
-
 </resources>
