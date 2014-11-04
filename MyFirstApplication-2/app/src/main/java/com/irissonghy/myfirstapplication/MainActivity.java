@@ -8,8 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
-
-
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -51,11 +50,14 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Intent mainIntent = getIntent();
+        String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);//get the intent and extract the username delivered by LoginActivity
+        TextView userName = (TextView) findViewById(R.id.textViewUsername);//set the text of textViewUsername on main page
+        userName.setText("Welcome " + displayName + "!");
+
     }
     // new intent to open pantry popup
     public void showMyPantry(View view) {
         Intent intent=new Intent(this,PantryPopupActivity.class);
-        startActivity (intent);
     }
     // new intent to open AddRecipeActivity from main
     public void goToAddRecipe (View view) {
