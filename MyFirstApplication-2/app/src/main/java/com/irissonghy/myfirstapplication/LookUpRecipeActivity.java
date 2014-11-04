@@ -110,6 +110,7 @@ public class LookUpRecipeActivity extends Activity {
         Intent RecipeDetailIntent = new Intent(this, RecipeDetailActivity.class);
         startActivity(RecipeDetailIntent);
     }
+
     //Hamburger menu: handle click
     /*public boolean onMenuItemClick(View view){
         //get which item on the menu is clicked

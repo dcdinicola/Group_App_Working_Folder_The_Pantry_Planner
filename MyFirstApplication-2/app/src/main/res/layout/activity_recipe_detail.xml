@@ -82,9 +82,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tommy"
-                        android:id="@+id/textView_recipePoster_2"
+                        android:id="@+id/recipePoster_1"
                         android:layout_marginLeft="20dp"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        android:onClick = "userNameOnClick"/>
                     <RatingBar
                         android:layout_width="197dp"
                         android:layout_height="20dp"
@@ -102,7 +103,7 @@
                             android:layout_height="40dp"
                             android:text="Favorite"
                             android:id="@+id/button_addToFavorites"
-                            android:layout_marginLeft="10dp" />
+                            android:layout_marginLeft="10dp"/>
 
                         <Button
                             android:layout_width="wrap_content"
@@ -131,8 +132,7 @@
                             android:layout_gravity="right"
                             android:paddingLeft="10dp"
                             android:layout_marginTop="2dp"
-                            android:textSize = "18sp"
-                            />
+                            android:textSize = "18sp" />
                 <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
