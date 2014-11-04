@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.RatingBar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,6 +19,15 @@ public class RecipeDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
         Intent recipeDetailGetIntent = getIntent();
+        //rating bar
+        RatingBar ratings = (RatingBar) findViewById(R.id.recipeRating_chickenSoup);
+        ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
+            public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser){
+
+            }
+        });
+
+        //textView clickable userName
         TextView userNameView = (TextView) this.findViewById(R.id.recipePoster_1);
         userNameView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +39,6 @@ public class RecipeDetailActivity extends Activity {
         });
 
     }
-
 
 
 

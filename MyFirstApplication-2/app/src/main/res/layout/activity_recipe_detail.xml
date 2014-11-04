@@ -88,12 +88,13 @@
                         android:onClick = "userNameOnClick"/>
                     <RatingBar
                         android:layout_width="197dp"
-                        android:layout_height="20dp"
-                        android:id="@+id/ratingBar_recipeRating_2"
+                        android:layout_height="50dp"
+                        android:id="@+id/recipeRating_chickenSoup"
                         android:layout_marginLeft="10dp"
-                        style="?android:attr/ratingBarStyleSmall"
                         android:numStars="4"
-                        android:rating="4" />
+
+                        android:rating="0.0" />
+                    <!--
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
@@ -113,6 +114,7 @@
                             android:orientation="vertical"
                             android:layout_marginLeft="10dp" />
                         </LinearLayout>
+                        -->
                     </LinearLayout>
                 </LinearLayout>
                 <TextView
