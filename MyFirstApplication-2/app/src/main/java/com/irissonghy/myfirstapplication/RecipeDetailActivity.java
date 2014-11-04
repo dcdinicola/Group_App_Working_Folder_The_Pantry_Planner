@@ -10,15 +10,34 @@ import android.widget.RatingBar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class RecipeDetailActivity extends Activity {
+
+    List<String> recipeList = new ArrayList<String>();
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
-        Intent recipeDetailGetIntent = getIntent();
+
+        initRecipeList();
+
+        //get message from intent
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
+
+        int id = (int) Long.parseLong(message);
+
+        //create the retrieved recipe name
+        TextView textView = (TextView) findViewById(R.id.recipeName_1);
+        textView.setText(recipeList.get(id));
+
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeRating_chickenSoup);
         ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
@@ -40,7 +59,12 @@ public class RecipeDetailActivity extends Activity {
 
     }
 
-
+    private void initRecipeList() {
+        recipeList.add("Chicken Soup");
+        recipeList.add("Beef Tomato");
+        recipeList.add("McNuggets");
+        recipeList.add("Cheesecake");
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

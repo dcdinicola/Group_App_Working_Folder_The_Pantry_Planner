@@ -11,55 +11,75 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SimpleAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class LookUpRecipeActivity extends Activity {
-    //an array to show the names of the recipes in the listView
-    private static final String[] strs = new String[]{
-            "Chicken Soup", "Beef Tomato","McNuggets","Cheesecake"
-    };
 
-    private ListView lv;
+    // the string variable we use for sending messages with intents
+    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
+
+    // a list class type
+    List<Map<String, String>> recipeList = new ArrayList<Map<String,String>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_look_up_recipe);
 
-        lv = (ListView) findViewById(R.id.lv);
-        lv.setAdapter(new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,strs));
+        //
+        registerForContextMenu((ListView) findViewById(R.id.lv));
+        //initialize recipe list
+        initRecipeList();
 
-        lv.setOnItemClickListener(new OnItemClickListener()
+
+        // adapters are what we use to associate the list variable and its contents with the list view
+        ListView recipeListView = (ListView) findViewById(R.id.lv);
+        SimpleAdapter simpleAdpt = new SimpleAdapter(this, recipeList, android.R.layout.simple_list_item_1, new String[] {"recipe"}, new int[] {android.R.id.text1});
+        recipeListView.setAdapter(simpleAdpt);
+
+        //look_up_recipe listView onClickListener
+        recipeListView.setOnItemClickListener(new OnItemClickListener()
         {
             public void onItemClick(AdapterView<?> adapter, View view,
                                     int position, long id) {
-                switch(position)
-                {
-                    case 0:
-                        Intent newActivity1 = new Intent(LookUpRecipeActivity.this, RecipeDetailActivity.class);
-                        startActivity(newActivity1);
-                        break;
-                    case 1:
-                        Intent newActivity2 = new Intent(LookUpRecipeActivity.this, RecipeDetailActivity.class);
-                        startActivity(newActivity2);
-                        break;
-                    case 2:
-                        Intent newActivity3 = new Intent(LookUpRecipeActivity.this, RecipeDetailActivity.class);
-                        startActivity(newActivity3);
-                        break;
-                    case 3:
-                        Intent newActivity4 = new Intent(LookUpRecipeActivity.this, RecipeDetailActivity.class);
-                        startActivity(newActivity4);
-                        break;
-                }
+
+                openRecipeDetail(id);
 
             }
         });
         Intent intent = getIntent();
     }
 
+    private void initRecipeList() {
+        recipeList.add(createRecipe("recipe", "Chicken Soup"));
+        recipeList.add(createRecipe("recipe", "Beef Tomato"));
+        recipeList.add(createRecipe("recipe", "McNuggets"));
+        recipeList.add(createRecipe("recipe", "Cheesecake"));
+    }
 
+    // this method helps us minimize the amount of repeat calls we need to make in initList to place
+    // a recipe entry into the list
+    private HashMap<String, String> createRecipe(String key, String name) {
+        HashMap<String, String> recipe = new HashMap<String, String>();
+        recipe.put(key, name);
+        return recipe;
+    }
+
+    // openTeamDetail is called whenever a list item is clicked on
+    // it calls for an intent that starts up the team detail activity and sends the team's id over
+    // to the activity with the message variable declared at the top of the activity
+    public void openRecipeDetail(long id) {
+        Intent intent = new Intent(this, RecipeDetailActivity.class);
+        String message = String.valueOf(id);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
