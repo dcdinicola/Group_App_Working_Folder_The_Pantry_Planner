@@ -64,6 +64,10 @@ public class RecipeDetailActivity extends Activity {
         recipeList.add("Beef Tomato");
         recipeList.add("McNuggets");
         recipeList.add("Cheesecake");
+        recipeList.add("Chicken Teriyaki");
+        recipeList.add("Duck Ramen");
+        recipeList.add("Chicken & Cheddar Sandwich");
+        recipeList.add("Curry Rice");
     }
 
     @Override

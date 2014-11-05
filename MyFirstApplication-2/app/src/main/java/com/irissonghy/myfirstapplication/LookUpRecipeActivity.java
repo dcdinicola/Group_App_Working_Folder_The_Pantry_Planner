@@ -71,8 +71,8 @@ public class LookUpRecipeActivity extends Activity {
         return recipe;
     }
 
-    // openTeamDetail is called whenever a list item is clicked on
-    // it calls for an intent that starts up the team detail activity and sends the team's id over
+    // openRecipeDetail is called whenever a list item is clicked on
+    // it calls for an intent that starts up the team detail activity and sends the recipe's id over
     // to the activity with the message variable declared at the top of the activity
     public void openRecipeDetail(long id) {
         Intent intent = new Intent(this, RecipeDetailActivity.class);

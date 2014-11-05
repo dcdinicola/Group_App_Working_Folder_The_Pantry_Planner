@@ -12,67 +12,69 @@ import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Toast;
+import android.widget.SimpleAdapter;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class FavoritesActivity extends Activity {
-    ListView listView;
+    //Add the EXTRA_MESSAGE definition
+    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
+
+    // a list class type
+    List<Map<String, String>> recipeList = new ArrayList<Map<String,String>>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
         Intent intent = getIntent();
-        // Get ListView object from xml
-        listView = (ListView) findViewById(R.id.FavoriteslistView);
-        // Defined Array values to show in ListView
-        String[] favorites = new String[] { "Chicken Teriyaki",
-                "Duck Ramen",
-                "Chicken & Cheddar Sandwich",
-                "Cheese Cake",
-                "Curry Rice",
-                "BBQ Chicken Wings"
-        };
 
-        // Define a new Adapter
-        // First parameter - Context
-        // Second parameter - Layout for the row
-        // Third parameter - ID of the TextView to which the data is written
-        // Forth - the Array of data
+        registerForContextMenu((ListView) findViewById(R.id.FavoriteslistView));
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, favorites);
+        //initialize recipe list
+        initRecipeList();
+        // adapters are what we use to associate the list variable and its contents with the list view
+        ListView favoritesListView = (ListView) findViewById(R.id.FavoriteslistView);
+        SimpleAdapter simpleAdpt = new SimpleAdapter(this, recipeList, android.R.layout.simple_list_item_1, new String[] {"recipe"}, new int[] {android.R.id.text1});
+        favoritesListView.setAdapter(simpleAdpt);
 
-        // Assign adapter to ListView
-        listView.setAdapter(adapter);
-
-        // ListView Item Click Listener
-        listView.setOnItemClickListener(new OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
+        //look_up_recipe listView onClickListener
+        favoritesListView.setOnItemClickListener(new OnItemClickListener()
+        {
+            public void onItemClick(AdapterView<?> adapter, View view,
                                     int position, long id) {
-                switch (position){
-                    case 0: Intent newActivity = new Intent(FavoritesActivity.this,RecipeDetailActivity.class);
-                            startActivity(newActivity);
-                            break;
-                    case 1: Intent newActivity1 = new Intent(FavoritesActivity.this,RecipeDetailActivity.class);
-                            startActivity(newActivity1);
-                            break;
-                    case 2: Intent newActivity2 = new Intent(FavoritesActivity.this,RecipeDetailActivity.class);
-                        startActivity(newActivity2);
-                        break;
-                    case 3: Intent newActivity3 = new Intent(FavoritesActivity.this,RecipeDetailActivity.class);
-                        startActivity(newActivity3);
-                        break;
-                    case 4: Intent newActivity4 = new Intent(FavoritesActivity.this,RecipeDetailActivity.class);
-                        startActivity(newActivity4);
-                        break;
-                    case 5: Intent newActivity5 = new Intent(FavoritesActivity.this,RecipeDetailActivity.class);
-                        startActivity(newActivity5);
-                        break;
-                }
-            }
 
+                openRecipeDetail(id);
+
+            }
         });
+    }
+    private void initRecipeList() {
+        recipeList.add(createRecipe("recipe", "Chicken Teriyaki"));//the id of this also starts from 0? so the recipe detail page will show chicken soup. need to be fixed in the future
+        recipeList.add(createRecipe("recipe", "Duck Ramen"));
+        recipeList.add(createRecipe("recipe", "Chicken & Cheddar Sandwich"));
+        recipeList.add(createRecipe("recipe", "Cheesecake"));
+        recipeList.add(createRecipe("recipe", "Curry Rice"));
+    }
+
+    // this method helps us minimize the amount of repeat calls we need to make in initList to place
+    // a recipe entry into the list
+    private HashMap<String, String> createRecipe(String key, String name) {
+        HashMap<String, String> recipe = new HashMap<String, String>();
+        recipe.put(key, name);
+        return recipe;
+    }
+    // openRecipeDetail is called whenever a list item is clicked on
+    // it calls for an intent that starts up the team detail activity and sends the recipe's id over
+    // to the activity with the message variable declared at the top of the activity
+    public void openRecipeDetail(long id) {
+        Intent intent = new Intent(this, RecipeDetailActivity.class);
+        String message = String.valueOf(id);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
     }
 
 
