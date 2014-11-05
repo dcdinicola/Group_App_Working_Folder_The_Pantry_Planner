@@ -27,9 +27,8 @@ public class PantryPopupActivity extends Activity{
        "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, veggies);
+
       PantrylistView.setAdapter(adapter);
-     // PantrylistView appears to be functioning.  However, I need to learn how to apply that
-     // to the XML so that the values of the string show up on the list
 
     }
 
