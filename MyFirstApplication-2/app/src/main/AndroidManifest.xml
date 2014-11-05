@@ -26,7 +26,8 @@
         </activity>
         <activity
             android:name="com.irissonghy.myfirstapplication.LookUpRecipeActivity"
-            android:label="@string/title_activity_look_up_recipe" >
+            android:label="@string/title_activity_look_up_recipe"
+            android:theme = "@style/ListFontColor">
         </activity>
         <activity
             android:name="com.irissonghy.myfirstapplication.RecipeDetailActivity"
@@ -44,6 +45,7 @@
             android:name="com.irissonghy.myfirstapplication.ProfileActivity"
             android:label="@string/title_activity_profile" >
         </activity>
+
     </application>
 
 </manifest>
