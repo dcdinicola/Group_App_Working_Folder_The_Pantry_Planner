@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.irissonghy.myfirstapplication.PantryPopupActivity"
-    android:id="@+id/pantryPopupRelative">
+    android:id="@+id/pantryPopupRelative"
+    android:background="#462446">
 
     <TextView
         android:layout_width="348dp"
@@ -11,6 +12,7 @@
         android:text="This page allows you to update the ingredients in your pantry, update quantities of items in your pantry, and choose from those items in order to prepare a delicious meal."
         android:id="@+id/textView_ingredientsContentText"
         android:layout_gravity="right"
+        android:textColor="#fff"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
         android:layout_marginTop="5dp" />
@@ -23,9 +25,11 @@
         android:layout_centerHorizontal="true"
         android:textSize="21sp"
         android:textStyle="bold"
-        android:gravity="top"
+        android:gravity="center"
         android:layout_gravity="top"
-        android:layout_marginTop="72dp"/>
+        android:layout_marginTop="72dp"
+        android:background="#ff6c54"
+        android:textColor="#FFF" />
 
 
     <Button
@@ -33,12 +37,13 @@
         android:layout_height="wrap_content"
         android:text="Select"
         android:id="@+id/button2"
-        android:textSize="20sp"
+        android:textSize="21sp"
         android:textStyle="bold"
-        android:gravity="center_horizontal"
-        android:layout_gravity="center_horizontal|bottom|top"
+        android:layout_gravity="center"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFF"
+        android:background="#ff6c54" />
 
     <Button
         android:layout_width="wrap_content"
@@ -48,9 +53,11 @@
         android:layout_alignTop="@+id/button2"
         android:layout_toRightOf="@+id/button2"
         android:layout_toEndOf="@+id/button2"
-        android:textSize="20dp"
+        android:textSize="21sp"
         android:textStyle="bold"
-        android:gravity="center|center_vertical|fill_vertical" />
+        android:gravity="center|center_vertical|fill_vertical"
+        android:textColor="#FFF"
+        android:background="#ff6c54" />
 
 
     <ImageView
@@ -84,6 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="250dp"
         android:id="@+id/PantrylistView"
+        android:textColor="#fff"
         android:layout_alignTop="@+id/space"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
