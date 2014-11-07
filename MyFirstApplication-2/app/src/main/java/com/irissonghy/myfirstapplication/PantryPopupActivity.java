@@ -11,7 +11,12 @@ import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-//I would like to have the string values replace the item, but am not successful
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 public class PantryPopupActivity extends Activity{
     ListView PantrylistView;
@@ -21,14 +26,44 @@ public class PantryPopupActivity extends Activity{
         Intent intent = getIntent();
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
         //  still having trouble with red "R"s)
-       String[]veggies= new String[]  {
-        "Carrots", "Celery", "Onions", "Potatoes", "Chicken", "Beef", "Salmon", "Tilapia",
-       "Romaine Lettuce", "Kale", "Spinach", "Brocoli",
-       "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts"};
+        String[]veggies= new String[]  {
+                "Carrots", "Celery", "Onions", "Potatoes", "Chicken", "Beef", "Salmon", "Tilapia",
+                "Romaine Lettuce", "Kale", "Spinach", "Brocoli",
+                "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, veggies);
 
-      PantrylistView.setAdapter(adapter);
+public class MyCookingAdapter extends ArrayAdapter<String> {
+
+    String[] veggies;
+
+    public MyCookingAdapter(Context context, String[] veggies) {
+        super(context, 0, veggies); // runs the Array Adapter constructor
+        this.veggies = veggies;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        View v = convertView;
+
+
+
+        if (v == null) {
+            LayoutInflater li = (LayoutInflater)
+                    getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = li.inflate(R.layout.list_item_cooking, null);
+
+            TextView t = (TextView) v.findViewById(R.id.textView);
+            t.setText(this.veggies[position]);
+
+
+        }
+
+
+
+        return v;
+
+    }
 
     }
 
