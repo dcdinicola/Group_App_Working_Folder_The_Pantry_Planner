@@ -2,6 +2,7 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,18 +22,21 @@ public class AddRecipeActivity extends Activity {
         setContentView(R.layout.activity_add_recipe);
 
 
-//        FragmentManager fm = getFragmentManager();
-//        DialogFragment testDialog = new DialogFragment();
-//        testDialog.setRetainInstance(true);
-//        testDialog.show(getFragmentManager(), "testDialog");
+    }
+
+    public void showDialog (View v) {
+        FragmentManager manager = getFragmentManager();
+        MyDialog dialogFragment = new MyDialog();
+        dialogFragment.show(manager, "MyDialog");
+
     }
 
 
-    public void goToRecipeDetail (View view) {
-        Intent addRecipeIntent = new Intent(this, RecipeDetailActivity.class);
-        startActivity(addRecipeIntent);
-
-    }
+//    public void goToRecipeDetail (View view) {
+//        Intent addRecipeIntent = new Intent(this, RecipeDetailActivity.class);
+//        startActivity(addRecipeIntent);
+//
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -10,16 +10,13 @@
         android:text="Are you sure you would like to add this recipe?"
         android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="179dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="10dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="100dp"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true">
 
@@ -27,18 +24,20 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Yes!"
-            android:id="@+id/yesButton"
-            android:layout_marginLeft="80dp" />
+            android:id="@+id/yes"
+            android:layout_marginLeft="80dp"
+            />
 
         <Button
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:id="@+id/cancelButton"
+            android:id="@+id/cancel"
             android:layout_below="@+id/textView"
             android:layout_alignLeft="@+id/textView"
             android:layout_alignStart="@+id/textView"
-            android:layout_marginRight="100dp" />
+            android:layout_marginRight="100dp"
+           />
     </LinearLayout>
 
 </RelativeLayout>
