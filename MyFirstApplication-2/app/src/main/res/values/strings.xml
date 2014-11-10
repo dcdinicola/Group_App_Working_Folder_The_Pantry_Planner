@@ -37,5 +37,12 @@
         <item>Difficult</item>
     </string-array>
 
+    <string-array name="profile_entries">
+        <item>Thai Basil Chicken</item>
+        <item>Spaghetti</item>
+        <item>Pizza</item>
+
+    </string-array>
+
 
 </resources>
