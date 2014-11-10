@@ -2,27 +2,36 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
-import android.provider.MediaStore;
-import android.provider.MediaStore.Files;
-
-
 import android.view.View;
 
+
 public class AddRecipeActivity extends Activity {
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
+
+
+//        FragmentManager fm = getFragmentManager();
+//        DialogFragment testDialog = new DialogFragment();
+//        testDialog.setRetainInstance(true);
+//        testDialog.show(getFragmentManager(), "testDialog");
     }
 
-    public void showRecipeDetail(View view) {
-        Intent intent=new Intent(this,RecipeDetailActivity.class);
-        startActivity (intent);
+
+    public void goToRecipeDetail (View view) {
+        Intent addRecipeIntent = new Intent(this, RecipeDetailActivity.class);
+        startActivity(addRecipeIntent);
+
     }
 
     @Override
@@ -66,6 +75,8 @@ public class AddRecipeActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 
     //ACTIVITY 1
     //user interacts with spinner on the top right corner

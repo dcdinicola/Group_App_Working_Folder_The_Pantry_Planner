@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
         userName.setText("Welcome " + displayName + "!");
 
     }
-    // new intent to open pantry popup
+    //new intent to open pantry popup
     public void showMyPantry(View view) {
         Intent intent=new Intent(this,PantryPopupActivity.class);
     }
