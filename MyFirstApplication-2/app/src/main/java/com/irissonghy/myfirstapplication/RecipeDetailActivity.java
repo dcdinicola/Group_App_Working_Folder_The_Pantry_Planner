@@ -17,7 +17,12 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 
+import org.w3c.dom.Text;
+
 public class RecipeDetailActivity extends Activity {
+
+    public String reviewText = "";
+    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
     List<String> recipeList = new ArrayList<String>();
 
@@ -37,6 +42,8 @@ public class RecipeDetailActivity extends Activity {
         //create the retrieved recipe name
         TextView textView = (TextView) findViewById(R.id.recipeName_1);
         textView.setText(recipeList.get(id));
+
+
 
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeRating_chickenSoup);
@@ -71,12 +78,20 @@ public class RecipeDetailActivity extends Activity {
     }
 
 
+    public void postReview() {
+
+        //display reviews
+        TextView review = (TextView) findViewById(R.id.reviewTextArea);
+        review.setText(reviewText);
+
+
+    }
 
     public void showDialog(View v){
          //review dialog
          AlertDialog.Builder builder = new AlertDialog.Builder(this);
          builder.setTitle("Please write down your review:");
-         //create textview box for users to input review
+         //create input box for users to input review
          final EditText inputBox = new EditText(this);
          builder.setView(inputBox);
 
@@ -88,7 +103,8 @@ public class RecipeDetailActivity extends Activity {
                      @Override
                      public void onClick(DialogInterface dialogInterface, int id) {
                          //dialogInterface.cancel();
-                         inputBox.setText("Reviews");
+                         reviewText = inputBox.getText().toString();
+                         postReview();
                      }
                  });
          builder.setNegativeButton("Cancel",
