@@ -11,12 +11,24 @@ import android.view.View;
 
 public class ProfileActivity extends Activity {
 
+//    List <Map<String, String>> profileRecipeList = new ArrayList<~>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        Intent intent = getIntent();
+//        Intent intent = getIntent();
+//
+//        registerForContextMenu((ListView) findViewById(R.id.profileListView));
+//
+//        initProfileRecipeList();
+//
+//        ListView profileListView = (ListView) findViewById(R.id.profileListView);
+//        SimpleAdapter profileAdpt = new SimpleAdapter(this, profileRecipeList, android.R.layout)
+//
+
+
     }
+
 
 
     @Override
@@ -57,7 +69,7 @@ public class ProfileActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void showRecipeDetail(View view) {
+    public void profileToRecipeDetail(View view) {
         Intent intent=new Intent(this,RecipeDetailActivity.class);
         startActivity (intent);
     }

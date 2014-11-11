@@ -123,8 +123,9 @@
         <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/listView"
-            android:entries="@array/profile_entries"/>
+            android:id="@+id/profileListView"
+            android:entries="@array/profile_entries"
+            android:onClick="profileToRecipeDetail"/>
     </ScrollView>
 
 
