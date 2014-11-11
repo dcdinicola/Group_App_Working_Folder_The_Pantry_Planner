@@ -5,6 +5,7 @@ package com.irissonghy.myfirstapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.RatingBar;
 import android.view.Menu;
@@ -74,14 +75,20 @@ public class RecipeDetailActivity extends Activity {
     public void showDialog(View v){
          //review dialog
          AlertDialog.Builder builder = new AlertDialog.Builder(this);
-         builder.setMessage("Please write down your review:");
+         builder.setTitle("Please write down your review:");
+         //create textview box for users to input review
+         final EditText inputBox = new EditText(this);
+         builder.setView(inputBox);
+
          builder.setCancelable(true);
+
          builder.setPositiveButton("Post",
                  new DialogInterface.OnClickListener()
                  {
                      @Override
                      public void onClick(DialogInterface dialogInterface, int id) {
                          //dialogInterface.cancel();
+                         inputBox.setText("Reviews");
                      }
                  });
          builder.setNegativeButton("Cancel",
@@ -94,7 +101,7 @@ public class RecipeDetailActivity extends Activity {
                      }
                  });
          builder.show();
-                //builder.create();
+
 
         }
 
