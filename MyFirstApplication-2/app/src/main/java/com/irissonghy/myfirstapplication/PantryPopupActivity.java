@@ -33,16 +33,16 @@ public class PantryPopupActivity extends Activity{
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, veggies);
 
-public class MyCookingAdapter extends ArrayAdapter<String> {
+/*public class MyCookingAdapter extends ArrayAdapter<String> {
 
     String[] veggies;
 
     public MyCookingAdapter(Context context, String[] veggies) {
         super(context, 0, veggies); // runs the Array Adapter constructor
         this.veggies = veggies;
-    }
+    }*/
 
-    @Override
+    /*@Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View v = convertView;
 
@@ -63,7 +63,7 @@ public class MyCookingAdapter extends ArrayAdapter<String> {
 
         return v;
 
-    }
+    }*/
 
     }
 

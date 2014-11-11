@@ -12,14 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
-
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 
 public class RecipeDetailActivity extends Activity {
 
     List<String> recipeList = new ArrayList<String>();
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +68,39 @@ public class RecipeDetailActivity extends Activity {
         recipeList.add("Chicken & Cheddar Sandwich");
         recipeList.add("Curry Rice");
     }
+
+
+
+    public void showDialog(View v){
+         //review dialog
+         AlertDialog.Builder builder = new AlertDialog.Builder(this);
+         builder.setMessage("Please write down your review:");
+         builder.setCancelable(true);
+         builder.setPositiveButton("Post",
+                 new DialogInterface.OnClickListener()
+                 {
+                     @Override
+                     public void onClick(DialogInterface dialogInterface, int id) {
+                         //dialogInterface.cancel();
+                     }
+                 });
+         builder.setNegativeButton("Cancel",
+                 new DialogInterface.OnClickListener()
+                 {
+                     @Override
+                     public void onClick(DialogInterface dialogInterface, int id) {
+                         //dialogInterface.cancel();
+
+                     }
+                 });
+         builder.show();
+                //builder.create();
+
+        }
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
