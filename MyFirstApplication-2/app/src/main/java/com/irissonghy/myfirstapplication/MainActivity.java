@@ -13,11 +13,6 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-
-
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_PantryPopup);
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -60,7 +55,7 @@ public class MainActivity extends Activity {
         userName.setText("Welcome " + displayName + "!");
 
     }
-    //new intent to open pantry popup
+    // new intent to open pantry popup
     public void showMyPantry(View view) {
         Intent intent=new Intent(this,PantryPopupActivity.class);
     }
@@ -69,11 +64,6 @@ public class MainActivity extends Activity {
         Intent intent=new Intent(this, AddRecipeActivity.class);
         startActivity (intent);
 
-    }
-    // new intent to open PantryPopupActivity from main
-    public void goToPantryPopup (View view) {
-        Intent intent=new Intent(this, PantryPopupActivity.class);
-        startActivity (intent);
     }
 
     // new intent to open FavoritesActivity from main
@@ -95,17 +85,9 @@ public class MainActivity extends Activity {
 
     }
 
-    // new intent to identify cuisine type and cooking level
-    //private OnItemSelectedListener OnCatSpinnerCL = new AdapterView.OnItemSelectedListener() {
-
-
-     //   public void onItemSelected(AdapterView<?> parent, View view, int pos,long id) {
-
-     //       ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
-     //       ((TextView) parent.getChildAt(0)).setTextSize(5);
     @Override
-   public boolean onCreateOptionsMenu(Menu menu) {
-      // Inflate the menu; this adds items to the action bar if it is present.
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
