@@ -21,10 +21,10 @@ import java.util.Map;
 
 public class FavoritesActivity extends Activity {
     //Add the EXTRA_MESSAGE definition
-    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
+    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE1";
 
     // a list class type
-    List<Map<String, String>> recipeList = new ArrayList<Map<String,String>>();
+    List<Map<String, String>> favoritesList = new ArrayList<Map<String,String>>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +35,10 @@ public class FavoritesActivity extends Activity {
         registerForContextMenu((ListView) findViewById(R.id.FavoriteslistView));
 
         //initialize recipe list
-        initRecipeList();
+        initFavoritesList();
         // adapters are what we use to associate the list variable and its contents with the list view
         ListView favoritesListView = (ListView) findViewById(R.id.FavoriteslistView);
-        SimpleAdapter simpleAdpt = new SimpleAdapter(this, recipeList, android.R.layout.simple_list_item_1, new String[] {"recipe"}, new int[] {android.R.id.text1});
+        SimpleAdapter simpleAdpt = new SimpleAdapter(this, favoritesList, android.R.layout.simple_list_item_1, new String[] {"favorites"}, new int[] {android.R.id.text1});
         favoritesListView.setAdapter(simpleAdpt);
 
         //look_up_recipe listView onClickListener
@@ -52,12 +52,12 @@ public class FavoritesActivity extends Activity {
             }
         });
     }
-    private void initRecipeList() {
-        recipeList.add(createRecipe("recipe", "Chicken Teriyaki"));//the id of this also starts from 0? so the recipe detail page will show chicken soup. need to be fixed in the future
-        recipeList.add(createRecipe("recipe", "Duck Ramen"));
-        recipeList.add(createRecipe("recipe", "Chicken & Cheddar Sandwich"));
-        recipeList.add(createRecipe("recipe", "Cheesecake"));
-        recipeList.add(createRecipe("recipe", "Curry Rice"));
+    private void initFavoritesList() {
+        favoritesList.add(createRecipe("favorites", "Chicken Teriyaki"));//the id of this also starts from 0? so the recipe detail page will show chicken soup. need to be fixed in the future
+        favoritesList.add(createRecipe("favorites", "Duck Ramen"));
+        favoritesList.add(createRecipe("favorites", "Chicken & Cheddar Sandwich"));
+        favoritesList.add(createRecipe("favorites", "Cheesecake"));
+        favoritesList.add(createRecipe("favorites", "Curry Rice"));
     }
 
     // this method helps us minimize the amount of repeat calls we need to make in initList to place
@@ -72,8 +72,8 @@ public class FavoritesActivity extends Activity {
     // to the activity with the message variable declared at the top of the activity
     public void openRecipeDetail(long id) {
         Intent intent = new Intent(this, RecipeDetailActivity.class);
-        String message = String.valueOf(id);
-        intent.putExtra(EXTRA_MESSAGE, message);
+        String messageFav = String.valueOf(id);
+        intent.putExtra(EXTRA_MESSAGE, messageFav);
         startActivity(intent);
     }
 

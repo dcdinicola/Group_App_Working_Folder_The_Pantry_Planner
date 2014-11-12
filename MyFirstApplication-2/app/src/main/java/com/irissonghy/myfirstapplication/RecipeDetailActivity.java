@@ -22,9 +22,10 @@ import org.w3c.dom.Text;
 public class RecipeDetailActivity extends Activity {
 
     public String reviewText = "";
-    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
+    //public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
     List<String> recipeList = new ArrayList<String>();
+    List<String> favoritesList = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +33,24 @@ public class RecipeDetailActivity extends Activity {
         setContentView(R.layout.activity_recipe_detail);
 
         initRecipeList();
+        initFavoritesList();
 
         //get message from intent
         Intent intent = getIntent();
-        String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
 
-        int id = (int) Long.parseLong(message);
+        String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
+        String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
 
         //create the retrieved recipe name
         TextView textView = (TextView) findViewById(R.id.recipeName_1);
-        textView.setText(recipeList.get(id));
+        if(message != null) {
+            int id = (int) Long.parseLong(message);
+            textView.setText(recipeList.get(id));
+
+        } else if (messageFav != null){
+            int idFav = (int) Long.parseLong(messageFav);
+            textView.setText(favoritesList.get(idFav));
+        }
 
 
 
@@ -77,6 +86,13 @@ public class RecipeDetailActivity extends Activity {
         recipeList.add("Curry Rice");
     }
 
+    private void initFavoritesList(){
+        favoritesList.add("Chicken Teriyaki");
+        favoritesList.add("Duck Ramen");
+        favoritesList.add("Chicken & Cheddar Sandwich");
+        favoritesList.add("Cheesecake");
+        favoritesList.add("Curry Rice");
+    }
 
     public void postReview() {
 
