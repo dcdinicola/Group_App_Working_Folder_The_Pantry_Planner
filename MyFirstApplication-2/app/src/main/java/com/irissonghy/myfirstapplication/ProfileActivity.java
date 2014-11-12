@@ -7,27 +7,94 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
 public class ProfileActivity extends Activity {
 
-//    List <Map<String, String>> profileRecipeList = new ArrayList<~>();
+    // the string variable we use for sending messages with intents
+    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
+
+    // a list class type
+    List<Map<String, String>> myProfItems = new ArrayList<Map<String,String>>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-//        Intent intent = getIntent();
-//
-//        registerForContextMenu((ListView) findViewById(R.id.profileListView));
-//
-//        initProfileRecipeList();
-//
-//        ListView profileListView = (ListView) findViewById(R.id.profileListView);
-//        SimpleAdapter profileAdpt = new SimpleAdapter(this, profileRecipeList, android.R.layout)
-//
+
+
+        //profileListView();
+
+
+        registerForContextMenu((ListView) findViewById(R.id.profileListViewItem));
+
+        //initialize recipe list in profile screen
+        initProfileRecipeList();
+
+        ListView profileList = (ListView) findViewById(R.id.profileListViewItem);
+        SimpleAdapter profileAdapter = new SimpleAdapter(this, myProfItems, android.R.layout.simple_list_item_1, new String[]{"profrecipe"}, new int[]{android.R.id.text1});
+
+        profileList.setAdapter(profileAdapter);
+
+        //look_up_recipe listView onClickListener
+        profileList.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            public void onItemClick(AdapterView<?> adapter, View view,
+                                    int position, long id) {
+
+                openRecipeDetail(id);
+
+            }
+        });
+        Intent intent = getIntent();
 
 
     }
+
+    private void initProfileRecipeList() {
+        myProfItems.add(createRecipe("profrecipe", "Chicken Soup"));
+        myProfItems.add(createRecipe("profrecipe", "Beef Tomato"));
+        myProfItems.add(createRecipe("profrecipe", "McNuggets"));
+        myProfItems.add(createRecipe("profrecipe", "Cheesecake"));
+    }
+
+    // this method helps us minimize the amount of repeat calls we need to make in initList to place
+    // a recipe entry into the list
+    private HashMap<String, String> createRecipe(String key, String name) {
+        HashMap<String, String> recipe = new HashMap<String, String>();
+        recipe.put(key, name);
+        return recipe;
+    }
+
+    // openRecipeDetail is called whenever a list item is clicked on
+    // it calls for an intent that starts up the team detail activity and sends the recipe's id over
+    // to the activity with the message variable declared at the top of the activity
+    public void openRecipeDetail(long id) {
+        Intent intent = new Intent(this, RecipeDetailActivity.class);
+        String message = String.valueOf(id);
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+
+
+
+//    private void profileListView() {
+//        String[] myProfileItems = {"Spaghetti", "Pizza", "Tomato Soup", "Pasta Salad"};
+//
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.activity_profile, myProfileItems);
+//
+//        ListView list = (ListView) findViewById(R.id.profileListViewItem);
+//        list.setAdapter(adapter);
+//    }
 
 
 
