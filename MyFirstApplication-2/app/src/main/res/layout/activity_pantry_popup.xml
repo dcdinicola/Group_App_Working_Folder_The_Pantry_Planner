@@ -18,6 +18,9 @@
         android:paddingRight="5dp"
         android:layout_marginTop="5dp" />
 
+    <!--pseudocode:  this button will allow you to add items to your pantry
+    Clicking on it will allow you to add an ingredient to string veggies, which will display
+    on the bottom of the list-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -36,7 +39,8 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
 
     </LinearLayout>
 
@@ -44,11 +48,15 @@
     <ImageView
         android:layout_width="350dp"
         android:layout_height="80dp"
-        android:layout_below="@+id/PantrylistView"
         android:id="@+id/imageView_recipeImage2"
         android:layout_gravity="left"
         android:background="#b2ff65"
-        android:layout_marginLeft="10dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout" />
+
+    <!--Pseudocode:  once items are selected from pantry, this will display what has been picked
+    I want this to be basically the pot or bowl of ingredients to be used-->
 
     <TextView
         android:layout_width="350dp"
@@ -58,8 +66,9 @@
         android:layout_gravity="center_horizontal"
         android:paddingLeft="20dp"
         android:paddingRight="5dp"
-        android:layout_below="@+id/PantrylistView"
-        android:layout_marginBottom="25dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout" />
     <Space
         android:layout_width="fill_parent"
         android:layout_height="60dp"
@@ -73,20 +82,18 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignRight="@+id/buttonaddToPantry"
+        android:layout_alignEnd="@+id/buttonaddToPantry"
+        android:layout_below="@+id/buttonaddToPantry">
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView"
             android:text="Item"/>
 
-        <NumberPicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/numberPicker" />
-
-    <ListView
-        android:layout_width="wrap_content"
+        <ListView
+        android:layout_width="169dp"
         android:layout_height="250dp"
         android:id="@+id/PantrylistView"
         android:textColor="#fff"
@@ -94,7 +101,12 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
+        <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker" />
+
+        <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cancel"
