@@ -19,6 +19,8 @@ import java.util.Map;
 
 public class ProfileActivity extends Activity {
 
+//LISTADAPTER THAT CONNECTS PROFILE TO RECIPE DETAIL
+
     // the string variable we use for sending messages with intents
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
@@ -84,19 +86,7 @@ public class ProfileActivity extends Activity {
         startActivity(intent);
     }
 
-
-
-
-//    private void profileListView() {
-//        String[] myProfileItems = {"Spaghetti", "Pizza", "Tomato Soup", "Pasta Salad"};
-//
-//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.activity_profile, myProfileItems);
-//
-//        ListView list = (ListView) findViewById(R.id.profileListViewItem);
-//        list.setAdapter(adapter);
-//    }
-
-
+//ACTION BAR
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -136,6 +126,7 @@ public class ProfileActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
+//CONNECT TO RECIPE DETAIL ACTIVITY
     public void profileToRecipeDetail(View view) {
         Intent intent=new Intent(this,RecipeDetailActivity.class);
         startActivity (intent);
