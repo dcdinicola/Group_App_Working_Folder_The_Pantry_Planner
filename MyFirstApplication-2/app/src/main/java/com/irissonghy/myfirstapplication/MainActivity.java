@@ -42,6 +42,13 @@ public class MainActivity extends Activity {
             return true;
         }
 
+        else if (id ==R.id.activity_pantry_popup) {
+            // launch intent to go to pantry popup
+            Intent intent=new Intent(this, PantryPopupActivity.class);
+            startActivity (intent);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -55,9 +62,10 @@ public class MainActivity extends Activity {
         userName.setText("Welcome " + displayName + "!");
 
     }
-    // new intent to open pantry popup
-    public void showMyPantry(View view) {
+    // new intent to open pantry popup from Main
+    public void goToPantryPopup(View view) {
         Intent intent=new Intent(this,PantryPopupActivity.class);
+        startActivity (intent);
     }
     // new intent to open AddRecipeActivity from main
     public void goToAddRecipe (View view) {

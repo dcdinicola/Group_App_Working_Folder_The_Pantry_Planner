@@ -61,7 +61,7 @@
         android:background="#ff6c54"
         android:textColor="#FFF"
         android:layout_below="@+id/textViewPantry"
-        android:onClick="Pantry_popup"/>
+        android:onClick="goToPantryPopup"/>
 
     <ImageView
         android:layout_width="25dp"
