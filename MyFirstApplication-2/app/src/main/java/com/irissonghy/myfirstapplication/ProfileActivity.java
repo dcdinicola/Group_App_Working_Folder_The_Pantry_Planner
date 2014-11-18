@@ -10,11 +10,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.lang.String;
 
 
 public class ProfileActivity extends Activity {
@@ -23,7 +25,8 @@ public class ProfileActivity extends Activity {
 
     // the string variable we use for sending messages with intents
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
-
+    //the string we use for storing the username
+    String userName;
     // a list class type
     List<Map<String, String>> myProfItems = new ArrayList<Map<String,String>>();
 
@@ -32,9 +35,9 @@ public class ProfileActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+        initString();
 
         //profileListView();
-
 
         registerForContextMenu((ListView) findViewById(R.id.profileListViewItem));
 
@@ -58,6 +61,16 @@ public class ProfileActivity extends Activity {
         });
         Intent intent = getIntent();
 
+        // Create the text view
+        TextView textView = (TextView) findViewById(R.id.usernameText);
+        textView.setText(userName);
+
+    }
+
+    //grab the username from login
+    private void initString() {
+
+        userName = SharedPreferencesUtility.getString(this, "loginName");
 
     }
 

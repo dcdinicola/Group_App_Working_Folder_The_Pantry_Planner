@@ -42,8 +42,8 @@ public class MainActivity extends Activity {
             return true;
         }
 
-        else if (id ==R.id.activity_pantry_popup) {
-            // launch intent to go to pantry popup
+        else if (id == R.id.activity_pantry_popup) {
+            //launch intent to go to pantry popup
             Intent intent=new Intent(this, PantryPopupActivity.class);
             startActivity (intent);
             return true;

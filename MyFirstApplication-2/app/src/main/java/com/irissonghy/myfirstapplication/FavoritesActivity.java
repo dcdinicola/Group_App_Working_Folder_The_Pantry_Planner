@@ -53,7 +53,7 @@ public class FavoritesActivity extends Activity {
         });
     }
     private void initFavoritesList() {
-        favoritesList.add(createRecipe("favorites", "Chicken Teriyaki"));//the id of this also starts from 0? so the recipe detail page will show chicken soup. need to be fixed in the future
+        favoritesList.add(createRecipe("favorites", "Chicken Teriyaki"));
         favoritesList.add(createRecipe("favorites", "Duck Ramen"));
         favoritesList.add(createRecipe("favorites", "Chicken & Cheddar Sandwich"));
         favoritesList.add(createRecipe("favorites", "Cheesecake"));

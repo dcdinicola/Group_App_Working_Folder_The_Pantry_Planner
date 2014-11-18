@@ -10,6 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class LoginActivity extends Activity {
     //Add the EXTRA_MESSAGE definition
@@ -18,7 +21,8 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        // Since everyone has to pass through the login screen, we will initialize our data structures here
+        initData();
     }
 
     @Override
@@ -49,6 +53,15 @@ public class LoginActivity extends Activity {
         String displayName = userName.getText().toString(); //Create a string-type variable displayName to store the text value of userName
         loginIntent.putExtra(EXTRA_MESSAGE, displayName); //The putExtra() method takes the key name in the first parameter and the value in the second parameter
         startActivity(loginIntent);
+        SharedPreferencesUtility.putString(this, "loginName", displayName);
+    }
+    private void initData() {
+        List<String> usersList = new ArrayList<String>();
+        usersList.add("Lavanya");
+        usersList.add("Dan");
+        usersList.add("Connie");
+        usersList.add("Iris");
+        SharedPreferencesUtility.putStringList(this, "users", usersList);
 
     }
         //Pseudocode for logIn
