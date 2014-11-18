@@ -2,7 +2,6 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -61,7 +60,7 @@ public class LoginActivity extends Activity {
         usersList.add("Dan");
         usersList.add("Connie");
         usersList.add("Iris");
-        SharedPreferencesUtility.putStringList(this, "users", usersList);
+//        SharedPreferencesUtility.putStringList(this, "users", usersList);
 
     }
         //Pseudocode for logIn

@@ -70,7 +70,7 @@
     <TextView
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:id="@+id/usernameText"
+        android:id="@+id/recipeName"
         android:layout_below="@+id/textView"
         android:layout_toRightOf="@+id/imageProfile"
         android:layout_toEndOf="@+id/imageProfile"
@@ -85,7 +85,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText3"
+        android:id="@+id/recipeDetailDirections"
         android:layout_below="@+id/imageView2"
         android:layout_alignLeft="@+id/imageView2"
         android:layout_alignStart="@+id/imageView2"
@@ -96,9 +96,9 @@
     <Space
         android:layout_width="fill_parent"
         android:layout_height="20dp"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
+        android:layout_below="@+id/recipeDetailDirections"
+        android:layout_alignLeft="@+id/recipeDetailDirections"
+        android:layout_alignStart="@+id/recipeDetailDirections"
         android:id="@+id/space2" />
 
     <TextView

@@ -2,17 +2,17 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 
 public class AddRecipeActivity extends Activity {
 
-
+    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
 
 
@@ -24,8 +24,23 @@ public class AddRecipeActivity extends Activity {
 
     }
 
+    public void showRecipeDetail(View view) {
+        Intent recipeIntent = new Intent(this,RecipeDetailActivity.class);
+        EditText recipeName = (EditText) findViewById(R.id.recipeName);
+        String displayRecipeName = recipeName.getText().toString();
+        recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeName);
 
-    public void showDialog (View v) {
+        EditText recipeIngredients = (EditText) findViewById(R.id.recipeDetailIngredients);
+        String displayRecipeIngredients = recipeIngredients.getText().toString();
+        recipeIntent.putExtra(EXTRA_MESSAGE,displayRecipeIngredients);
+
+        EditText recipeDirections = (EditText) findViewById(R.id.recipeDetailDirections);
+        String displayRecipeDirections = recipeDirections.getText().toString();
+        recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeDirections);
+        startActivity(recipeIntent);
+    }
+
+//    public void showDialog (View v) {
 
 //        AlertDialog.Builder builder = new AlertDialog.Builder(this);
 //        builder.setTitle("Are you sure you would like to add this recipe?");
@@ -48,12 +63,12 @@ public class AddRecipeActivity extends Activity {
 //                         public void onClick(DialogInterface dialogInterface, int id))
 
 
-
-        FragmentManager manager = getFragmentManager();
-        MyDialog dialogFragment = new MyDialog();
-        dialogFragment.show(manager, "MyDialog");
-
-    }
+//
+//        FragmentManager manager = getFragmentManager();
+//        MyDialog dialogFragment = new MyDialog();
+//        dialogFragment.show(manager, "MyDialog");
+//
+//    }
 
 
     @Override
