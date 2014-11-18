@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Button;
+
+import static android.view.View.OnClickListener;
 
 
 public class MainActivity extends Activity {
@@ -42,13 +45,6 @@ public class MainActivity extends Activity {
             return true;
         }
 
-        else if (id == R.id.activity_pantry_popup) {
-            //launch intent to go to pantry popup
-            Intent intent=new Intent(this, PantryPopupActivity.class);
-            startActivity (intent);
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -63,16 +59,23 @@ public class MainActivity extends Activity {
 
     }
     // new intent to open pantry popup from Main
-    public void goToPantryPopup(View view) {
-        Intent intent=new Intent(this,PantryPopupActivity.class);
-        startActivity (intent);
-    }
-    // new intent to open AddRecipeActivity from main
-    public void goToAddRecipe (View view) {
-        Intent intent=new Intent(this, AddRecipeActivity.class);
-        startActivity (intent);
 
+    private void setupPantryPopupButton() {
+        Button pantryPopupButton = (Button) findViewById(R.id.button3);
+
+        pantryPopupButton.setOnClickListener(new OnClickListener() {
+
+            public void onClick(View view) {
+                Intent intent = new Intent(this, PantryPopupActivity.class);
+                startActivity(Intent);
+            }
+        }
     }
+            // new intent to open AddRecipeActivity from main
+            public void goToAddRecipe(View view) {
+                Intent intent = new Intent(this, AddRecipeActivity.class);
+                startActivity(intent);
+            }
 
     // new intent to open FavoritesActivity from main
     public void goToFavorites (View view) {
