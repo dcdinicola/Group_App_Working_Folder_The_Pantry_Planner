@@ -118,40 +118,5 @@ public class FavoritesActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    //Recipe clicked
-    //public void recipeOnClick(View view){
-        //get which recipe is clicked
-
-        //go the the recipe's detail page
-       // Intent RecipeDetailIntent = new Intent(this, RecipeDetailActivity.class);
-        //startActivity(RecipeDetailIntent);
-    //}
-    //public void profileOnClick(View view){
-        //get which profile is clicked
-
-        //go the the profile page
-        //Intent ProfileIntent = new Intent(this, ProfileActivity.class);
-        //startActivity(ProfileIntent);
-    //}
-    //Pseudocode for Nav Menu
-    //START
-    //The drop down menu with links to other activities opens
-    //Get the id of the item that user selects
-    //Respond to user selection: go to the activity that user selects
-    //END
-
-    //Pseudocode for Tapping on a recipe
-    //START
-    //Get the id of the recipe that user taps on
-    //Retrieve the recipe detail from database
-    //Go to the RecipeDetailActivity with the detail of the chosen recipe
-    //END
-
-    //Pseudocode for Tapping on a user avatar
-    //START
-    //Get the id of avatar that user taps on
-    //Retrieve the user's profile from database
-    //Go to the UserProfileActivity of the chosen user
-    //END
 
 }

@@ -35,23 +35,14 @@ public class RecipeDetailActivity extends Activity {
 
         //get message from intent
         Intent intent = getIntent();
-//        Intent recipeDetailIntent = getIntent();
+
 
         String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
-//        String displayRecipeName = recipeDetailIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
-//        String displayRecipeIngredients = recipeDetailIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
-//        String displayRecipeDirections = recipeDetailIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+
 
         //create the retrieved recipe name
         TextView textView = (TextView) findViewById(R.id.recipeName_1);
-//        TextView recipeIngredients = (TextView) findViewById(R.id.recipeDetailIngredients);
-//        TextView recipeDirections = (TextView) findViewById(R.id.recipeDetailDirections);
-
-
-//        textView.setText(displayRecipeName);
-//        recipeIngredients.setText(displayRecipeIngredients);
-//        recipeDirections.setText(displayRecipeDirections);
 
         if(message != null) {
             int id = (int) Long.parseLong(message);

@@ -52,7 +52,7 @@ public class LoginActivity extends Activity {
         String displayName = userName.getText().toString(); //Create a string-type variable displayName to store the text value of userName
         loginIntent.putExtra(EXTRA_MESSAGE, displayName); //The putExtra() method takes the key name in the first parameter and the value in the second parameter
         startActivity(loginIntent);
-        SharedPreferencesUtility.putString(this, "loginName", displayName);
+        SharedPreferencesUtility.putStringList(this,"loginName", displayName);
     }
     private void initData() {
         List<String> usersList = new ArrayList<String>();
@@ -60,17 +60,7 @@ public class LoginActivity extends Activity {
         usersList.add("Dan");
         usersList.add("Connie");
         usersList.add("Iris");
-//        SharedPreferencesUtility.putStringList(this, "users", usersList);
+        SharedPreferencesUtility.putStringList(this, "users", usersList);
+
 
     }
-        //Pseudocode for logIn
-        //START
-        //Get the username and password
-        //Check whether they exist in the database
-        //if they exist, start the MainActivity
-        //else, add a text field in red that says "Sorry, either the username or password is invalid.
-        //Please try again. Or do you want to create a new account?"
-        //END
-
-
-}

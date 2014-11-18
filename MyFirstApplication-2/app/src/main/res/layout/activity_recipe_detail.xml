@@ -15,8 +15,12 @@
             android:layout_height="fill_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
+<<<<<<< HEAD
+            android:layout_alignParentStart="true">
+=======
             android:layout_alignParentStart="true"
             android:id="@+id/LinearLayoutRecipeDetail">
+>>>>>>> FETCH_HEAD
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
