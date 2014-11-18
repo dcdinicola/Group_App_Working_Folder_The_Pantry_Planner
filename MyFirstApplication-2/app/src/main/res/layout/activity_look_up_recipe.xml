@@ -27,7 +27,7 @@
             <ImageView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:src = "@drawable/recipe_icon"
+                android:src = "@drawable/recipelookup"
                 android:id="@+id/imageView_recipeIcon" />
 
             <TextView
