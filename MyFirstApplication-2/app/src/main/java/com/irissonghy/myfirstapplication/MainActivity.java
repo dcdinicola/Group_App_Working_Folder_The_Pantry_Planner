@@ -67,7 +67,7 @@ public class MainActivity extends Activity {
 
             public void onClick(View view) {
                 Intent intent = new Intent(this, PantryPopupActivity.class);
-                startActivity(Intent);
+                startActivity(intent);
             }
         }
     }
