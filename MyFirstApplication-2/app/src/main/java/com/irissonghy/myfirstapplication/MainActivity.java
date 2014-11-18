@@ -60,15 +60,14 @@ public class MainActivity extends Activity {
 
     private void setupPantryPopupButton() {
         Button pantryPopupButton = (Button) findViewById(R.id.button3);
-
-//        pantryPopupButton.setOnClickListener(new OnClickListener() {
-//
-//            public void onClick(View view) {
-//                Intent intent = new Intent(this, PantryPopupActivity.class);
-//                startActivity(Intent);
-//            }
-//        }
     }
+
+            public void goToPantryPopup(View view) {
+               Intent pantryPopupIntent = new Intent(this, PantryPopupActivity.class);
+               startActivity(pantryPopupIntent);
+            }
+
+
             // new intent to open AddRecipeActivity from main
             public void goToAddRecipe(View view) {
                 Intent intent = new Intent(this, AddRecipeActivity.class);
