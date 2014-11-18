@@ -62,7 +62,7 @@ public class ProfileActivity extends Activity {
         Intent intent = getIntent();
 
         // Create the text view
-        TextView textView = (TextView) findViewById(R.id.usernameText);
+        TextView textView = (TextView) findViewById(R.id.recipeName);
         textView.setText(userName);
 
     }

@@ -11,7 +11,7 @@
         android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:text="This page allows you to update the ingredients in your pantry, update quantities of items in your pantry, and choose from those items in order to prepare a delicious meal."
-        android:id="@+id/textView_ingredientsContentText"
+        android:id="@+id/recipeDetailDirections"
         android:layout_gravity="right"
         android:textColor="#fff"
         android:paddingLeft="10dp"
@@ -118,8 +118,8 @@
         android:textColor="#FFF"
         android:background="#ff6c54"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView_ingredientsContentText"
-        android:layout_alignEnd="@+id/textView_ingredientsContentText"
+        android:layout_alignRight="@+id/recipeDetailDirections"
+        android:layout_alignEnd="@+id/recipeDetailDirections"
         android:layout_toRightOf="@+id/buttonaddToPantry" />
 
     <Button

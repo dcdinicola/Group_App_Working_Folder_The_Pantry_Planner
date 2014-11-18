@@ -15,7 +15,12 @@
             android:layout_height="fill_parent"
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
+<<<<<<< HEAD
             android:layout_alignParentStart="true">
+=======
+            android:layout_alignParentStart="true"
+            android:id="@+id/LinearLayoutRecipeDetail">
+>>>>>>> FETCH_HEAD
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
@@ -32,7 +37,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="45dp"
-                    android:text="Recipe Detail"
+                    android:text="Recipe Details"
                     android:id="@+id/textView_recipeDetail"
                     android:layout_gravity="left"
                     android:layout_marginLeft="10dp"
@@ -46,11 +51,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="This is the detail of the recipe... "
+                android:text="View the ingredients and directions to make this recipe! Feel free to leave a comment below."
                 android:id="@+id/textView_recipeDetailDescription"
-                android:textSize="20sp"
+                android:textSize="12sp"
                 android:layout_marginLeft="10dp"
-                android:textColor="#f0f0f0"/>
+                android:textColor="#f0f0f0"
+                android:layout_marginBottom="5dp" />
 
             <LinearLayout
                 android:orientation="horizontal"
@@ -133,7 +139,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Admiration shy saw debating ecstatic. Call in so want pure rank am dear were. "
-                    android:id="@+id/textView_ingredientsContentText"
+                    android:id="@+id/recipeDetailIngredients"
                     android:layout_gravity="right"
                     android:textColor="#FFF"
                     android:paddingLeft="10dp"
@@ -156,9 +162,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Declared man. Call in so want pure rank am dear were. "
-                            android:id="@+id/textView_directionsContentText"
+                            android:id="@+id/recipeDetailDirections"
                             android:layout_gravity="right"
-                    android:textColor="#FFF"
+                            android:textColor="#FFF"
                             android:paddingLeft="10dp"
                             android:paddingRight="10dp"
                             android:layout_marginTop="2dp"

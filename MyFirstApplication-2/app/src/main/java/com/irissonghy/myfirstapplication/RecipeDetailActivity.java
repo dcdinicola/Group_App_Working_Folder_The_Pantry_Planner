@@ -3,21 +3,19 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.RatingBar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.RatingBar;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
-
-import org.w3c.dom.Text;
 
 public class RecipeDetailActivity extends Activity {
 
@@ -38,11 +36,14 @@ public class RecipeDetailActivity extends Activity {
         //get message from intent
         Intent intent = getIntent();
 
+
         String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
 
+
         //create the retrieved recipe name
         TextView textView = (TextView) findViewById(R.id.recipeName_1);
+
         if(message != null) {
             int id = (int) Long.parseLong(message);
             textView.setText(recipeList.get(id));
@@ -51,7 +52,6 @@ public class RecipeDetailActivity extends Activity {
             int idFav = (int) Long.parseLong(messageFav);
             textView.setText(favoritesList.get(idFav));
         }
-
 
 
         //rating bar
@@ -72,6 +72,8 @@ public class RecipeDetailActivity extends Activity {
 
             }
         });
+
+
 
     }
 

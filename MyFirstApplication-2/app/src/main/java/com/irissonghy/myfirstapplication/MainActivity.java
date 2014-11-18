@@ -3,15 +3,13 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.Intent;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Button;
-
-import static android.view.View.OnClickListener;
+import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
@@ -58,11 +56,17 @@ public class MainActivity extends Activity {
         userName.setText("Welcome " + displayName + "!");
 
     }
+    public void goToPantryPopup()
+    {
+        Intent intent = new Intent(this, PantryPopupActivity.class);
+        startActivity(intent);
+    }
     // new intent to open pantry popup from Main
 
-    private void setupPantryPopupButton() {
+    /*private void setupPantryPopupButton() {
         Button pantryPopupButton = (Button) findViewById(R.id.button3);
 
+<<<<<<< HEAD
         pantryPopupButton.setOnClickListener(new OnClickListener() {
 
             public void onClick(View view) {
@@ -70,7 +74,16 @@ public class MainActivity extends Activity {
                 startActivity(intent);
             }
         }
-    }
+=======
+//        pantryPopupButton.setOnClickListener(new OnClickListener() {
+//
+//            public void onClick(View view) {
+//                Intent intent = new Intent(this, PantryPopupActivity.class);
+//                startActivity(Intent);
+//            }
+//        }
+>>>>>>> FETCH_HEAD
+    }*/
             // new intent to open AddRecipeActivity from main
             public void goToAddRecipe(View view) {
                 Intent intent = new Intent(this, AddRecipeActivity.class);
