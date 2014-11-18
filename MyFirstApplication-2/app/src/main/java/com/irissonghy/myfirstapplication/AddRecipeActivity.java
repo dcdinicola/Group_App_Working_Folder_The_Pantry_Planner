@@ -24,19 +24,37 @@ public class AddRecipeActivity extends Activity {
 
     }
 
+
     public void showDialog (View v) {
+
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Are you sure you would like to add this recipe?");
+//
+//        builder.setCancelable(true);
+//
+//        builder.setPositiveButton("Yes!",
+//                 new DialogInterface.OnClickListener()
+//        {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int id) {
+//            Intent intent = new Intent(this, RecipeDetailActivity.class);
+//            startActivity(intent);
+//        });
+//
+//
+//        builder.setNegativeButton("Cancel"new DialogInterface.OnClickListener()
+//                     {
+//                         @Override
+//                         public void onClick(DialogInterface dialogInterface, int id))
+
+
+
         FragmentManager manager = getFragmentManager();
         MyDialog dialogFragment = new MyDialog();
         dialogFragment.show(manager, "MyDialog");
 
     }
 
-
-//    public void goToRecipeDetail (View view) {
-//        Intent addRecipeIntent = new Intent(this, RecipeDetailActivity.class);
-//        startActivity(addRecipeIntent);
-//
-//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

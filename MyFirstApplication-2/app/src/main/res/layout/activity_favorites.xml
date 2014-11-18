@@ -13,7 +13,7 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:id="@+id/imageFavorites"
-        android:src="@drawable/fav_star"
+        android:src="@drawable/favoriteslogo"
         android:layout_toLeftOf="@+id/textViewFavorites" />
     <TextView
         android:layout_width="150dp"

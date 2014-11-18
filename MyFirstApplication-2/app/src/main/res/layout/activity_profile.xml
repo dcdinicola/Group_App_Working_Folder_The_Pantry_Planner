@@ -15,8 +15,9 @@
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:id="@+id/imageProfile"
-        android:src="@drawable/profile_icon"
-        android:layout_toLeftOf="@+id/textViewProfile" />
+        android:src="@drawable/profile_logo"
+        android:layout_toLeftOf="@+id/textViewProfile"
+        />
     <TextView
         android:layout_width="150dp"
         android:layout_height="45dp"
