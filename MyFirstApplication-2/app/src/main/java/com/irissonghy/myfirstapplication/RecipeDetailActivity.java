@@ -89,11 +89,7 @@ public class RecipeDetailActivity extends Activity {
     }
 
     private void initFavoritesList(){
-        favoritesList.add("Chicken Teriyaki");
-        favoritesList.add("Duck Ramen");
-        favoritesList.add("Chicken & Cheddar Sandwich");
-        favoritesList.add("Cheesecake");
-        favoritesList.add("Curry Rice");
+        favoritesList = SharedPreferencesUtility.getStringList(this, "favs");
     }
 
     public void postReview() {

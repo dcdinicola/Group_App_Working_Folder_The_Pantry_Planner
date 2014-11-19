@@ -16,6 +16,7 @@ import java.util.List;
 public class LoginActivity extends Activity {
     //Add the EXTRA_MESSAGE definition
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +41,7 @@ public class LoginActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         //if (id == R.id.action_settings) {
-          //  return true;
+        //  return true;
         //}
 
         return super.onOptionsItemSelected(item);
@@ -52,15 +53,16 @@ public class LoginActivity extends Activity {
         String displayName = userName.getText().toString(); //Create a string-type variable displayName to store the text value of userName
         loginIntent.putExtra(EXTRA_MESSAGE, displayName); //The putExtra() method takes the key name in the first parameter and the value in the second parameter
         startActivity(loginIntent);
-        SharedPreferencesUtility.putStringList(this,"loginName", displayName);
+        SharedPreferencesUtility.putString(this, "loginName", displayName);
     }
     private void initData() {
-        List<String> usersList = new ArrayList<String>();
-        usersList.add("Lavanya");
-        usersList.add("Dan");
-        usersList.add("Connie");
-        usersList.add("Iris");
-        SharedPreferencesUtility.putStringList(this, "users", usersList);
+    List<String> favsList = new ArrayList<String>();
+    favsList.add("Chicken Teriyaki");
+    favsList.add("Duck Ramen");
+    favsList.add("Chicken & Cheddar Sandwich");
+    favsList.add("Cheesecake");
+    favsList.add("Curry Rice");
+    SharedPreferencesUtility.putStringList(this, "favs", favsList);
 
-
+    }
     }

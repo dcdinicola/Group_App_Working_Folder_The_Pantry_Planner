@@ -94,7 +94,7 @@ public class MainActivity extends Activity {
 //        }
 >>>>>>> FETCH_HEAD
     }*/
->>>>>>> FETCH_HEAD
+//>>>>>>> FETCH_HEAD
             // new intent to open AddRecipeActivity from main
             public void goToAddRecipe(View view) {
                 Intent intent = new Intent(this, AddRecipeActivity.class);

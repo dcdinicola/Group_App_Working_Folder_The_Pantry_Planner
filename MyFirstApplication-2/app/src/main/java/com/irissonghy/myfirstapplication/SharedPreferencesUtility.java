@@ -14,7 +14,7 @@ import java.util.List;
 
 public class SharedPreferencesUtility {
 
-    /*public static List<String> getStringList(Activity activity, String key) {
+    public static List<String> getStringList(Activity activity, String key) {
 
         List<String> list = new ArrayList<String>();
 
@@ -58,7 +58,7 @@ public class SharedPreferencesUtility {
         editor.putString(key, listString);
         editor.apply();
 
-    }*/
+    }
 
     //retrieve username string
     public static String getString(Activity activity, String key){

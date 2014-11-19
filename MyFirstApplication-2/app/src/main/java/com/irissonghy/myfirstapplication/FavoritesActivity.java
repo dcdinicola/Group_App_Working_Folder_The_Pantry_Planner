@@ -41,7 +41,7 @@ public class FavoritesActivity extends Activity {
         SimpleAdapter simpleAdpt = new SimpleAdapter(this, favoritesList, android.R.layout.simple_list_item_1, new String[] {"favorites"}, new int[] {android.R.id.text1});
         favoritesListView.setAdapter(simpleAdpt);
 
-        //look_up_recipe listView onClickListener
+        //favorites listView onClickListener
         favoritesListView.setOnItemClickListener(new OnItemClickListener()
         {
             public void onItemClick(AdapterView<?> adapter, View view,
@@ -53,11 +53,10 @@ public class FavoritesActivity extends Activity {
         });
     }
     private void initFavoritesList() {
-        favoritesList.add(createRecipe("favorites", "Chicken Teriyaki"));
-        favoritesList.add(createRecipe("favorites", "Duck Ramen"));
-        favoritesList.add(createRecipe("favorites", "Chicken & Cheddar Sandwich"));
-        favoritesList.add(createRecipe("favorites", "Cheesecake"));
-        favoritesList.add(createRecipe("favorites", "Curry Rice"));
+        List<String> favs = SharedPreferencesUtility.getStringList(this, "favs");
+        for(String t: favs) {
+            favoritesList.add(createRecipe("favorites", t));
+        }
     }
 
     // this method helps us minimize the amount of repeat calls we need to make in initList to place
