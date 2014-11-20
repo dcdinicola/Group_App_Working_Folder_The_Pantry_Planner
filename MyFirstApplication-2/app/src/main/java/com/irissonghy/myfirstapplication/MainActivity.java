@@ -56,45 +56,13 @@ public class MainActivity extends Activity {
         userName.setText("Welcome " + displayName + "!");
 
     }
+    // calls Pantry popup when user clicks "Select from Pantry"
     public void goToPantryPopup(View view) {
 
         Intent intent = new Intent(this, PantryPopupActivity.class);
         startActivity(intent);
     }
-    // new intent to open pantry popup from Main
 
-    /*private void setupPantryPopupButton() {
-        Button pantryPopupButton = (Button) findViewById(R.id.button3);
-<<<<<<< HEAD
-    }
-
-            public void goToPantryPopup(View view) {
-               Intent pantryPopupIntent = new Intent(this, PantryPopupActivity.class);
-               startActivity(pantryPopupIntent);
-            }
-
-
-=======
-
-<<<<<<< HEAD
-        pantryPopupButton.setOnClickListener(new OnClickListener() {
-
-            public void onClick(View view) {
-                Intent intent = new Intent(this, PantryPopupActivity.class);
-                startActivity(intent);
-            }
-        }
-=======
-//        pantryPopupButton.setOnClickListener(new OnClickListener() {
-//
-//            public void onClick(View view) {
-//                Intent intent = new Intent(this, PantryPopupActivity.class);
-//                startActivity(Intent);
-//            }
-//        }
->>>>>>> FETCH_HEAD
-    }*/
-//>>>>>>> FETCH_HEAD
             // new intent to open AddRecipeActivity from main
             public void goToAddRecipe(View view) {
                 Intent intent = new Intent(this, AddRecipeActivity.class);
