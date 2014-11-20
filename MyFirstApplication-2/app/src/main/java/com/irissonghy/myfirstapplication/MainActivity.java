@@ -56,8 +56,8 @@ public class MainActivity extends Activity {
         userName.setText("Welcome " + displayName + "!");
 
     }
-    public void goToPantryPopup()
-    {
+    public void goToPantryPopup(View view) {
+
         Intent intent = new Intent(this, PantryPopupActivity.class);
         startActivity(intent);
     }
