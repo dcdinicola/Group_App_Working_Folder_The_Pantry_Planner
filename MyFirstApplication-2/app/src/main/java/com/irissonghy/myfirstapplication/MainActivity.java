@@ -52,8 +52,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Intent mainIntent = getIntent();
         String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);//get the intent and extract the username delivered by LoginActivity
-        TextView userName = (TextView) findViewById(R.id.textViewUsername);//set the text of textViewUsername on main page
-        userName.setText("Welcome " + displayName + "!");
+        TextView userName = (TextView) findViewById(R.id.mainHeader);//set the text of textViewUsername on main page
+        userName.setText("Select Food Material From " + displayName +"'s Pantry");
 
     }
     // calls Pantry popup when user clicks "Select from Pantry"

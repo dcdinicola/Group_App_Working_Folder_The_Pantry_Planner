@@ -30,23 +30,24 @@ public class RecipeDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
 
-        initRecipeList();
+
         initFavoritesList();
 
         //get message from intent
         Intent intent = getIntent();
 
-
         String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
+        TextView textView = (TextView) findViewById(R.id.recipeName);
+
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
 
 
         //create the retrieved recipe name
-        TextView textView = (TextView) findViewById(R.id.recipeName_1);
+        //TextView textView = (TextView) findViewById(R.id.recipeName_1);
 
         if(message != null) {
-            int id = (int) Long.parseLong(message);
-            textView.setText(recipeList.get(id));
+            //int id = (int) Long.parseLong(message);
+            textView.setText(message);
 
         } else if (messageFav != null){
             int idFav = (int) Long.parseLong(messageFav);
@@ -55,7 +56,7 @@ public class RecipeDetailActivity extends Activity {
 
 
         //rating bar
-        RatingBar ratings = (RatingBar) findViewById(R.id.recipeRating_chickenSoup);
+        RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
         ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
             public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser){
 
@@ -63,7 +64,7 @@ public class RecipeDetailActivity extends Activity {
         });
 
         //textView clickable userName
-        TextView userNameView = (TextView) this.findViewById(R.id.recipePoster_1);
+        TextView userNameView = (TextView) this.findViewById(R.id.recipePoster);
         userNameView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
