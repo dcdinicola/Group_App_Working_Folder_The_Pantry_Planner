@@ -1,23 +1,15 @@
 <!--Huaying Song-->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:layout_height="match_parent"
     tools:context="com.irissonghy.myfirstapplication.FavoritesActivity"
     android:id="@+id/RelativeLayoutFavorites"
-    android:background="#462446">
+    android:background="#f0f0f0">
 
-    <ImageView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:id="@+id/imageFavorites"
-        android:src="@drawable/favoriteslogo"
-        android:layout_toLeftOf="@+id/textViewFavorites" />
+
     <TextView
-        android:layout_width="150dp"
-        android:layout_height="45dp"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
         android:text="Favorites"
         android:id="@+id/textViewFavorites"
         android:layout_alignParentTop="true"
@@ -29,16 +21,18 @@
         android:layout_alignParentBottom="false"
         android:layout_alignParentRight="false"
         android:layout_alignWithParentIfMissing="false"
-        android:gravity="center_vertical|center_horizontal"
+        android:gravity="center"
         android:layout_alignParentEnd="false"
-        android:textColor="#fff" />
-    <Space
-        android:layout_width="fill_parent"
-        android:layout_height="20dp"
-        android:layout_below="@+id/imageFavorites"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/space" />
+        android:textColor="#333"
+        android:background="#dfdfdf" />
+    <ImageView
+    android:layout_width="45dp"
+    android:layout_height="45dp"
+    android:id="@+id/imageFavorites"
+    android:src="@drawable/favoriteslogo"
+    android:layout_toLeftOf="@+id/textViewFavorites"
+    android:layout_marginRight="-110dp"
+    android:layout_marginTop="3dp"/>
 
     <ListView
         android:layout_width="fill_parent"
@@ -52,18 +46,20 @@
         android:layout_alignParentStart="true"
         android:layout_alignWithParentIfMissing="false"
         android:layout_centerHorizontal="true"
-        android:background="#795672" />
+        android:background="#efefef"
+        android:layout_marginTop="15dp"
+        style="@style/ListFontColor"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Below is a list of your favorite recipes."
         android:id="@+id/textViewFavDescription"
-        android:layout_below="@+id/space"
+        android:paddingLeft="15dp"
+        android:textColor="#555"
+        android:textSize="18sp"
+        android:layout_below="@+id/textViewFavorites"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="15dp"
-        android:paddingLeft="10dp"
-        android:textColor="#fff"
-        android:textSize="18sp" />
+        android:layout_marginTop="15dp" />
 </RelativeLayout>

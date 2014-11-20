@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".Login"
     android:id="@+id/LinearLayoutLogin"
-    android:background="#462446">
+    android:background="#f0f0f0">
 
     <ImageView
         android:layout_width="100dp"
@@ -23,11 +23,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/textViewPP"
         android:typeface="sans"
-        android:textSize="30sp"
+        android:textSize="28sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
         android:layout_marginTop="15dp"
-        android:textColor="#fff" />
+        android:textColor="#333" />
 
     <EditText
         android:layout_width="250dp"
@@ -38,16 +38,16 @@
         android:focusable="true"
         android:layout_gravity="center_horizontal"
         android:hint="Username"
-        android:textColorHint="#fff"
+        android:textColorHint="#777"
         android:inputType="text"
         android:textStyle="normal"
-        android:textSize="21sp"
+        android:textSize="20sp"
         android:typeface="sans"
         android:ellipsize="start"
         android:layout_marginTop="30dp"
         android:maxLines="1"
         android:focusableInTouchMode="true"
-        android:textColor="#fff" />
+        android:textColor="#555" />
 
     <EditText
         android:layout_width="250dp"
@@ -58,17 +58,17 @@
         android:focusable="true"
         android:layout_gravity="center_horizontal"
         android:hint="Password"
-        android:textColorHint="#fff"
+        android:textColorHint="#777"
         android:inputType="text|textPassword"
         android:textStyle="normal"
-        android:textSize="21sp"
+        android:textSize="20sp"
         android:typeface="sans"
         android:ellipsize="start"
         android:layout_marginTop="24dp"
         android:maxLines="1"
         android:password="true"
         android:focusableInTouchMode="true"
-        android:textColor="#fff" />
+        android:textColor="#555" />
 
     <TextView
         android:layout_width="240dp"
@@ -76,7 +76,7 @@
         android:text="No Account? Sign Up Here!"
         android:id="@+id/textViewSignUp"
         android:layout_marginTop="32dp"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:typeface="sans"
         android:textColorLink="#2980b9"
         android:layout_gravity="center_horizontal"
@@ -87,8 +87,8 @@
         android:inputType="textUri" />
 
     <Button
-        android:layout_width="90pt"
-        android:layout_height="27pt"
+        android:layout_width="80pt"
+        android:layout_height="25pt"
         android:text="LOGIN"
         android:id="@+id/buttonLogin"
         android:layout_gravity="center_horizontal"
@@ -97,7 +97,7 @@
         android:textStyle="bold"
         android:textColor="#fff"
         android:typeface="sans"
-        android:textSize="21sp"
+        android:textSize="20sp"
         android:onClick="logIn"/>
 
 </LinearLayout>
