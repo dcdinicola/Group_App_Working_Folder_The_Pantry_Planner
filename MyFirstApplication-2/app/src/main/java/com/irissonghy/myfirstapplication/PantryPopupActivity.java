@@ -19,19 +19,25 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 public class PantryPopupActivity extends Activity{
-    ListView PantrylistView;
-    protected void onCreate (Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantry_popup);
-        Intent intent = getIntent();
-        PantrylistView = (ListView) findViewById(R.id.PantrylistView);
+      ListView PantrylistView;
+      String[]ingredients= new String[] {};
+      protected void onCreate (Bundle savedInstanceState) {
+          super.onCreate(savedInstanceState);
+          setContentView(R.layout.activity_pantry_popup);
+          Intent intent = getIntent();
+          PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
-        String[]veggies= new String[]  {
-                "Carrots", "Celery", "Onions", "Potatoes", "Chicken", "Beef", "Salmon", "Tilapia",
-                "Romaine Lettuce", "Kale", "Spinach", "Brocoli",
-                "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts"};
+        String[] ingredients= {
+                "Carrots", "Celery", "Onions", "Potatoes", "Pot Roast", "Ground Beef", "Chicken", "Chicken Breast", "Salami",
+                "Prosciutto", "Beef","Pork", "Salmon","Shrimp", "Tilapia", "Turkey Breast", "Bacon",
+                "Multi-Grain Bread", "Wheat Bread", "French Bread", "Pepperoni", "Garlic", "Parsley", "Elbow Maccaroni",
+                "Romaine Lettuce", "Kale", "Spinach", "Brocoli", "Olive Oil", "Rice", "Grits", "Parmesan Cheese",
+                "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts","Zucchini", "Brussels Sprouts", "Flour", "Sugar",
+                "Milk", "Eggs", "Arugula", "Cheese", "Ricotta Cheese", "White Wine", "Red Wine", "Marsala", "Evaporated Milk",
+                "Condensed Milk", "Jalapeno", "Red Pepper", "Green Pepper", "Breadcrumbs", "Lemons", "Limes", "Tomato",
+                "Avocado", "Tortillas", "Butter", "Linguine"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, veggies);
+                android.R.layout.simple_list_item_1, ingredients);
 
 /*public class MyCookingAdapter extends ArrayAdapter<String> {
 
