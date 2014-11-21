@@ -45,9 +45,9 @@ public class AddRecipeActivity extends Activity {
 
 
         Intent recipeIntent = new Intent(this,RecipeDetailActivity.class);
-        String message = String.valueOf(id);
+        String recipeMessage = String.valueOf(id);
 
-        recipeIntent.putExtra(EXTRA_MESSAGE,message);
+        recipeIntent.putExtra(EXTRA_MESSAGE,recipeMessage);
         startActivity(recipeIntent);
 
         finish();
