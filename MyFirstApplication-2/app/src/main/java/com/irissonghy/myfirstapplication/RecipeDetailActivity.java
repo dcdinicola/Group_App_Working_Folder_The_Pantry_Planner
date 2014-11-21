@@ -1,5 +1,3 @@
-//Sikang Li
-
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
@@ -24,34 +22,16 @@ public class RecipeDetailActivity extends Activity {
 
     List<String> favoritesList = new ArrayList<String>();
 
+    List<Recipe> myProfItems;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
 
-
-        initFavoritesList();
-
-        //get message from intent
-        Intent intent = getIntent();
-        String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
-
-
-        String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
-        TextView textView = (TextView) findViewById(R.id.recipeName);
-
-
-        if(message != null) {
-            textView.setText(message);
-
-        } else if (messageFav != null){
-            int idFav = (int) Long.parseLong(messageFav);
-            textView.setText(favoritesList.get(idFav));
-        }
-
-
-
-
+        //
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
         ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
@@ -70,10 +50,57 @@ public class RecipeDetailActivity extends Activity {
 
             }
         });
+        //
+
+
+        initFavoritesList();
+
+
+        //get message from intent
+        Intent intent = getIntent();
+        String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
+
+        initRecipeList();
+
+        String recipeMessage = intent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+
+
+        String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
+        TextView textView = (TextView) findViewById(R.id.recipeName);
+        //TextView recipeIngredientsText = (TextView) findViewById(R.id.recipeIngredients);
+        //TextView recipeDirectionsText = (TextView) findViewById(R.id.recipeDirections);
+
+
+        if (message != null) {
+            textView.setText(message);
+
+        } else if (messageFav != null) {
+            int idFav = (int) Long.parseLong(messageFav);
+            textView.setText(favoritesList.get(idFav));
+        } else if (recipeMessage != null) {
+
+            int recipeId = (int) Long.parseLong(recipeMessage);
+            textView.setText(myProfItems.get(recipeId).getRecipeName());
+            //recipeIngredientsText.setText(myProfItems.get(recipeId).getRecipeIngredients());
+            //recipeDirectionsText.setText(myProfItems.get(recipeId).getRecipeDirections());
+
+        }
+
 
 
 
     }
+
+    private void initRecipeList() {
+        myProfItems = SharedPreferencesUtility.getRecipeList(this,"recipes");
+    }
+
+
+
+
+
+
+
 
 
     private void initFavoritesList(){
@@ -90,38 +117,38 @@ public class RecipeDetailActivity extends Activity {
     }
 
     public void showDialog(View v){
-         //review dialog
-         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-         builder.setTitle("Please write down your review:");
-         //create input box for users to input review
-         final EditText inputBox = new EditText(this);
-         builder.setView(inputBox);
+        //review dialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Please write down your review:");
+        //create input box for users to input review
+        final EditText inputBox = new EditText(this);
+        builder.setView(inputBox);
 
-         builder.setCancelable(true);
+        builder.setCancelable(true);
 
-         builder.setPositiveButton("Post",
-                 new DialogInterface.OnClickListener()
-                 {
-                     @Override
-                     public void onClick(DialogInterface dialogInterface, int id) {
-                         //dialogInterface.cancel();
-                         reviewText = inputBox.getText().toString();
-                         postReview();
-                     }
-                 });
-         builder.setNegativeButton("Cancel",
-                 new DialogInterface.OnClickListener()
-                 {
-                     @Override
-                     public void onClick(DialogInterface dialogInterface, int id) {
-                         //dialogInterface.cancel();
+        builder.setPositiveButton("Post",
+                new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int id) {
+                        //dialogInterface.cancel();
+                        reviewText = inputBox.getText().toString();
+                        postReview();
+                    }
+                });
+        builder.setNegativeButton("Cancel",
+                new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int id) {
+                        //dialogInterface.cancel();
 
-                     }
-                 });
-         builder.show();
+                    }
+                });
+        builder.show();
 
 
-        }
+    }
 
 
     @Override

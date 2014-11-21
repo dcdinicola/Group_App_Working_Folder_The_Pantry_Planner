@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.List;
+
 
 public class AddRecipeActivity extends Activity {
 
@@ -27,27 +29,27 @@ public class AddRecipeActivity extends Activity {
 
     public void showRecipeDetail(View view) {
 
-        //List<Recipe> recipes = SharedPreferencesUtility.getRecipeList(this,"recipes");
+        List<Recipe> recipes = SharedPreferencesUtility.getRecipeList(this,"recipes");
 
-        //int id = recipes.size();
+        int id = recipes.size();
 
         EditText recipeName = (EditText) findViewById(R.id.recipeName);
         EditText recipeIngredients = (EditText) findViewById(R.id.recipeDetailIngredients);
         EditText recipeDirections = (EditText) findViewById(R.id.recipeDetailDirections);
 
-        //recipes.add(new Recipe(recipeName.getText().toString(), recipeIngredients.getText().toString(), recipeDirections.getText().toString() ));
+        recipes.add(new Recipe(recipeName.getText().toString(), recipeIngredients.getText().toString(), recipeDirections.getText().toString() ));
 
 
-        //SharedPreferencesUtility.putRecipeList(this,"teams", teams);
+        SharedPreferencesUtility.putRecipeList(this,"recipes", recipes);
 
         //toast message for successfully adding recipe
         Toast.makeText(getApplicationContext(), "A new recipe has been added!",Toast.LENGTH_LONG).show();
 
 
         Intent recipeIntent = new Intent(this,RecipeDetailActivity.class);
-        //String recipeMessage = String.valueOf(id);
+        String recipeMessage = String.valueOf(id);
 
-        //recipeIntent.putExtra(EXTRA_MESSAGE,recipeMessage);
+        recipeIntent.putExtra(EXTRA_MESSAGE,recipeMessage);
         startActivity(recipeIntent);
 
         finish();

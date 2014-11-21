@@ -23,6 +23,7 @@ public class LoginActivity extends Activity {
         setContentView(R.layout.activity_login);
         // Since everyone has to pass through the login screen, we will initialize our data structures here
         initData();
+        initRecipeData();
     }
 
     @Override
@@ -65,4 +66,17 @@ public class LoginActivity extends Activity {
     SharedPreferencesUtility.putStringList(this, "favs", favsList);
 
     }
+
+    private void initRecipeData() {
+        List<Recipe> myProfItems = new ArrayList<Recipe>();
+        
+        String defaultIngredients = "tomatoes carrots onions";
+        String defaultDescription = "boil the tomatoes carrots and onions";
+
+        myProfItems.add(new Recipe("Chicken Teriyaki", defaultIngredients, defaultDescription));
+        myProfItems.add(new Recipe("Duck Ramen", defaultIngredients, defaultDescription));
+        myProfItems.add(new Recipe("Chicken & Cheddar Sandwich",defaultIngredients, defaultDescription));
+
+        SharedPreferencesUtility.putRecipeList(this,"recipes", myProfItems);
     }
+}

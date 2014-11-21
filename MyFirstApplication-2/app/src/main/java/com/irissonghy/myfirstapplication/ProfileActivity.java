@@ -45,7 +45,7 @@ public class ProfileActivity extends Activity {
         initString();
 
         //initialize recipe list in profile screen
-        //initProfileRecipeList();
+        initProfileRecipeList();
 
         //this associates the contents in the listview with the variable ListItem (myProfItems)
         ListView profileList = (ListView) findViewById(R.id.profileListViewItem);
@@ -79,23 +79,24 @@ public class ProfileActivity extends Activity {
     }
 
     //adding recipe names to the list variable
-//    private void initProfileRecipeList() {
-//
+    private void initProfileRecipeList() {
+
 //        myProfItems.add(createRecipe("recipe", "Chicken Soup"));
 //        myProfItems.add(createRecipe("recipe", "Beef Tomato"));
 //        myProfItems.add(createRecipe("recipe", "McNuggets"));
 //        myProfItems.add(createRecipe("recipe", "Cheesecake"));
-//
-//        List<Recipe> recipes = SharedPreferencesUtility.getRecipeList(this, "recipes");
-//        for (Recipe r: recipes) {
-//            myProfItems.add(createRecipe("recipe",r));
-//        }
-//    }
+
+        List<Recipe> recipes = SharedPreferencesUtility.getRecipeList(this, "recipes");
+        for (Recipe r: recipes) {
+            myProfItems.add(createRecipe("recipes", r));
+        }
+    }
 
     // this method helps us minimize the amount of repeat calls we need to make in initList to place
     // a recipe entry into the list
-    private HashMap<String, String> createRecipe(String key, String name) {
+    private HashMap<String, String> createRecipe(String key, Recipe r) {
         HashMap<String, String> recipe = new HashMap<String, String>();
+        String name = r.getRecipeName();
         recipe.put(key, name);
         return recipe;
     }

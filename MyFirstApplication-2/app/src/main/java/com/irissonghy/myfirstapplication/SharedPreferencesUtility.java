@@ -75,42 +75,50 @@ public class SharedPreferencesUtility {
 
 
     //RECIPE DETAIL SHARED PREFERENCES (GET)
-//    public static List<Recipe> getRecipeList(Activity activity, String key) {
-//
-//        List<Recipe> list = new ArrayList< ~ > ();
-//        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
-//        String listString = preferences.getString(key, "");
-//
-//        if (listString.length() != 0) {
-//            String[] recipes = listString.split(";;");
-//
-//            for (String r : recipes) {
-//                String[] recipeAttributes = r.split(";");
-//                String recipeName = recipeAttributes[0];
-//                String recipeIngredients = recipeAttributes[1];
-//                String recipeDirections = recipeAttributes[2];
-//                Recipe newRecipe = new Recipe(recipeName, recipeIngredients, recipeDirections);
-//
-//                list.add(newRecipe);
-//            }
-//        }
-//        return list;
-//    }
-//
-//    //RECIPE DETAIL SHARED PREFERENCES (PUT)
-//    public static void putRecipeList(Activity activity, String key, List<Recipe> list) {
-//        List<String> tempRecipeList = new ArrayList< ~ > ();
-//        for (Recipe r : list) {
-//            String tempRecipeString = r.getRecipeName() + ";" + r.getRecipeIngredients() + ";" + getRecipeDirections();
-//
-//            tempRecipeList.add(tempRecipeString);
-//
-//        }
-//
-//        String listString = TextUtils.join(";;", tempRecipeList);
-//
-//        myPutString(activity, key, listString);
-//
-//    }
+    public static List<Recipe> getRecipeList(Activity activity, String key) {
+
+        List<Recipe> list = new ArrayList<Recipe> ();
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
+        String listString = preferences.getString(key, "");
+
+        if (listString.length() != 0) {
+            String[] recipes = listString.split(";;");
+
+            for (String r : recipes) {
+                String[] recipeAttributes = r.split(";");
+                String recipeName = recipeAttributes[0];
+                String recipeIngredients = recipeAttributes[1];
+                String recipeDirections = recipeAttributes[2];
+                Recipe newRecipe = new Recipe(recipeName, recipeIngredients, recipeDirections);
+
+                list.add(newRecipe);
+            }
+        }
+        return list;
+    }
+
+    //RECIPE DETAIL SHARED PREFERENCES (PUT)
+    public static void putRecipeList(Activity activity, String key, List<Recipe> list) {
+        List<String> tempRecipeList = new ArrayList();
+        for (Recipe r : list) {
+            String tempRecipeString = r.getRecipeName() + ";" + r.getRecipeIngredients() + ";" + r.getRecipeDirections();
+
+            tempRecipeList.add(tempRecipeString);
+
+        }
+
+        String listString = TextUtils.join(";;", tempRecipeList);
+
+        myPutString(activity, key, listString);
+
+    }
+    private static void myPutString(Activity activity, String key, String value) {
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(activity);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(key, value);
+        editor.apply();
+
+    }
 
 }
