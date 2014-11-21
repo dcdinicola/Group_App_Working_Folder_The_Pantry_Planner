@@ -25,7 +25,7 @@ public class PantryPopupActivity extends Activity{
         setContentView(R.layout.activity_pantry_popup);
         Intent intent = getIntent();
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
-        //  still having trouble with red "R"s)
+
         String[]veggies= new String[]  {
                 "Carrots", "Celery", "Onions", "Potatoes", "Chicken", "Beef", "Salmon", "Tilapia",
                 "Romaine Lettuce", "Kale", "Spinach", "Brocoli",
