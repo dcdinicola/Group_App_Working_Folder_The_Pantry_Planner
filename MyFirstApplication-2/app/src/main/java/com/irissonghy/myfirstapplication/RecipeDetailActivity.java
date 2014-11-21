@@ -22,9 +22,9 @@ public class RecipeDetailActivity extends Activity {
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
-    List<Recipe> myProfItems;
+    //List<Recipe> myProfItems;
 
-    int recipeId;
+    //int recipeId;
 
     List<String> recipeList = new ArrayList<String>();
     List<String> favoritesList = new ArrayList<String>();
@@ -41,25 +41,25 @@ public class RecipeDetailActivity extends Activity {
         Intent intent = getIntent();
 
 
-        String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
+        //String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
         //TextView textView = (TextView) findViewById(R.id.recipeName);
 
-        String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
+        //String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
 
-        Intent getRecipeIntent = getIntent();
+        //Intent getRecipeIntent = getIntent();
 
 
-        String recipeMessage = intent.getStringExtra(ProfileActivity.EXTRA_MESSAGE);
+        //String recipeMessage = intent.getStringExtra(ProfileActivity.EXTRA_MESSAGE);
 
-        recipeId = (int) Long.parseLong(recipeMessage);
+        //recipeId = (int) Long.parseLong(recipeMessage);
 
         TextView textView = (TextView) findViewById(R.id.recipeName);
-        textView.setText(myProfItems.get(recipeId).getName());
+        //textView.setText(myProfItems.get(recipeId).getRecipeName());
 
     }
 
     private void initList() {
-        myProfItems = SharedPreferencesUtility.getRecipeList(this,"recipes");
+        //myProfItems = SharedPreferencesUtility.getRecipeList(this,"recipes");
     }
 
         //String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
@@ -69,13 +69,13 @@ public class RecipeDetailActivity extends Activity {
         //create the retrieved recipe name
         //TextView textView = (TextView) findViewById(R.id.recipeName_1);
 
-        if(message != null) {
-            //int id = (int) Long.parseLong(message);
-            textView.setText(message);
-
-        String displayRecipeName = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
-        String displayRecipeIngredients = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
-        String displayRecipeDirections = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+//        if(message != null) {
+//            //int id = (int) Long.parseLong(message);
+//            textView.setText(message);
+//
+//        String displayRecipeName = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+//        String displayRecipeIngredients = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+//        String displayRecipeDirections = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
 
 
         //create the retrieved recipe name
@@ -107,7 +107,7 @@ public class RecipeDetailActivity extends Activity {
             }
         });
 
-        //textView clickable userName
+        textView clickable userName
         TextView userNameView = (TextView) this.findViewById(R.id.recipePoster);
         userNameView.setOnClickListener(new View.OnClickListener() {
             @Override
