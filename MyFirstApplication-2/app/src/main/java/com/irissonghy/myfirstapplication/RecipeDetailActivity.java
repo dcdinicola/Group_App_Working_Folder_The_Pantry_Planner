@@ -20,7 +20,7 @@ import java.util.List;
 public class RecipeDetailActivity extends Activity {
 
     public String reviewText = "";
-    //public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
+    public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
     List<String> recipeList = new ArrayList<String>();
     List<String> favoritesList = new ArrayList<String>();
@@ -34,25 +34,53 @@ public class RecipeDetailActivity extends Activity {
         initFavoritesList();
 
         //get message from intent
-        Intent intent = getIntent();
+        //Intent intent = getIntent();
 
+<<<<<<< Updated upstream
         String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
         TextView textView = (TextView) findViewById(R.id.recipeName);
 
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
+=======
+        Intent getRecipeIntent = getIntent();
 
+>>>>>>> Stashed changes
 
+        //String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
+        //String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
+
+<<<<<<< Updated upstream
         //create the retrieved recipe name
         //TextView textView = (TextView) findViewById(R.id.recipeName_1);
 
         if(message != null) {
             //int id = (int) Long.parseLong(message);
             textView.setText(message);
+=======
+        String displayRecipeName = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+        String displayRecipeIngredients = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+        String displayRecipeDirections = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+>>>>>>> Stashed changes
 
-        } else if (messageFav != null){
-            int idFav = (int) Long.parseLong(messageFav);
-            textView.setText(favoritesList.get(idFav));
-        }
+        //create the retrieved recipe name
+        //TextView textView = (TextView) findViewById(R.id.recipeName_1);
+
+        TextView recipeNameTextView = (TextView) findViewById(R.id.recipeName_1);
+        TextView recipeIngredientsTextView = (TextView) findViewById(R.id.recipeDetailIngredients);
+        TextView recipeDirectionsTextView = (TextView) findViewById(R.id.recipeDetailDirections);
+
+        recipeNameTextView.setText(displayRecipeName);
+        recipeIngredientsTextView.setText(displayRecipeIngredients);
+        recipeDirectionsTextView.setText(displayRecipeDirections);
+
+//        if(message != null) {
+//            int id = (int) Long.parseLong(message);
+//            textView.setText(recipeList.get(id));
+//
+//        } else if (messageFav != null){
+//            int idFav = (int) Long.parseLong(messageFav);
+//            textView.setText(favoritesList.get(idFav));
+//        }
 
 
         //rating bar

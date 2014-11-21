@@ -37,6 +37,7 @@ public class AddRecipeActivity extends Activity {
         EditText recipeDirections = (EditText) findViewById(R.id.recipeDetailDirections);
         String displayRecipeDirections = recipeDirections.getText().toString();
         recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeDirections);
+
         startActivity(recipeIntent);
     }
 

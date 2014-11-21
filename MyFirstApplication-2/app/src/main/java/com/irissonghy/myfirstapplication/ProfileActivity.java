@@ -25,9 +25,11 @@ public class ProfileActivity extends Activity {
 
     // the string variable we use for sending messages with intents
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
+
     //the string we use for storing the username
     String userName;
-    // a list class type
+
+    // a list class type so that list view is altered programatically
     List<Map<String, String>> myProfItems = new ArrayList<Map<String,String>>();
 
     @Override
@@ -35,30 +37,32 @@ public class ProfileActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        initString();
 
-        //profileListView();
-
+        //want to apply the contextmenu for each individual recipe that is in the user's profileListView();
         registerForContextMenu((ListView) findViewById(R.id.profileListViewItem));
+
+        //filling in the list class variable (myProfItems) with the names of our recipes
+        initString();
 
         //initialize recipe list in profile screen
         initProfileRecipeList();
 
+        //this associates the contents in the listview with the variable ListItem (myProfItems)
         ListView profileList = (ListView) findViewById(R.id.profileListViewItem);
         SimpleAdapter profileAdapter = new SimpleAdapter(this, myProfItems, android.R.layout.simple_list_item_1, new String[]{"profrecipe"}, new int[]{android.R.id.text1});
-
         profileList.setAdapter(profileAdapter);
 
-        //look_up_recipe listView onClickListener
+        //look_up_recipe listView onClickListener, tells ProfileActivity what to do when recipe is selected)
         profileList.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
             public void onItemClick(AdapterView<?> adapter, View view,
                                     int position, long id) {
-
                 openRecipeDetail(id);
 
             }
         });
+
+
         Intent intent = getIntent();
 
         // Create the text view
@@ -74,11 +78,17 @@ public class ProfileActivity extends Activity {
 
     }
 
+    //adding recipe names to the list variable
     private void initProfileRecipeList() {
         myProfItems.add(createRecipe("profrecipe", "Chicken Soup"));
         myProfItems.add(createRecipe("profrecipe", "Beef Tomato"));
         myProfItems.add(createRecipe("profrecipe", "McNuggets"));
         myProfItems.add(createRecipe("profrecipe", "Cheesecake"));
+
+        List<String> recipes = SharedPreferencesUtility.getStringList(this, "recipes");
+        for (Recipe r: recipes) {
+            myProfItems.add(createRecipe("recipe",r));
+        }
     }
 
     // this method helps us minimize the amount of repeat calls we need to make in initList to place
