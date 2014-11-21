@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="Add New Item"
         android:layout_alignParentTop="true"
-        android:id="@+id/buttonaddToPantry"
+        android:id="@+id/button addToPantry"
         android:layout_centerHorizontal="true"
         android:textSize="21sp"
         android:textStyle="bold"
@@ -77,7 +77,7 @@
     <Space
         android:layout_width="fill_parent"
         android:layout_height="60dp"
-        android:layout_below="@+id/buttonaddToPantry"
+        android:layout_below="@+id/button addToPantry"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/space" />
@@ -88,9 +88,9 @@
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignRight="@+id/buttonaddToPantry"
-        android:layout_alignEnd="@+id/buttonaddToPantry"
-        android:layout_below="@+id/buttonaddToPantry">
+        android:layout_alignRight="@+id/button addToPantry"
+        android:layout_alignEnd="@+id/button addToPantry"
+        android:layout_below="@+id/button addToPantry">
 
         <TextView android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
         android:layout_height="250dp"
         android:id="@+id/PantrylistView"
         android:textColor="#fff"
-        android:layout_Below="@+id/buttonaddToPantry"
+        android:layout_below="@+id/button addToPantry"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -121,17 +121,14 @@
         android:layout_height="30dp"
         android:text="Cancel"
         android:id="@+id/button4"
-        android:layout_toEndOf="@+id/buttonaddToPantry"
+        android:layout_toEndOf="@+id/button addToPantry"
         android:textSize="21sp"
         android:textStyle="bold"
         android:gravity="center|center_vertical|fill_vertical"
         android:textColor="#FFF"
         android:background="#ff6c54"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/recipeDetailDirections"
-        android:layout_alignEnd="@+id/recipeDetailDirections"
-        android:layout_toRightOf="@+id/buttonaddToPantry"
-        android:layout_below="@+id/imageView_recipeImage2"/>
+        android:layout_toRightOf="@+id/button addToPantry"
+        />
 
     <Button
         android:layout_width="70dp"
