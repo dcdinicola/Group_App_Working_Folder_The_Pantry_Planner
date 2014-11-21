@@ -80,12 +80,13 @@ public class ProfileActivity extends Activity {
 
     //adding recipe names to the list variable
     private void initProfileRecipeList() {
-        myProfItems.add(createRecipe("profrecipe", "Chicken Soup"));
-        myProfItems.add(createRecipe("profrecipe", "Beef Tomato"));
-        myProfItems.add(createRecipe("profrecipe", "McNuggets"));
-        myProfItems.add(createRecipe("profrecipe", "Cheesecake"));
 
-        List<String> recipes = SharedPreferencesUtility.getStringList(this, "recipes");
+        myProfItems.add(createRecipe("recipe", "Chicken Soup"));
+        myProfItems.add(createRecipe("recipe", "Beef Tomato"));
+        myProfItems.add(createRecipe("recipe", "McNuggets"));
+        myProfItems.add(createRecipe("recipe", "Cheesecake"));
+
+        List<Recipe> recipes = SharedPreferencesUtility.getRecipeList(this, "recipes");
         for (Recipe r: recipes) {
             myProfItems.add(createRecipe("recipe",r));
         }

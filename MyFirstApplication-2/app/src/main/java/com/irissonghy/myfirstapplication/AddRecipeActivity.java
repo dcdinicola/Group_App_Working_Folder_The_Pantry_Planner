@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 public class AddRecipeActivity extends Activity {
@@ -25,20 +26,45 @@ public class AddRecipeActivity extends Activity {
     }
 
     public void showRecipeDetail(View view) {
-        Intent recipeIntent = new Intent(this,RecipeDetailActivity.class);
+
+        List<Recipe> recipes = SharedPreferencesUtility.getRecipeList(this,"recipes");
+
+        int id = recipes.size();
+
         EditText recipeName = (EditText) findViewById(R.id.recipeName);
-        String displayRecipeName = recipeName.getText().toString();
-        recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeName);
-
         EditText recipeIngredients = (EditText) findViewById(R.id.recipeDetailIngredients);
-        String displayRecipeIngredients = recipeIngredients.getText().toString();
-        recipeIntent.putExtra(EXTRA_MESSAGE,displayRecipeIngredients);
-
         EditText recipeDirections = (EditText) findViewById(R.id.recipeDetailDirections);
-        String displayRecipeDirections = recipeDirections.getText().toString();
-        recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeDirections);
 
+        recipes.add(new Recipe(recipeName.getText().toString(), recipeIngredients.getText().toString(), recipeDirections.getText().toString() ));
+
+
+        SharedPreferencesUtility.putRecipeList(this,"teams", teams);
+
+        //toast message for successfully adding recipe
+        Toast.makeText(getApplicationContext(), "A new recipe has been added!",Toast.LENGTH_LONG).show();
+
+
+        Intent recipeIntent = new Intent(this,RecipeDetailActivity.class);
+        String message = String.valueOf(id);
+
+        recipeIntent.putExtra(EXTRA_MESSAGE,message);
         startActivity(recipeIntent);
+
+        finish();
+
+//        EditText recipeName = (EditText) findViewById(R.id.recipeName);
+//        String displayRecipeName = recipeName.getText().toString();
+//        recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeName);
+//
+//        EditText recipeIngredients = (EditText) findViewById(R.id.recipeDetailIngredients);
+//        String displayRecipeIngredients = recipeIngredients.getText().toString();
+//        recipeIntent.putExtra(EXTRA_MESSAGE,displayRecipeIngredients);
+//
+//        EditText recipeDirections = (EditText) findViewById(R.id.recipeDetailDirections);
+//        String displayRecipeDirections = recipeDirections.getText().toString();
+//        recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeDirections);
+//
+//        startActivity(recipeIntent);
     }
 
 //    public void showDialog (View v) {
