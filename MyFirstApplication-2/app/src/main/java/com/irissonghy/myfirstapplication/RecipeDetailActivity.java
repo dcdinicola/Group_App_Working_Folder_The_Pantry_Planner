@@ -22,11 +22,6 @@ public class RecipeDetailActivity extends Activity {
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
-    //List<Recipe> myProfItems;
-
-    //int recipeId;
-
-    List<String> recipeList = new ArrayList<String>();
     List<String> favoritesList = new ArrayList<String>();
 
     @Override
@@ -34,69 +29,27 @@ public class RecipeDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
 
-        initList();
+
         initFavoritesList();
 
         //get message from intent
         Intent intent = getIntent();
+        String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
 
 
-        //String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
-        //TextView textView = (TextView) findViewById(R.id.recipeName);
-
-        //String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
-
-        //Intent getRecipeIntent = getIntent();
-
-
-        //String recipeMessage = intent.getStringExtra(ProfileActivity.EXTRA_MESSAGE);
-
-        //recipeId = (int) Long.parseLong(recipeMessage);
-
+        String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
         TextView textView = (TextView) findViewById(R.id.recipeName);
-        //textView.setText(myProfItems.get(recipeId).getRecipeName());
-
-    }
-
-    private void initList() {
-        //myProfItems = SharedPreferencesUtility.getRecipeList(this,"recipes");
-    }
-
-        //String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
-        //String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
 
 
-        //create the retrieved recipe name
-        //TextView textView = (TextView) findViewById(R.id.recipeName_1);
+        if(message != null) {
+            textView.setText(message);
 
-//        if(message != null) {
-//            //int id = (int) Long.parseLong(message);
-//            textView.setText(message);
-//
-//        String displayRecipeName = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
-//        String displayRecipeIngredients = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
-//        String displayRecipeDirections = getRecipeIntent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+        } else if (messageFav != null){
+            int idFav = (int) Long.parseLong(messageFav);
+            textView.setText(favoritesList.get(idFav));
+        }
 
 
-        //create the retrieved recipe name
-        //TextView textView = (TextView) findViewById(R.id.recipeName_1);
-
-//        TextView recipeNameTextView = (TextView) findViewById(R.id.recipeName_1);
-//        TextView recipeIngredientsTextView = (TextView) findViewById(R.id.recipeDetailIngredients);
-//        TextView recipeDirectionsTextView = (TextView) findViewById(R.id.recipeDetailDirections);
-//
-//        recipeNameTextView.setText(displayRecipeName);
-//        recipeIngredientsTextView.setText(displayRecipeIngredients);
-//        recipeDirectionsTextView.setText(displayRecipeDirections);
-
-//        if(message != null) {
-//            int id = (int) Long.parseLong(message);
-//            textView.setText(recipeList.get(id));
-//
-//        } else if (messageFav != null){
-//            int idFav = (int) Long.parseLong(messageFav);
-//            textView.setText(favoritesList.get(idFav));
-//        }
 
 
         //rating bar
@@ -107,7 +60,7 @@ public class RecipeDetailActivity extends Activity {
             }
         });
 
-        textView clickable userName
+        //textView clickable userName
         TextView userNameView = (TextView) this.findViewById(R.id.recipePoster);
         userNameView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,16 +75,6 @@ public class RecipeDetailActivity extends Activity {
 
     }
 
-    private void initRecipeList() {
-        recipeList.add("Chicken Soup");
-        recipeList.add("Beef Tomato");
-        recipeList.add("McNuggets");
-        recipeList.add("Cheesecake");
-        recipeList.add("Chicken Teriyaki");
-        recipeList.add("Duck Ramen");
-        recipeList.add("Chicken & Cheddar Sandwich");
-        recipeList.add("Curry Rice");
-    }
 
     private void initFavoritesList(){
         favoritesList = SharedPreferencesUtility.getStringList(this, "favs");
@@ -179,9 +122,6 @@ public class RecipeDetailActivity extends Activity {
 
 
         }
-
-
-
 
 
     @Override

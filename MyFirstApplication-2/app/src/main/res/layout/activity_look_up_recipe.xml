@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:id="@+id/LinearLayoutLookUp"
     android:background="#f0f0f0">
->>>>>>> Stashed changes
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="fill_parent"
