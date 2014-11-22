@@ -6,8 +6,8 @@ package com.irissonghy.myfirstapplication;
 public class Recipe {
 
     private String recipeName;
-    private  String recipeIngredients;
-    private  String recipeDirections;
+    private String recipeIngredients;
+    private String recipeDirections;
 
 
     public Recipe(String recipeName, String recipeIngredients, String recipeDirections) {

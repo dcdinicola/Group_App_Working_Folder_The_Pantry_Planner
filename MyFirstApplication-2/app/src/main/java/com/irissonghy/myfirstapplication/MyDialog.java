@@ -15,19 +15,3 @@ public class MyDialog extends DialogFragment {
         return inflater.inflate(R.layout.addrecipedialog, null);
     };
 }
-//yes = (Button) view.findViewById(R.id.yes);
-//cancel = (Button) view.findViewById(R.id.cancel);
-//return view;
-
-
-//    @Override
-//    public void onClick(View view) {
-//        if (view.getId()==R.id.yes){
-//            dismiss();
-//            //Intent intent = new Intent(this,RecipeDetailActivity.class);
-//
-//        }
-//        else if (view.getId()==R.id.cancel){
-//            dismiss();
-//        }
-//    }

@@ -35,24 +35,17 @@ public class LoginActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        //if (id == R.id.action_settings) {
-        //  return true;
-        //}
+        int id = item.getItemId();
 
         return super.onOptionsItemSelected(item);
     }
 
     public void logIn(View view) {
         Intent loginIntent = new Intent(this, MainActivity.class);
-        EditText userName = (EditText) findViewById(R.id.editTextName); //use findViewById() to get the EditText element and add its text value to the intent
-        String displayName = userName.getText().toString(); //Create a string-type variable displayName to store the text value of userName
-        loginIntent.putExtra(EXTRA_MESSAGE, displayName); //The putExtra() method takes the key name in the first parameter and the value in the second parameter
+        EditText userName = (EditText) findViewById(R.id.editTextName);
+        String displayName = userName.getText().toString();
+        loginIntent.putExtra(EXTRA_MESSAGE, displayName);
         startActivity(loginIntent);
         SharedPreferencesUtility.putString(this, "loginName", displayName);
     }
@@ -69,7 +62,6 @@ public class LoginActivity extends Activity {
 
     private void initRecipeData() {
         List<Recipe> myProfItems = new ArrayList<Recipe>();
-        
         String defaultIngredients = "tomatoes carrots onions";
         String defaultDescription = "boil the tomatoes carrots and onions";
 

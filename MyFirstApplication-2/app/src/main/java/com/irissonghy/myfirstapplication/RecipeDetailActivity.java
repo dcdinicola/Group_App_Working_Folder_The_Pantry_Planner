@@ -31,30 +31,8 @@ public class RecipeDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
 
-        //
-        //rating bar
-        RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
-        ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
-            public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser){
-
-            }
-        });
-
-        //textView clickable userName
-        TextView userNameView = (TextView) this.findViewById(R.id.recipePoster);
-        userNameView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent userNameIntent = new Intent(view.getContext(), ProfileActivity.class);
-                startActivity(userNameIntent);
-
-            }
-        });
-        //
-
 
         initFavoritesList();
-
 
         //get message from intent
         Intent intent = getIntent();
@@ -67,8 +45,6 @@ public class RecipeDetailActivity extends Activity {
 
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
         TextView textView = (TextView) findViewById(R.id.recipeName);
-        //TextView recipeIngredientsText = (TextView) findViewById(R.id.recipeIngredients);
-        //TextView recipeDirectionsText = (TextView) findViewById(R.id.recipeDirections);
 
 
         if (message != null) {
@@ -87,18 +63,30 @@ public class RecipeDetailActivity extends Activity {
         }
 
 
+        //rating bar
+        RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
+        ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
+            public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser){
 
+            }
+        });
+
+        //textView clickable userName
+        TextView userNameView = (TextView) this.findViewById(R.id.recipePoster);
+        userNameView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent userNameIntent = new Intent(view.getContext(), ProfileActivity.class);
+                startActivity(userNameIntent);
+
+            }
+        });
 
     }
 
     private void initRecipeList() {
         myProfItems = SharedPreferencesUtility.getRecipeList(this,"recipes");
     }
-
-
-
-
-
 
 
 
@@ -112,7 +100,6 @@ public class RecipeDetailActivity extends Activity {
         //display reviews
         TextView review = (TextView) findViewById(R.id.reviewTextArea);
         review.setText(reviewText);
-
 
     }
 
