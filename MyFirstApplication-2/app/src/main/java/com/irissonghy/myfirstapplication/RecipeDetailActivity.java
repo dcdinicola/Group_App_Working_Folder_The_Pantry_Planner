@@ -52,8 +52,8 @@ public class RecipeDetailActivity extends Activity {
             textView.setText(message);
 
         } else if (messageFav != null) {
-            int idFav = (int) Long.parseLong(messageFav);
-            textView.setText(favoritesList.get(idFav));
+            textView.setText(messageFav);
+
         } else if (recipeMessage != null) {
 
             int recipeId = (int) Long.parseLong(recipeMessage);

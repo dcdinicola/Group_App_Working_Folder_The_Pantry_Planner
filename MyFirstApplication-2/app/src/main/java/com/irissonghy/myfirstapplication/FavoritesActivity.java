@@ -58,18 +58,19 @@ public class FavoritesActivity extends Activity {
             public void onItemClick(AdapterView<?> adapter, View view,
                                     int position, long id) {
 
-                openRecipeDetail(id);
+                openRecipeDetail(position);
 
             }
         });
 
     }
 
-    public void openRecipeDetail(long id) {
+    public void openRecipeDetail(int position) {
         Intent intent = new Intent(this, RecipeDetailActivity.class);
-        String messageFav = String.valueOf(id);
+        String messageFav = memeTitles[position];
         intent.putExtra(EXTRA_MESSAGE, messageFav);
         startActivity(intent);
+
     }
 
 
@@ -112,7 +113,6 @@ public class FavoritesActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
 
 }
 

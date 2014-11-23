@@ -82,9 +82,4 @@ public class LookUpRecipeActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-
-
-
-
-
 }
