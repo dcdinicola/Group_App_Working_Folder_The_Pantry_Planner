@@ -88,6 +88,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="60dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do."
             android:id = "@+id/ingredientsTextArea"
             android:background="#f0f0f0"
             android:layout_marginLeft="15dp"
@@ -106,6 +107,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="60dp"
+            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do."
             android:id = "@+id/directionsTextArea"
             android:background="#f0f0f0"
             android:layout_marginLeft="15dp"
@@ -122,20 +124,24 @@
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:weightSum="1">
-                <TextView
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop = "5dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:weightSum="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="45dp"
                     android:text="Review"
                     android:id="@+id/recipeReview"
-                    android:layout_weight="0.14"
                     android:textSize="21sp"
-                    android:layout_marginTop="5dp" />
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="80dp"
-                    android:id = "@+id/reviewTextArea"
-                    android:background="#fff"
-                    />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="90dp"
+                    android:gravity="center" />
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -143,6 +149,35 @@
                     android:id="@+id/reviewButton"
                     android:layout_marginTop="10dp"
                     android:onClick="showDialog" />
+                    </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Great Recipe! I love this recipe a lot because every time there are guests in my house I cook them this dish, and they love it! It is also
+                                  favored by kids!"
+                    android:id="@+id/recipeReview1"
+                    android:layout_weight="0.14"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Very Useful! I love this recipe a lot because every time there are guests in my house I cook them this dish, and they love it! It is also
+                                  favored by kids!"
+                    android:id="@+id/recipeReview2"
+                    android:layout_weight="0.14"
+                    android:textSize="16sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"/>
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="80dp"
+                    android:id = "@+id/reviewTextArea"
+                    android:background="#f0f0f0"
+                    />
+
             </LinearLayout>
 
     </LinearLayout>
