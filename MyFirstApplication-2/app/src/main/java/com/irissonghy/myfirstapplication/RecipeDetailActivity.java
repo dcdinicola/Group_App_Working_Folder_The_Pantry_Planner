@@ -19,8 +19,8 @@ import java.util.List;
 
 public class RecipeDetailActivity extends Activity {
     //
-    int[] imagesDetail = {R.drawable.meme1,R.drawable.meme2,R.drawable.meme3,R.drawable.meme4,R.drawable.meme5,
-            R.drawable.meme6,R.drawable.meme7,R.drawable.meme8,R.drawable.meme9,R.drawable.meme10};
+    int[] imagesDetail = {R.drawable.meme1_banner,R.drawable.meme2_banner,R.drawable.meme3_banner,R.drawable.meme4_banner,R.drawable.meme5_banner,
+            R.drawable.meme6_banner,R.drawable.meme7_banner,R.drawable.meme8_banner,R.drawable.meme9_banner,R.drawable.meme10_banner};
 
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
