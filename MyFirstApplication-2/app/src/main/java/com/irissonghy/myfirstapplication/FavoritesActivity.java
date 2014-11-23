@@ -35,11 +35,10 @@ public class FavoritesActivity extends Activity {
     //Add the EXTRA_MESSAGE definition
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE1";
 
-    // a list class type
-    //List<Map<String, String>> favoritesList = new ArrayList<Map<String,String>>();
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favorites);
 
@@ -53,21 +52,8 @@ public class FavoritesActivity extends Activity {
         FavAdapter adapter = new FavAdapter(this, images,memeTitles,memeDescriptions);
         list.setAdapter(adapter);
 
-
-
-        /**** original code START ***/
-        /*
-        registerForContextMenu((ListView) findViewById(R.id.favListView));
-
-        //initialize recipe list
-        initFavoritesList();
-        // adapters are what we use to associate the list variable and its contents with the list view
-        ListView favoritesListView = (ListView) findViewById(R.id.favListView);
-        SimpleAdapter simpleAdpt = new SimpleAdapter(this, favoritesList, android.R.layout.simple_list_item_1, new String[] {"favorites"}, new int[] {android.R.id.text1});
-        favoritesListView.setAdapter(simpleAdpt);
-
         //favorites listView onClickListener
-        favoritesListView.setOnItemClickListener(new OnItemClickListener()
+        list.setOnItemClickListener(new OnItemClickListener()
         {
             public void onItemClick(AdapterView<?> adapter, View view,
                                     int position, long id) {
@@ -76,28 +62,8 @@ public class FavoritesActivity extends Activity {
 
             }
         });
-        */
-        /**** original code END ***/
+
     }
-
-    /**** original code START ***/
-    /*
-    private void initFavoritesList() {
-        List<String> favs = SharedPreferencesUtility.getStringList(this, "favs");
-        for(String t: favs) {
-            favoritesList.add(createRecipe("favorites", t));
-        }
-    }
-
-
-
-    private HashMap<String, String> createRecipe(String key, String name) {
-        HashMap<String, String> recipe = new HashMap<String, String>();
-        recipe.put(key, name);
-        return recipe;
-    }
-
-
 
     public void openRecipeDetail(long id) {
         Intent intent = new Intent(this, RecipeDetailActivity.class);
@@ -105,8 +71,6 @@ public class FavoritesActivity extends Activity {
         intent.putExtra(EXTRA_MESSAGE, messageFav);
         startActivity(intent);
     }
-    */
-    /**** original code END ***/
 
 
     @Override
