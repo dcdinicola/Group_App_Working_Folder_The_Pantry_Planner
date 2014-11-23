@@ -86,7 +86,6 @@ public class FavoritesActivity extends Activity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        // action bar items here
 
         int id = item.getItemId();
         if (id == R.id.activity_mainpage) {
@@ -95,7 +94,7 @@ public class FavoritesActivity extends Activity {
             return true;
         }
         else if (id == R.id.activity_profile) {
-            // launch intent to go to user profile
+
             Intent intent=new Intent(this,ProfileActivity.class);
             intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
@@ -121,6 +120,7 @@ public class FavoritesActivity extends Activity {
 
 }
 
+// customized adapter for favorite listView
 class FavAdapter extends ArrayAdapter<String>
 {
     Context context;

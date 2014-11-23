@@ -67,7 +67,6 @@ public class AddRecipeActivity extends Activity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-    // action bar items here
 
         int id = item.getItemId();
         if (id == R.id.activity_mainpage) {
