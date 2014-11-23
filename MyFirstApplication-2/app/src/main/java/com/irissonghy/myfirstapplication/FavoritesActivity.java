@@ -56,26 +56,31 @@ public class FavoritesActivity extends Activity {
         list.setOnItemClickListener(new OnItemClickListener()
         {
             public void onItemClick(AdapterView<?> adapter, View view,
-                                    int position, long id) {
-
+                                    int position, long id)
+            {
                 openRecipeDetail(position);
-
             }
         });
 
     }
 
-    public void openRecipeDetail(int position) {
+    public void openRecipeDetail(int position)
+    {
         Intent intent = new Intent(this, RecipeDetailActivity.class);
-        String messageFav = memeTitles[position];
+
+        String messageFav = memeTitles[position] + ";" +
+                            memeDescriptions[position];
+
         intent.putExtra(EXTRA_MESSAGE, messageFav);
+
         startActivity(intent);
 
     }
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_favorites, menu);
         return true;
@@ -93,6 +98,7 @@ public class FavoritesActivity extends Activity {
         else if (id == R.id.activity_profile) {
             // launch intent to go to user profile
             Intent intent=new Intent(this,ProfileActivity.class);
+            intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
 
             return true;

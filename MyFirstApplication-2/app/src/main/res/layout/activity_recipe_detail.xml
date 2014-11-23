@@ -88,7 +88,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="60dp"
-            android:id = "@+id/IngredientsTextArea"
+            android:id = "@+id/ingredientsTextArea"
             android:background="#fff"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
@@ -106,7 +106,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="60dp"
-            android:id = "@+id/DirectionsTextArea"
+            android:id = "@+id/directionsTextArea"
             android:background="#fff"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="5dp"

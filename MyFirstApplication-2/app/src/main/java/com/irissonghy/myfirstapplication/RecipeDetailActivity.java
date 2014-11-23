@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeDetailActivity extends Activity {
+    //
+    int[] imagesDetail = {R.drawable.meme1,R.drawable.meme2,R.drawable.meme3,R.drawable.meme4,R.drawable.meme5,
+            R.drawable.meme6,R.drawable.meme7,R.drawable.meme8,R.drawable.meme9,R.drawable.meme10};
 
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
@@ -52,32 +56,46 @@ public class RecipeDetailActivity extends Activity {
             textView.setText(message);
 
         } else if (messageFav != null) {
-            textView.setText(messageFav);
+            String[] mixMsg = messageFav.split(";");
+
+            String displayName = mixMsg[0];
+            TextView nameView = (TextView) findViewById(R.id.recipeName);
+            nameView.setText(displayName);
+
+            String displayDes = mixMsg[1];
+            TextView desView = (TextView) findViewById(R.id.ingredientsTextArea);
+            desView.setText(displayDes);
+
+           // int displayImg = Integer.parseInt(mixMsg[2]);
+            ImageView imgView = (ImageView) findViewById(R.id.recipeImage);
+            imgView.setImageResource(imagesDetail[9]);
+
 
         } else if (recipeMessage != null) {
 
             int recipeId = (int) Long.parseLong(recipeMessage);
             textView.setText(myProfItems.get(recipeId).getRecipeName());
-            //recipeIngredientsText.setText(myProfItems.get(recipeId).getRecipeIngredients());
-            //recipeDirectionsText.setText(myProfItems.get(recipeId).getRecipeDirections());
 
         }
 
 
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
-        ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener(){
-            public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser){
+        ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener()
+        {
+            public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser)
+            {
 
             }
         });
 
         //textView clickable userName
-        TextView userNameView = (TextView) this.findViewById(R.id.recipePoster);
+        final TextView userNameView = (TextView) this.findViewById(R.id.recipePoster);
         userNameView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent userNameIntent = new Intent(view.getContext(), ProfileActivity.class);
+                userNameIntent.putExtra("id", userNameView.getText());
                 startActivity(userNameIntent);
 
             }
@@ -86,12 +104,9 @@ public class RecipeDetailActivity extends Activity {
     }
 
 
-
     private void initRecipeList() {
         myProfItems = SharedPreferencesUtility.getRecipeList(this,"recipes");
     }
-
-
 
 
     private void initFavoritesList(){
@@ -137,7 +152,6 @@ public class RecipeDetailActivity extends Activity {
                 });
         builder.show();
 
-
     }
 
 
@@ -159,6 +173,7 @@ public class RecipeDetailActivity extends Activity {
         else if (id == R.id.activity_profile) {
             // launch intent to go to user profile
             Intent intent=new Intent(this,ProfileActivity.class);
+            intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
 
             return true;

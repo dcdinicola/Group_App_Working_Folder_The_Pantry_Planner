@@ -25,6 +25,7 @@ public class MainActivity extends Activity {
         else if (id == R.id.activity_profile) {
             // launch intent to go to user profile
             Intent intent=new Intent(this,ProfileActivity.class);
+            intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
 
             return true;

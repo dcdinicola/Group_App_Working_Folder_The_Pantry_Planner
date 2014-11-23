@@ -63,6 +63,7 @@ public class LookUpRecipeActivity extends Activity {
         }
         else if (id == R.id.activity_profile) {
             Intent intent=new Intent(this,ProfileActivity.class);
+            intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
 
             return true;

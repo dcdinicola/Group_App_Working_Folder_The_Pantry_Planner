@@ -74,7 +74,18 @@ public class ProfileActivity extends Activity {
     //grab the username from login
     private void initString() {
 
-        userName = SharedPreferencesUtility.getString(this, "loginName");
+        //get the String transferred, which is the id of the profile owner
+        Bundle extras = getIntent().getExtras();
+        userName = extras.getString("id");
+        TextView post_view = (TextView) findViewById(R.id.textView3);
+        ListView listView = (ListView) findViewById(R.id.profileListViewItem);
+
+
+        if(!userName.equals(SharedPreferencesUtility.getString(this, "loginName"))) {
+            post_view.setVisibility(View.INVISIBLE);
+            listView.setVisibility(View.INVISIBLE);
+
+        }
 
     }
 
@@ -130,6 +141,7 @@ public class ProfileActivity extends Activity {
         else if (id == R.id.activity_profile) {
             // launch intent to go to user profile
             Intent intent=new Intent(this,ProfileActivity.class);
+            intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
 
             return true;
