@@ -10,10 +10,10 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="55dp"
-        android:text="Favorites"
+        android:text="    Favorites"
         android:id="@+id/textViewFavorites"
         android:layout_alignParentTop="true"
-        android:textSize="30sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         android:typeface="sans"
         android:layout_centerHorizontal="true"
@@ -26,13 +26,13 @@
         android:textColor="#333"
         android:background="#dfdfdf" />
     <ImageView
-    android:layout_width="45dp"
-    android:layout_height="45dp"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
     android:id="@+id/imageFavorites"
     android:src="@drawable/favoriteslogo"
     android:layout_toLeftOf="@+id/textViewFavorites"
-    android:layout_marginRight="-110dp"
-    android:layout_marginTop="3dp"/>
+    android:layout_marginRight="-135dp"
+    android:layout_marginTop="5dp"/>
 
     <ListView
         android:layout_width="fill_parent"

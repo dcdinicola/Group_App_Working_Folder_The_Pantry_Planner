@@ -16,7 +16,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:id="@+id/favListImage"
-            />
+            android:layout_marginLeft="2dp" />
 
 
         <LinearLayout
@@ -26,17 +26,23 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="Large Text"
-                android:id="@+id/favListTitle" />
+                android:id="@+id/favListTitle"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:text="Small Text"
-                android:id="@+id/favListDescription" />
+                android:id="@+id/favListDescription"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp" />
 
         </LinearLayout>
 

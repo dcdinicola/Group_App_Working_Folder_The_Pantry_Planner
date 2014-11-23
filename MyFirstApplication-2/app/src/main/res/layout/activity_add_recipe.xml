@@ -12,10 +12,10 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="55dp"
-        android:text="Add Recipe"
+        android:text="    Add Recipe"
         android:id="@+id/textViewAddRecipe"
         android:layout_alignParentTop="true"
-        android:textSize="25sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         android:typeface="sans"
         android:layout_centerHorizontal="true"
@@ -28,13 +28,13 @@
         android:textColor="#333"
         android:background="#dfdfdf" />
     <ImageView
-    android:layout_width="45dp"
-    android:layout_height="45dp"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
     android:id="@+id/imageAddRecipe"
     android:src="@drawable/addrecipelogo"
     android:layout_toLeftOf="@+id/textViewAddRecipe"
-    android:layout_marginRight="-110dp"
-        android:layout_marginTop="3dp" />
+    android:layout_marginRight="-130dp"
+        android:layout_marginTop="5dp" />
 
     <Space
         android:layout_width="fill_parent"

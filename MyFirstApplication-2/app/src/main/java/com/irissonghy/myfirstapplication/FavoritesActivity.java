@@ -30,7 +30,7 @@ public class FavoritesActivity extends Activity {
     String[] memeTitles;
     String[] memeDescriptions;
     int[] images = {R.drawable.meme1,R.drawable.meme2,R.drawable.meme3,R.drawable.meme4,R.drawable.meme5,
-            R.drawable.meme6,R.drawable.meme7,R.drawable.meme8,R.drawable.meme9,R.drawable.meme10,};
+            R.drawable.meme6,R.drawable.meme7,R.drawable.meme8,R.drawable.meme9,R.drawable.meme10};
 
     //Add the EXTRA_MESSAGE definition
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE1";
@@ -122,6 +122,7 @@ class FavAdapter extends ArrayAdapter<String>
     int[] images;
     String[] titleArray;
     String[] descriptionArray;
+
     FavAdapter(Context c,int[] imgs, String[] titles, String[] descriptions)
     {
         super(c,R.layout.single_row,R.id.favListTitle,titles);
