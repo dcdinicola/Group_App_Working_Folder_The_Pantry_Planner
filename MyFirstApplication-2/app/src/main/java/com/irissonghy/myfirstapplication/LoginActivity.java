@@ -60,6 +60,7 @@ public class LoginActivity extends Activity {
 
     }
 
+
     private void initRecipeData() {
         List<Recipe> myProfItems = new ArrayList<Recipe>();
         String defaultIngredients = "tomatoes carrots onions";
