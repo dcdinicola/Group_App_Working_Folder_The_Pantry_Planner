@@ -61,7 +61,6 @@ public class FavoritesActivity extends Activity {
                 openRecipeDetail(position);
             }
         });
-
     }
 
     public void openRecipeDetail(int position)

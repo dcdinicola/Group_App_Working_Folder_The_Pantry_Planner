@@ -5,18 +5,22 @@ package com.irissonghy.myfirstapplication;
  */
 public class FavRecipe {
     private String favRecipeName;
-    private String favRecipeImage;
+    private String favRecipeDescription;
+    private int favRecipeImage;
 
 
 
-    public FavRecipe(String recipeName, String recipeImage) {
+    public FavRecipe(String recipeName, String recipeDescription, int recipeImage) {
 
         this.favRecipeName = recipeName;
+        this.favRecipeDescription = recipeDescription;
         this.favRecipeImage = recipeImage;
     }
 
     public String getFavRecipeName() {return favRecipeName;}
 
-    public String getFavRecipeImage() {return favRecipeImage;}
+    public String getFavRecipeDescription() {return favRecipeDescription;}
+
+    public int getFavRecipeImage() {return favRecipeImage;}
 
 }

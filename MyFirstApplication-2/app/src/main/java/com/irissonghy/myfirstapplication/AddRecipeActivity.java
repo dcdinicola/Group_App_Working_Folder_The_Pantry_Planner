@@ -54,50 +54,7 @@ public class AddRecipeActivity extends Activity {
 
         finish();
 
-//        EditText recipeName = (EditText) findViewById(R.id.recipeName);
-//        String displayRecipeName = recipeName.getText().toString();
-//        recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeName);
-//
-//        EditText recipeIngredients = (EditText) findViewById(R.id.recipeDetailIngredients);
-//        String displayRecipeIngredients = recipeIngredients.getText().toString();
-//        recipeIntent.putExtra(EXTRA_MESSAGE,displayRecipeIngredients);
-//
-//        EditText recipeDirections = (EditText) findViewById(R.id.recipeDetailDirections);
-//        String displayRecipeDirections = recipeDirections.getText().toString();
-//        recipeIntent.putExtra(EXTRA_MESSAGE, displayRecipeDirections);
-//
-//        startActivity(recipeIntent);
     }
-
-//    public void showDialog (View v) {
-
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Are you sure you would like to add this recipe?");
-//
-//        builder.setCancelable(true);
-//
-//        builder.setPositiveButton("Yes!",
-//                 new DialogInterface.OnClickListener()
-//        {
-//            @Override
-//            public void onClick(DialogInterface dialogInterface, int id) {
-//            Intent intent = new Intent(this, RecipeDetailActivity.class);
-//            startActivity(intent);
-//        });
-//
-//
-//        builder.setNegativeButton("Cancel"new DialogInterface.OnClickListener()
-//                     {
-//                         @Override
-//                         public void onClick(DialogInterface dialogInterface, int id))
-
-
-//
-//        FragmentManager manager = getFragmentManager();
-//        MyDialog dialogFragment = new MyDialog();
-//        dialogFragment.show(manager, "MyDialog");
-//
-//    }
 
 
     @Override
@@ -142,49 +99,5 @@ public class AddRecipeActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
-
-    //ACTIVITY 1
-    //user interacts with spinner on the top right corner
-    //clicking each of the options opens a explicit activity within the application
-    //http://developer.android.com/guide/topics/ui/controls/spinner.html
-
-    //ACTIVITY 2
-    //user clicks camera icon with id addRecipePic
-    //android.developer code to open implicit camera intent
-    /*public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-
-        // create Intent to take a picture and return control to the calling application
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-
-        fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-        intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-
-        // start the image capture Intent
-        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
-    }
-
-    //android.developer code for camera to receive camera intent result
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE) {
-            if (resultCode == RESULT_OK) {
-                // Image captured and saved to fileUri specified in the Intent
-                Toast.makeText(this, "Image saved to:\n" +
-                        data.getData(), Toast.LENGTH_LONG).show();
-            } else if (resultCode == RESULT_CANCELED) {
-                // User cancelled the image capture
-            } else {
-                // Image capture failed, advise user
-            }
-        }
-    }*/
-
-
-    //ACTIVITY 3
-    //when user clicks "Submit" button (id: AddRecipe_RecipeDetail), all the data from the UI must get passed on to the recipe detail page
-    //Ingredients, Difficulty, Name, Directions
 
 }

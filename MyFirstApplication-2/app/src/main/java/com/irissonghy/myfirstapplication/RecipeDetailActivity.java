@@ -39,7 +39,6 @@ public class RecipeDetailActivity extends Activity {
 
         initFavoritesList();
 
-        //get message from intent
         Intent intent = getIntent();
         String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
 
@@ -62,11 +61,12 @@ public class RecipeDetailActivity extends Activity {
             TextView nameView = (TextView) findViewById(R.id.recipeName);
             nameView.setText(displayName);
 
-            String displayDes = mixMsg[1];
-            TextView desView = (TextView) findViewById(R.id.ingredientsTextArea);
+            String displayDes = mixMsg[1]+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do";
+            TextView ingView = (TextView) findViewById(R.id.ingredientsTextArea);
+            ingView.setText(displayDes);
+            TextView desView = (TextView) findViewById(R.id.directionsTextArea);
             desView.setText(displayDes);
 
-           // int displayImg = Integer.parseInt(mixMsg[2]);
             ImageView imgView = (ImageView) findViewById(R.id.recipeImage);
             imgView.setImageResource(imagesDetail[9]);
 
