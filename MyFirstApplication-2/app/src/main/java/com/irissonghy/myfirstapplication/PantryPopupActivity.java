@@ -3,74 +3,139 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
+import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
+import java.util.ArrayList;
+
+import static com.irissonghy.myfirstapplication.R.layout.activity_pantry_popup;
 
 public class PantryPopupActivity extends Activity{
       ListView PantrylistView;
-      String[]ingredients= new String[] {};
+      ListView SelectedPantrylistView;
+private ArrayList selectedIngredientsArray;
+
+
+      String[] ingredients= {
+            "Carrots", "Celery", "Onions", "Potatoes", "Pot Roast", "Ground Beef", "Chicken", "Chicken Breast", "Salami",
+            "Prosciutto", "Beef","Pork", "Salmon","Shrimp", "Tilapia", "Turkey Breast", "Bacon",
+            "Multi-Grain Bread", "Wheat Bread", "French Bread", "Pepperoni", "Garlic", "Parsley", "Elbow Macaroni",
+            "Romaine Lettuce", "Kale", "Spinach", "Broccoli", "Olive Oil", "Rice", "Grits", "Parmesan Cheese",
+            "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts","Zucchini", "Brussels Sprouts", "Flour", "Sugar",
+            "Milk", "Eggs", "Arugula", "Cheese", "Ricotta Cheese", "White Wine", "Red Wine", "Marsala", "Evaporated Milk",
+            "Condensed Milk", "Jalapeno", "Red Pepper", "Green Pepper", "Breadcrumbs", "Lemons", "Limes", "Tomato",
+            "Avocado", "Tortillas", "Butter", "Linguine"};
+
       protected void onCreate (Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
-          setContentView(R.layout.activity_pantry_popup);
+          setContentView(activity_pantry_popup);
           Intent intent = getIntent();
+          SelectedPantrylistView = (ListView) findViewById(R.id.SelectedPantryList);
           PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
-        String[] ingredients= {
-                "Carrots", "Celery", "Onions", "Potatoes", "Pot Roast", "Ground Beef", "Chicken", "Chicken Breast", "Salami",
-                "Prosciutto", "Beef","Pork", "Salmon","Shrimp", "Tilapia", "Turkey Breast", "Bacon",
-                "Multi-Grain Bread", "Wheat Bread", "French Bread", "Pepperoni", "Garlic", "Parsley", "Elbow Maccaroni",
-                "Romaine Lettuce", "Kale", "Spinach", "Brocoli", "Olive Oil", "Rice", "Grits", "Parmesan Cheese",
-                "Sweet Potatoes", "Chives", "Asparagus", "Water Chestnuts","Zucchini", "Brussels Sprouts", "Flour", "Sugar",
-                "Milk", "Eggs", "Arugula", "Cheese", "Ricotta Cheese", "White Wine", "Red Wine", "Marsala", "Evaporated Milk",
-                "Condensed Milk", "Jalapeno", "Red Pepper", "Green Pepper", "Breadcrumbs", "Lemons", "Limes", "Tomato",
-                "Avocado", "Tortillas", "Butter", "Linguine"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, ingredients);
+          final ArrayList<String> ingredientsArray = new ArrayList<String>();
+          for (String i : ingredients) {
+              ingredientsArray.add(i);
+          }
+          selectedIngredientsArray = new ArrayList<String>();
 
-/*public class MyCookingAdapter extends ArrayAdapter<String> {
+          final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                  android.R.layout.simple_list_item_1, ingredientsArray);
+          final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
+                  android.R.layout.simple_list_item_1, selectedIngredientsArray);
+          SelectedPantrylistView.setAdapter(selectedIngredientsAdapter);
+          SelectedPantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-    String[] veggies;
+              @Override
+              public void onItemClick(AdapterView<?> parent, final View view,
+                 int position, long id) {
+                 final String item = (String) parent.getItemAtPosition(position);
+                 view.animate().setDuration(2000).alpha(0)
+                 .withEndAction(new Runnable() {
+                  @Override
+                   public void run() {
+                        selectedIngredientsArray.remove(item);
+                        selectedIngredientsAdapter.notifyDataSetChanged();
+                        ingredientsArray.add(item);
+                        adapter.notifyDataSetChanged();
+                        view.setAlpha(1);
+                                       }
+                                    });
+                               }
+                       }
+          );
+          PantrylistView.setAdapter(adapter);
+          PantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+              @Override
+              public void onItemClick(AdapterView<?> parent, final View view,
+                                      int position, long id) {
+                  final String item = (String) parent.getItemAtPosition(position);
+                  view.animate().setDuration(2000).alpha(0)
+                          .withEndAction(new Runnable() {
+                              @Override
+                              public void run() {
+                                ingredientsArray.remove(item);
+                                adapter.notifyDataSetChanged();
+                                  selectedIngredientsArray.add(item);
+                                  selectedIngredientsAdapter.notifyDataSetChanged();
+                                  view.setAlpha(1);
+                              }
+                          });
+              }
+      }
+          );}
+
+    // upon select, send selected ingredients back to main activity
+
+   // public void goToAddRecipe(View view) {
+   //     Intent intent = new Intent(this, AddRecipeActivity.class);
+   //     startActivity(intent);
+    // I will pass back selectedIngredientsArray
+   // }
+
+    // upon cancel, returns to main activity with no selected ingredients
+
+
+    // new intent to open AddRecipeActivity from main
+   // public void goToAddRecipe(View view) {
+   //     Intent intent = new Intent(this, AddRecipeActivity.class);
+   //     startActivity(intent);
+  //  }
+public class MyCookingAdapter extends ArrayAdapter<String> {
+
+    String[] ingredients;
 
     public MyCookingAdapter(Context context, String[] veggies) {
         super(context, 0, veggies); // runs the Array Adapter constructor
-        this.veggies = veggies;
-    }*/
-
-    /*@Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        View v = convertView;
+        this.ingredients  = veggies;
+    }
 
 
-
-        if (v == null) {
-            LayoutInflater li = (LayoutInflater)
-                    getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = li.inflate(R.layout.list_item_cooking, null);
-
-            TextView t = (TextView) v.findViewById(R.id.textView);
-            t.setText(this.veggies[position]);
+   // public View getView(int position, View convertView, ViewGroup parent) {
+   //     View v = convertView;
 
 
-        }
+        // if (v == null) {
+        //      LayoutInflater li = (LayoutInflater)
+        //              getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        //      v = li.inflate(R.layout.list_item_cooking, null);
+
+        //     TextView t = (TextView) v.findViewById(R.id.textView);
+        //   t.setText(this.ingredients[position]);
 
 
+        //   }
 
-        return v;
 
-    }*/
-
+//        return v;
     }
 
 

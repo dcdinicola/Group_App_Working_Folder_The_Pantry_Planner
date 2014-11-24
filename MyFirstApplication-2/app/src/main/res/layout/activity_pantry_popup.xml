@@ -5,17 +5,181 @@
     tools:context="com.irissonghy.myfirstapplication.PantryPopupActivity"
     android:id="@+id/pantryPopupRelative"
     android:background="#462446">
+
+
+    <TextView
+        android:layout_width="348dp"
+        android:layout_height="wrap_content"
+        android:text="This page allows you to update the ingredients in your pantry, update quantities of items in your pantry, and choose from those items in order to prepare a delicious meal."
+        android:id="@+id/recipeDetailDirections"
+        android:layout_gravity="right"
+        android:textColor="#fff"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginTop="5dp" />
+
+    <!--pseudocode:  this button will allow you to add items to your pantry
+    Clicking on it will allow you to add an ingredient to string veggies, which will display
+    on the bottom of the list-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Item"
+        android:layout_alignParentTop="true"
+        android:id="@+id/buttonaddToPantry"
+        android:layout_centerHorizontal="true"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="72dp"
+        android:background="#ff6c54"
+        android:textColor="#FFF" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/linearLayout">
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="350dp"
+        android:layout_height="80dp"
+        android:id="@+id/imageView_recipeImage2"
+        android:layout_gravity="left"
+        android:background="#b2ff65"
+        android:layout_toEndOf="@+id/linearLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="77dp"
+        android:src="#ffffffff" />
+
+    <!--Pseudocode:  once items are selected from pantry, this will display what has been picked
+    I want this to be basically the pot or bowl of ingredients to be used-->
+
+    <ListView
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:hint="Selected Items"
+        android:id="@+id/SelectedPantryList"
+        android:layout_gravity="center_horizontal"
+        android:paddingLeft="20dp"
+        android:paddingRight="5dp"
+        android:layout_toEndOf="@+id/linearLayout"
+        android:layout_alignTop="@+id/imageView_recipeImage2"
+        android:layout_alignRight="@+id/imageView_recipeImage2"
+        android:layout_alignEnd="@+id/imageView_recipeImage2" />
+    <Space
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/buttonaddToPantry"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/space" />
+
+    <!--Currently unable to get list view to display white text-->
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignRight="@+id/buttonaddToPantry"
+        android:layout_alignEnd="@+id/buttonaddToPantry"
+        android:layout_below="@+id/buttonaddToPantry"
+        android:weightSum="1"
+        android:id="@+id/linearLayout2"
+        android:layout_above="@+id/imageView_recipeImage2">
+
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/recipeIngredients"
+            android:text="Item"/>
+
+        <!--Currently unable to get list view to display white text      <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:scaleX=".25"
+            android:scaleY=".25"
+
+            android:id="@+id/numberPicker" /> -->
+
+
+    </LinearLayout>
+
     <ListView
         android:layout_width="169dp"
         android:layout_height="250dp"
         android:id="@+id/PantrylistView"
-        android:textColor="#fff"
+        android:textColor="#ffffff"
         android:layout_toRightOf="@+id/linearLayout"
         android:layout_toEndOf="@+id/linearLayout"
         android:layout_alignTop="@+id/space"
-         />
+        android:layout_alignRight="@+id/linearLayout2"
+        android:layout_alignEnd="@+id/linearLayout2" />
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:text="Select"
+        android:id="@+id/button2"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="#FFF"
+        android:background="#ff6c54"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/buttonaddToPantry"
+        android:layout_alignStart="@+id/buttonaddToPantry" />
+
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:text="Cancel"
+        android:id="@+id/button4"
+        android:layout_toEndOf="@+id/buttonaddToPantry"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:gravity="center|center_vertical|fill_vertical"
+        android:textColor="#FFF"
+        android:background="#ff6c54"
+        android:layout_gravity="bottom"
+        android:layout_alignTop="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/recipeDetailDirections"
+        android:layout_alignEnd="@+id/recipeDetailDirections" />
+    <!-- <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker"
+            android:layout_alignTop="@+id/expandableListView"
+            android:layout_toRightOf="@+id/button4"
+            android:layout_toEndOf="@+id/button4" />
+
+          <NumberPicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberPicker"
+            android:layout_alignTop="@+id/expandableListView"
+            android:layout_toRightOf="@+id/button4"
+            android:layout_toEndOf="@+id/button4" />
+    still unable to get number pickers working without causing a java error.
+
+           <NumberPicker
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/numberPicker"
+               android:layout_alignTop="@+id/expandableListView"
+               android:layout_toRightOf="@+id/button4"
+               android:layout_toEndOf="@+id/button4"
 
 
 
+               />-->
 
 </RelativeLayout>
