@@ -48,25 +48,30 @@ public class RecipeDetailActivity extends Activity {
 
 
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
-        //TextView textView = (TextView) findViewById(R.id.recipeName);
+
+        TextView nameView = (TextView) findViewById(R.id.recipeName);
+        TextView ingView = (TextView) findViewById(R.id.ingredientsTextArea);
+        TextView desView = (TextView) findViewById(R.id.directionsTextArea);
+
 
 
         if (message != null) {
-            TextView textView = (TextView) findViewById(R.id.recipeName);
-            textView.setText(message);
+            //TextView textView = (TextView) findViewById(R.id.recipeName);
+            //textView.setText(message);
+            nameView.setText(message);
 
         } else if (messageFav != null) {
             String[] mixMsg = messageFav.split(";");
 
 
             String displayName = mixMsg[0];
-            TextView nameView = (TextView) findViewById(R.id.recipeName);
+            //TextView nameView = (TextView) findViewById(R.id.recipeName);
             nameView.setText(displayName);
 
             String displayDes = mixMsg[1]+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do";
-            TextView ingView = (TextView) findViewById(R.id.ingredientsTextArea);
+            //TextView ingView = (TextView) findViewById(R.id.ingredientsTextArea);
             ingView.setText(displayDes);
-            TextView desView = (TextView) findViewById(R.id.directionsTextArea);
+            //TextView desView = (TextView) findViewById(R.id.directionsTextArea);
             desView.setText(displayDes);
 
             int position = Integer.parseInt(mixMsg[2]);
@@ -75,16 +80,17 @@ public class RecipeDetailActivity extends Activity {
 
         }
 
-            TextView recipeText = (TextView) findViewById(R.id.recipeName);
-            TextView recipeIngredientsText = (TextView) findViewById(R.id.ingredientsTextArea);
-            TextView recipeDirectionsText = (TextView) findViewById(R.id.directionsTextArea);
+
+            //TextView recipeText = (TextView) findViewById(R.id.recipeName);
+            //TextView recipeIngredientsText = (TextView) findViewById(R.id.ingredientsTextArea);
+            //TextView recipeDirectionsText = (TextView) findViewById(R.id.directionsTextArea);
 
 
             recipeId = (int) Long.parseLong(recipeMessage);
 
-            recipeText.setText(myProfItems.get(recipeId).getRecipeName());
-            recipeIngredientsText.setText(myProfItems.get(recipeId).getRecipeIngredients());
-            recipeDirectionsText.setText(myProfItems.get(recipeId).getRecipeDirections());
+            nameView.setText(myProfItems.get(recipeId).getRecipeName());
+            ingView.setText(myProfItems.get(recipeId).getRecipeIngredients());
+            desView.setText(myProfItems.get(recipeId).getRecipeDirections());
 
 
 
