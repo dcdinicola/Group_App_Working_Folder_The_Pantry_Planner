@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeDetailActivity extends Activity {
-    //
+
     int[] imagesDetail = {R.drawable.meme1_banner,R.drawable.meme2_banner,R.drawable.meme3_banner,R.drawable.meme4_banner,R.drawable.meme5_banner,
             R.drawable.meme6_banner,R.drawable.meme7_banner,R.drawable.meme8_banner,R.drawable.meme9_banner,R.drawable.meme10_banner};
 
@@ -57,6 +57,7 @@ public class RecipeDetailActivity extends Activity {
         } else if (messageFav != null) {
             String[] mixMsg = messageFav.split(";");
 
+
             String displayName = mixMsg[0];
             TextView nameView = (TextView) findViewById(R.id.recipeName);
             nameView.setText(displayName);
@@ -67,8 +68,10 @@ public class RecipeDetailActivity extends Activity {
             TextView desView = (TextView) findViewById(R.id.directionsTextArea);
             desView.setText(displayDes);
 
+            int position = Integer.parseInt(mixMsg[2]);
             ImageView imgView = (ImageView) findViewById(R.id.recipeImage);
-            imgView.setImageResource(imagesDetail[9]);
+            imgView.setImageResource(imagesDetail[position]);
+
 
 
         } else if (recipeMessage != null) {
