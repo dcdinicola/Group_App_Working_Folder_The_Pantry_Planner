@@ -17,11 +17,17 @@ public class Recipe {
         this.recipeDirections = recipeDirections;
     }
 
-    public String getRecipeName() {return recipeName;}
+    public String getRecipeName() {
+        return recipeName;
+    }
 
-    public String getRecipeIngredients() {return recipeIngredients;}
+    public String getRecipeIngredients() {
+        return recipeIngredients;
+    }
 
-    public String getRecipeDirections() {return recipeDirections;}
+    public String getRecipeDirections() {
+        return recipeDirections;
+    }
 
 
 

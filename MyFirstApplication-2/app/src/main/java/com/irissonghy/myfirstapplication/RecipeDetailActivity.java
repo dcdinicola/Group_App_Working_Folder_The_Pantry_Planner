@@ -29,6 +29,8 @@ public class RecipeDetailActivity extends Activity {
     List<String> favoritesList = new ArrayList<String>();
     List<Recipe> myProfItems;
 
+    int recipeId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +48,11 @@ public class RecipeDetailActivity extends Activity {
 
 
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
-        TextView textView = (TextView) findViewById(R.id.recipeName);
+        //TextView textView = (TextView) findViewById(R.id.recipeName);
 
 
         if (message != null) {
+            TextView textView = (TextView) findViewById(R.id.recipeName);
             textView.setText(message);
 
         } else if (messageFav != null) {
@@ -70,12 +73,21 @@ public class RecipeDetailActivity extends Activity {
             ImageView imgView = (ImageView) findViewById(R.id.recipeImage);
             imgView.setImageResource(imagesDetail[position]);
 
-        } else if (recipeMessage != null) {
-
-            int recipeId = (int) Long.parseLong(recipeMessage);
-            textView.setText(myProfItems.get(recipeId).getRecipeName());
-
         }
+
+            TextView recipeText = (TextView) findViewById(R.id.recipeName);
+            TextView recipeIngredientsText = (TextView) findViewById(R.id.ingredientsTextArea);
+            TextView recipeDirectionsText = (TextView) findViewById(R.id.directionsTextArea);
+
+
+            recipeId = (int) Long.parseLong(recipeMessage);
+
+            recipeText.setText(myProfItems.get(recipeId).getRecipeName());
+            recipeIngredientsText.setText(myProfItems.get(recipeId).getRecipeIngredients());
+            recipeDirectionsText.setText(myProfItems.get(recipeId).getRecipeDirections());
+
+
+
 
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);

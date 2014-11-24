@@ -62,12 +62,11 @@ public class LoginActivity extends Activity {
 
     private void initRecipeData() {
         List<Recipe> myProfItems = new ArrayList<Recipe>();
-        String defaultIngredients = "tomatoes carrots onions";
-        String defaultDescription = "boil the tomatoes carrots and onions";
 
-        myProfItems.add(new Recipe("Chicken Teriyaki", defaultIngredients, defaultDescription));
-        myProfItems.add(new Recipe("Duck Ramen", defaultIngredients, defaultDescription));
-        myProfItems.add(new Recipe("Chicken & Cheddar Sandwich",defaultIngredients, defaultDescription));
+
+        myProfItems.add(new Recipe("Chicken Teriyaki", "chicken", "marinate the chicken in the teriyaki sauce"));
+        myProfItems.add(new Recipe("Duck Ramen", "duck", "heat the duck with the ramen noodles"));
+        myProfItems.add(new Recipe("Chicken & Cheddar Sandwich","chicken, cheese, bread", "place all the ingredients in a panini press"));
 
         SharedPreferencesUtility.putRecipeList(this,"recipes", myProfItems);
     }

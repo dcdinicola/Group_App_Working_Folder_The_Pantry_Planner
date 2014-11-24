@@ -76,6 +76,7 @@ public class SharedPreferencesUtility {
         if (listString.length() != 0) {
             String[] recipes = listString.split(";;");
 
+            //loop through each value in list
             for (String r : recipes) {
                 String[] recipeAttributes = r.split(";");
                 String recipeName = recipeAttributes[0];

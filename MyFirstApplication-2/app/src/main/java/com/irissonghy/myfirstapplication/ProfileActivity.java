@@ -48,13 +48,13 @@ public class ProfileActivity extends Activity {
 
         //this associates the contents in the listview with the variable ListItem (myProfItems)
         ListView profileList = (ListView) findViewById(R.id.profileListViewItem);
-        SimpleAdapter profileAdapter = new SimpleAdapter(this, myProfItems, android.R.layout.simple_list_item_1, new String[]{"profrecipe"}, new int[]{android.R.id.text1});
+        SimpleAdapter profileAdapter = new SimpleAdapter(this, myProfItems, android.R.layout.simple_list_item_1, new String[]{"recipe"}, new int[]{android.R.id.text1});
         profileList.setAdapter(profileAdapter);
 
         //look_up_recipe listView onClickListener, tells ProfileActivity what to do when recipe is selected)
         profileList.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
-            public void onItemClick(AdapterView<?> adapter, View view,
+            public void onItemClick(AdapterView<?> parentAdapter, View view,
                                     int position, long id) {
                 openRecipeDetail(id);
 
@@ -91,14 +91,10 @@ public class ProfileActivity extends Activity {
     //adding recipe names to the list variable
     private void initProfileRecipeList() {
 
-//        myProfItems.add(createRecipe("recipe", "Chicken Soup"));
-//        myProfItems.add(createRecipe("recipe", "Beef Tomato"));
-//        myProfItems.add(createRecipe("recipe", "McNuggets"));
-//        myProfItems.add(createRecipe("recipe", "Cheesecake"));
 
         List<Recipe> recipes = SharedPreferencesUtility.getRecipeList(this, "recipes");
         for (Recipe r: recipes) {
-            myProfItems.add(createRecipe("recipes", r));
+            myProfItems.add(createRecipe("recipe", r));
         }
     }
 
@@ -112,7 +108,7 @@ public class ProfileActivity extends Activity {
     }
 
     // openRecipeDetail is called whenever a list item is clicked on
-    // it calls for an intent that starts up the team detail activity and sends the recipe's id over
+    // it calls for an intent that starts up the recipe detail activity and sends the recipe's id over
     // to the activity with the message variable declared at the top of the activity
     public void openRecipeDetail(long id) {
         Intent intent = new Intent(this, RecipeDetailActivity.class);
@@ -163,10 +159,10 @@ public class ProfileActivity extends Activity {
     }
 
 //CONNECT TO RECIPE DETAIL ACTIVITY
-    public void profileToRecipeDetail(View view) {
-        Intent intent=new Intent(this,RecipeDetailActivity.class);
-        startActivity (intent);
-    }
+//    public void profileToRecipeDetail(View view) {
+//        Intent intent=new Intent(this,RecipeDetailActivity.class);
+//        startActivity (intent);
+//    }
 
 }
 
