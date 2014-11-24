@@ -93,23 +93,8 @@ private ArrayList selectedIngredientsArray;
       }
           );}
 
-    // upon select, send selected ingredients back to main activity
 
-   // public void goToAddRecipe(View view) {
-   //     Intent intent = new Intent(this, AddRecipeActivity.class);
-   //     startActivity(intent);
-    // I will pass back selectedIngredientsArray
-   // }
-
-    // upon cancel, returns to main activity with no selected ingredients
-
-
-    // new intent to open AddRecipeActivity from main
-   // public void goToAddRecipe(View view) {
-   //     Intent intent = new Intent(this, AddRecipeActivity.class);
-   //     startActivity(intent);
-  //  }
-public class MyCookingAdapter extends ArrayAdapter<String> {
+    public class MyCookingAdapter extends ArrayAdapter<String> {
 
     String[] ingredients;
 
@@ -118,26 +103,17 @@ public class MyCookingAdapter extends ArrayAdapter<String> {
         this.ingredients  = veggies;
     }
 
+}
 
-   // public View getView(int position, View convertView, ViewGroup parent) {
-   //     View v = convertView;
+    // upon select, send selected ingredients back to main activity
+    public void goToMainActivity(View view) {
+    Intent intent = new Intent(this, MainActivity.class);
+    startActivity(intent);
 
-
-        // if (v == null) {
-        //      LayoutInflater li = (LayoutInflater)
-        //              getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        //      v = li.inflate(R.layout.list_item_cooking, null);
-
-        //     TextView t = (TextView) v.findViewById(R.id.textView);
-        //   t.setText(this.ingredients[position]);
-
-
-        //   }
-
-
-//        return v;
+    // I will pass back selectedIngredientsArray
     }
 
+    // upon cancel, returns to main activity with no selected ingredients
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -118,6 +118,7 @@
         android:textColor="#FFF"
         android:background="#ff6c54"
         android:layout_alignParentBottom="true"
+        android:onClick="goToMainActivity"
         android:layout_alignLeft="@+id/buttonaddToPantry"
         android:layout_alignStart="@+id/buttonaddToPantry" />
 
