@@ -17,11 +17,6 @@ import android.widget.ArrayAdapter;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.TextView;
-import android.widget.SimpleAdapter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 public class FavoritesActivity extends Activity {
@@ -72,7 +67,6 @@ public class FavoritesActivity extends Activity {
         String messageFav = memeTitles[position] + ";" +
                             memeDescriptions[position]+";"+position;
 
-
         intent.putExtra(EXTRA_MESSAGE, messageFav);
 
         startActivity(intent);
@@ -105,14 +99,13 @@ public class FavoritesActivity extends Activity {
             return true;
         }
         else if (id == R.id.activity_favorites) {
-            // launch intent to go to favorites
             Intent intent=new Intent(this,FavoritesActivity.class);
             startActivity (intent);
             return true;
         }
 
-        else if (id == R.id.activity_add_recipe) {
-            // launch intent to go to add recipe
+        else if (id == R.id.activity_add_recipe)
+        {
             Intent intent=new Intent(this,AddRecipeActivity.class);
             startActivity (intent);
             return true;
@@ -131,6 +124,7 @@ class FavAdapter extends ArrayAdapter<String>
     String[] titleArray;
     String[] descriptionArray;
 
+    //constructor
     FavAdapter(Context c,int[] imgs, String[] titles, String[] descriptions)
     {
         super(c,R.layout.single_row,R.id.favListTitle,titles);
@@ -142,7 +136,8 @@ class FavAdapter extends ArrayAdapter<String>
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View row = inflater.inflate(R.layout.single_row, parent, false);
 

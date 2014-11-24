@@ -19,6 +19,7 @@ import java.util.List;
 
 public class RecipeDetailActivity extends Activity {
 
+    //banner images for detail page
     int[] imagesDetail = {R.drawable.meme1_banner,R.drawable.meme2_banner,R.drawable.meme3_banner,R.drawable.meme4_banner,R.drawable.meme5_banner,
             R.drawable.meme6_banner,R.drawable.meme7_banner,R.drawable.meme8_banner,R.drawable.meme9_banner,R.drawable.meme10_banner};
 
@@ -26,16 +27,13 @@ public class RecipeDetailActivity extends Activity {
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
     List<String> favoritesList = new ArrayList<String>();
-
     List<Recipe> myProfItems;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
-
 
         initFavoritesList();
 
@@ -72,8 +70,6 @@ public class RecipeDetailActivity extends Activity {
             ImageView imgView = (ImageView) findViewById(R.id.recipeImage);
             imgView.setImageResource(imagesDetail[position]);
 
-
-
         } else if (recipeMessage != null) {
 
             int recipeId = (int) Long.parseLong(recipeMessage);
@@ -81,18 +77,18 @@ public class RecipeDetailActivity extends Activity {
 
         }
 
-
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
         ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener()
         {
             public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser)
             {
-
+                //Toast "Liked" message
+                Toast.makeText(getApplicationContext(), "Liked!", Toast.LENGTH_SHORT).show();
             }
         });
 
-        //textView clickable userName
+        //Clickable userName
         final TextView userNameView = (TextView) this.findViewById(R.id.recipePoster);
         userNameView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,12 +112,10 @@ public class RecipeDetailActivity extends Activity {
         favoritesList = SharedPreferencesUtility.getStringList(this, "favs");
     }
 
-    public void postReview() {
-
-        //display reviews
+    public void postReview()
+    {
         TextView review = (TextView) findViewById(R.id.reviewTextArea);
         review.setText(reviewText);
-
     }
 
     public void showDialog(View v){
@@ -139,7 +133,6 @@ public class RecipeDetailActivity extends Activity {
                 {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int id) {
-                        //dialogInterface.cancel();
                         reviewText = inputBox.getText().toString();
                         postReview();
                     }
@@ -148,10 +141,8 @@ public class RecipeDetailActivity extends Activity {
                 new DialogInterface.OnClickListener()
                 {
                     @Override
-                    public void onClick(DialogInterface dialogInterface, int id) {
-                        //dialogInterface.cancel();
-
-                    }
+                    public void onClick(DialogInterface dialogInterface, int id)
+                    {}
                 });
         builder.show();
 
@@ -174,7 +165,7 @@ public class RecipeDetailActivity extends Activity {
             return true;
         }
         else if (id == R.id.activity_profile) {
-            // launch intent to go to user profile
+
             Intent intent=new Intent(this,ProfileActivity.class);
             intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
@@ -182,14 +173,14 @@ public class RecipeDetailActivity extends Activity {
             return true;
         }
         else if (id == R.id.activity_favorites) {
-            // launch intent to go to favorites
+
             Intent intent=new Intent(this,FavoritesActivity.class);
             startActivity (intent);
             return true;
         }
 
         else if (id == R.id.activity_add_recipe) {
-            // launch intent to go to add recipe
+
             Intent intent=new Intent(this,AddRecipeActivity.class);
             startActivity (intent);
             return true;
