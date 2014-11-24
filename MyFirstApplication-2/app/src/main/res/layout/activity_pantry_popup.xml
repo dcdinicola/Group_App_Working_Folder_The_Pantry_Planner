@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.irissonghy.myfirstapplication.PantryPopupActivity"
     android:id="@+id/pantryPopupRelative"
-    android:background="#462446">
+    android:background="#fff">
 
 
     <TextView
@@ -13,7 +13,7 @@
         android:text="This page allows you to update the ingredients in your pantry, update quantities of items in your pantry, and choose from those items in order to prepare a delicious meal."
         android:id="@+id/recipeDetailDirections"
         android:layout_gravity="right"
-        android:textColor="#fff"
+        android:textColor="#555"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:layout_marginTop="5dp" />

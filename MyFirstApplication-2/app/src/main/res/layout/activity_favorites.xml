@@ -4,16 +4,16 @@
     android:layout_height="match_parent"
     tools:context="com.irissonghy.myfirstapplication.FavoritesActivity"
     android:id="@+id/RelativeLayoutFavorites"
-    android:background="#f0f0f0">
+    android:background="#fff">
 
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="55dp"
-        android:text="    Favorites"
+        android:text="FAVORITES"
         android:id="@+id/textViewFavorites"
         android:layout_alignParentTop="true"
-        android:textSize="21sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="sans"
         android:layout_centerHorizontal="true"
@@ -23,15 +23,16 @@
         android:layout_alignWithParentIfMissing="false"
         android:gravity="center"
         android:layout_alignParentEnd="false"
-        android:textColor="#333"
-        android:background="#dfdfdf" />
+        android:textColor="#fff"
+        android:background="#cdcdcd"
+        android:paddingLeft="20dp" />
     <ImageView
     android:layout_width="40dp"
     android:layout_height="40dp"
     android:id="@+id/imageFavorites"
     android:src="@drawable/favoriteslogo"
     android:layout_toLeftOf="@+id/textViewFavorites"
-    android:layout_marginRight="-135dp"
+    android:layout_marginRight="-130dp"
     android:layout_marginTop="5dp"/>
 
     <ListView
@@ -45,7 +46,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignWithParentIfMissing="false"
         android:layout_centerHorizontal="true"
-        android:background="#efefef"
+        android:background="#fff"
         android:layout_marginTop="15dp"
         style="@style/ListFontColor"
         android:layout_below="@+id/textViewFavorites" />

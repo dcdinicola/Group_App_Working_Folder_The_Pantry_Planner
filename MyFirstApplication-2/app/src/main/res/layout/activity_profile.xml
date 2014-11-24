@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.irissonghy.myfirstapplication.ProfileActivity"
     android:id="@+id/RelativeLayoutProfile"
-    android:background="#f0f0f0">
+    android:background="#fff">
 
     <ImageView
         android:layout_width="fill_parent"
@@ -63,14 +63,14 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="My Posts"
+        android:text="MY POSTS"
         android:id="@+id/textView3"
         android:textStyle="bold"
         android:textSize="21sp"
         android:layout_below="@+id/space2"
         android:layout_alignLeft="@+id/space2"
         android:layout_alignStart="@+id/space2"
-        android:textColor="#333"
+        android:textColor="#555"
         android:paddingLeft="15dp" />
 
     <!--<ScrollView-->
@@ -86,7 +86,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/profileListViewItem"
             android:layout_below="@+id/textView3"
-            android:background="#efefef"
+            android:background="#fff"
             android:paddingLeft="10dp"
             android:paddingRight="10dp" />
     <!--</ScrollView>-->

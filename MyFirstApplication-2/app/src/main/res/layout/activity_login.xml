@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context=".Login"
     android:id="@+id/LinearLayoutLogin"
-    android:background="#f0f0f0">
+    android:background="#fff">
 
     <ImageView
         android:layout_width="100dp"
@@ -26,8 +26,8 @@
         android:textSize="28sp"
         android:textStyle="bold"
         android:gravity="center_horizontal"
-        android:layout_marginTop="15dp"
-        android:textColor="#333" />
+        android:layout_marginTop="10dp"
+        android:textColor="#555" />
 
     <EditText
         android:layout_width="250dp"
@@ -87,8 +87,8 @@
         android:inputType="textUri" />
 
     <Button
-        android:layout_width="80pt"
-        android:layout_height="25pt"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
         android:text="LOGIN"
         android:id="@+id/buttonLogin"
         android:layout_gravity="center_horizontal"

@@ -6,16 +6,17 @@
     android:layout_height="match_parent"
     tools:context="com.irissonghy.myfirstapplication.AddRecipeActivity"
     android:id="@+id/RelativeLayoutAddRecipe"
-    android:background="#f0f0f0">
+    android:background="#fff"
+    android:clickable="true">
 
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="55dp"
-        android:text="    Add Recipe"
+        android:text="ADD RECIPE"
         android:id="@+id/textViewAddRecipe"
         android:layout_alignParentTop="true"
-        android:textSize="21sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:typeface="sans"
         android:layout_centerHorizontal="true"
@@ -25,8 +26,9 @@
         android:layout_alignWithParentIfMissing="false"
         android:gravity="center"
         android:layout_alignParentEnd="false"
-        android:textColor="#333"
-        android:background="#dfdfdf" />
+        android:textColor="#fff"
+        android:background="#cdcdcd"
+        android:paddingLeft="20dp" />
     <ImageView
     android:layout_width="40dp"
     android:layout_height="40dp"
@@ -44,65 +46,54 @@
         android:layout_alignParentStart="true"
         android:id="@+id/space" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Here you can input information about your recipe."
-        android:id="@+id/recipeIngredients"
-        android:textSize="18sp"
-        android:paddingLeft="15dp"
-        android:textColor="#777"
-        android:layout_below="@+id/textViewAddRecipe"
-        android:layout_marginTop="15dp"
-        android:paddingRight="15dp" />
-
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="145dp"
+        android:layout_height="145dp"
         android:id="@+id/imageView2"
         android:src="@drawable/add_recipe"
-        android:layout_below="@+id/recipeIngredients"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_alignParentStart="false" />
+        android:layout_alignParentStart="false"
+        android:layout_below="@+id/textViewAddRecipe" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/recipeName"
         android:layout_toEndOf="@+id/imageView2"
-        android:textSize="21sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:text="Recipe Name"
         android:textColor="#555"
-        android:layout_below="@+id/recipeIngredients"
         android:layout_toRightOf="@+id/imageView2"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp" />
+        android:layout_marginLeft="20dp"
+        android:layout_below="@+id/textViewAddRecipe"
+        android:hint="Recipe Name" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Difficulty:"
+        android:text="DIFFICULTY"
         android:id="@+id/textView2"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_below="@+id/recipeName"
         android:layout_alignLeft="@+id/recipeName"
         android:layout_alignStart="@+id/recipeName"
-        android:layout_marginTop="20dp"
-        android:textColor="#fff" />
+        android:layout_marginTop="35dp"
+        android:textColor="#555"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ingredients"
+        android:text="INGREDIENTS"
         android:id="@+id/textView3"
         android:textStyle="bold"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textColor="#555"
         android:layout_below="@+id/imageView2"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="25dp" />
 
     <EditText
         android:layout_width="fill_parent"
@@ -111,9 +102,8 @@
         android:ems="10"
         android:id="@+id/recipeDetailIngredients"
         android:layout_below="@+id/textView3"
-        android:textSize="18sp"
-        android:textColor="#fff"
-        android:layout_alignRight="@+id/recipeIngredients"
+        android:textSize="13sp"
+        android:textColor="#555"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp" />
 
@@ -128,15 +118,16 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Directions "
+        android:text="DIRECTIONS"
         android:id="@+id/textView5"
         android:layout_below="@+id/space4"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="15dp"
         android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="#555" />
+        android:textSize="16sp"
+        android:textColor="#555"
+        android:layout_marginTop="5dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -147,9 +138,10 @@
         android:layout_below="@+id/textView5"
         android:layout_alignLeft="@+id/textView5"
         android:layout_alignStart="@+id/textView5"
-        android:textColor="#fff"
+        android:textColor="#555"
         android:layout_alignRight="@+id/recipeDetailIngredients"
-        android:layout_alignEnd="@+id/recipeDetailIngredients" />
+        android:layout_alignEnd="@+id/recipeDetailIngredients"
+        android:textSize="13sp" />
 
     <Button
         android:layout_width="200dp"
@@ -159,9 +151,10 @@
         android:background="@drawable/btnlogin"
         android:layout_below="@+id/recipeDetailDirections"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:textColor="#fff"
-        android:onClick="showRecipeDetail"/>
+        android:onClick="showRecipeDetail"
+        android:textSize="18sp" />
 
 
 
