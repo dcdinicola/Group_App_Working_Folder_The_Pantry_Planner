@@ -36,10 +36,11 @@
         android:src="@drawable/downarrow"
         android:layout_marginTop="10dp" />
 
-    <TextView
+    <ListView
         android:layout_width="300dp"
         android:layout_height="140dp"
-        android:id="@+id/pantryItemList"
+        android:hint="Selected Items"
+        android:id="@+id/SelectedIngredientsList"
         android:background="#efefef"
         android:layout_marginTop="10dp"/>
     <Button

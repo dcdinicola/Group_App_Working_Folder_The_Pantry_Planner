@@ -52,23 +52,20 @@
     </LinearLayout>
 
 
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="80dp"
-        android:id="@+id/imageView_recipeImage2"
-        android:layout_gravity="left"
-        android:background="#b2ff65"
-        android:layout_toEndOf="@+id/linearLayout"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="77dp"
-        android:src="#ffffffff"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <!--Pseudocode:  once items are selected from pantry, this will display what has been picked
-    I want this to be basically the pot or bowl of ingredients to be used-->
+      <ImageView
+          android:layout_width="350dp"
+          android:layout_height="80dp"
+          android:id="@+id/imageView_recipeImage2"
+          android:layout_gravity="left"
+          android:background="#b2ff65"
+          android:layout_toEndOf="@+id/linearLayout"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:layout_alignParentStart="true"
+          android:layout_marginBottom="77dp"
+          android:src="#ffffffff"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentEnd="true" />
 
     <Space
         android:layout_width="fill_parent"
@@ -83,7 +80,7 @@
 
     <ListView
         android:layout_width="169dp"
-        android:layout_height="200dp"
+        android:layout_height="240dp"
         android:id="@+id/PantrylistView"
         android:textColor="#ffffff"
         android:layout_toRightOf="@+id/linearLayout"
@@ -91,11 +88,20 @@
         android:layout_alignTop="@+id/space"
         android:layout_marginTop="15dp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/imageView_recipeImage2" />
+
+    <Space
+        android:layout_width="350dp"
+        android:layout_height="20dp"
+        android:id="@+id/space2"
+        android:layout_above="@+id/SelectedPantryList"
+        android:layout_toRightOf="@+id/linearLayout"
+        android:layout_toEndOf="@+id/linearLayout" />
 
     <ListView
         android:layout_width="350dp"
-        android:layout_height="60dp"
+        android:layout_height="180dp"
         android:hint="Selected Items"
         android:id="@+id/SelectedPantryList"
         android:layout_gravity="center_horizontal"
@@ -134,6 +140,7 @@
         android:textColor="#FFF"
         android:background="#ff6c54"
         android:layout_gravity="bottom"
+        android:onClick="goToMainActivity"
         android:layout_alignParentBottom="true"
         android:layout_toRightOf="@+id/button2"
         android:layout_alignTop="@+id/button2"
@@ -147,6 +154,7 @@
         android:textSize="15sp"
         android:textStyle="bold"
         android:layout_alignTop="@+id/imageView_recipeImage2"
+        android:layout_below="@+id/PantrylistView"
         android:layout_centerHorizontal="true" />
 
     <!-- <NumberPicker

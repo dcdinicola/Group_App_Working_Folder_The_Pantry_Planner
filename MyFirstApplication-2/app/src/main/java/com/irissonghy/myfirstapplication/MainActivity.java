@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends Activity {
 
@@ -54,6 +56,7 @@ public class MainActivity extends Activity {
         String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);//get the intent and extract the username delivered by LoginActivity
         TextView userName = (TextView) findViewById(R.id.mainHeader);//set the text of textViewUsername on main page
         userName.setText("Select Food Material From " + displayName +"'s Pantry");
+        ArrayList<String> selectedArray = null;
 
     }
     // calls Pantry popup when user clicks "Select from Pantry"
@@ -61,6 +64,8 @@ public class MainActivity extends Activity {
 
         Intent intent = new Intent(this, PantryPopupActivity.class);
         startActivity(intent);
+        ArrayList<String> selectedArray = getIntent().getStringArrayListExtra("strings");
+
     }
 
             // new intent to open AddRecipeActivity from main

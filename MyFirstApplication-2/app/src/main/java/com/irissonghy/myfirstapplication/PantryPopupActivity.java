@@ -108,6 +108,7 @@ private ArrayList selectedIngredientsArray;
     // upon select, send selected ingredients back to main activity
     public void goToMainActivity(View view) {
     Intent intent = new Intent(this, MainActivity.class);
+    intent.putStringArrayListExtra("strings", selectedIngredientsArray);
     startActivity(intent);
 
     // I will pass back selectedIngredientsArray
