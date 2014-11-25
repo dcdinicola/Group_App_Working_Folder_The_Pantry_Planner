@@ -2,12 +2,20 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.List;
@@ -16,7 +24,9 @@ import java.util.List;
 public class AddRecipeActivity extends Activity {
 
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
-
+    private static final int CAM_REQUEST = 1;
+    Button btnTakePhoto;
+    ImageView imgTakePhoto;
 
 
     @Override
@@ -24,7 +34,33 @@ public class AddRecipeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_recipe);
 
+        btnTakePhoto = (Button) findViewById(R.id.camButton);
+        imgTakePhoto = (ImageView) findViewById(R.id.imageView2);
 
+        btnTakePhoto.setOnClickListener(new btnTakePhoneClicker());
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == CAM_REQUEST)
+        {
+            Bitmap thumbnail = (Bitmap) data.getExtras().get("data");
+            imgTakePhoto.setImageBitmap(thumbnail);
+        }
+    }
+
+    class btnTakePhoneClicker implements Button.OnClickListener
+    {
+        @Override
+        public void onClick(View view)
+        {
+            Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(cameraIntent,CAM_REQUEST);
+        }
     }
 
     public void showRecipeDetail(View view) {
@@ -58,8 +94,8 @@ public class AddRecipeActivity extends Activity {
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -98,5 +134,8 @@ public class AddRecipeActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
 
 }

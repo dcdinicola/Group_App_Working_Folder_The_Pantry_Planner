@@ -26,9 +26,6 @@ public class RecipeDetailActivity extends Activity {
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
-    List<String> favoritesList = new ArrayList<String>();
-    List<Recipe> myProfItems;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
