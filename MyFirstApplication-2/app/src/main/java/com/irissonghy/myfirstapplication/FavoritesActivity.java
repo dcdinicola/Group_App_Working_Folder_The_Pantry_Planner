@@ -25,8 +25,7 @@ public class FavoritesActivity extends Activity {
     String[] memeTitles;
     String[] memeDescriptions;
     int[] images = {R.drawable.meme1,R.drawable.meme2,R.drawable.meme3,R.drawable.meme4,
-            R.drawable.meme5,R.drawable.meme6,R.drawable.meme7,R.drawable.meme8,R.drawable.meme9,
-            R.drawable.meme10};
+            R.drawable.meme5};
 
 
     //Add the EXTRA_MESSAGE definition
@@ -65,8 +64,7 @@ public class FavoritesActivity extends Activity {
         Intent intent = new Intent(this, RecipeDetailActivity.class);
 
         String messageFav = memeTitles[position] + ";" +
-                            memeDescriptions[position]+";"+position;
-
+                            memeDescriptions[position]+ ";" + position;
         intent.putExtra(EXTRA_MESSAGE, messageFav);
 
         startActivity(intent);

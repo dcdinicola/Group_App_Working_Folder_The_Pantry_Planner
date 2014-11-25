@@ -20,14 +20,14 @@ import java.util.List;
 public class RecipeDetailActivity extends Activity {
 
     //banner images for detail page
-    int[] imagesDetail = {R.drawable.meme1_banner,R.drawable.meme2_banner,R.drawable.meme3_banner,R.drawable.meme4_banner,R.drawable.meme5_banner,
-            R.drawable.meme6_banner,R.drawable.meme7_banner,R.drawable.meme8_banner,R.drawable.meme9_banner,R.drawable.meme10_banner};
+    int[] imagesDetail = {R.drawable.meme1_banner,R.drawable.meme2_banner,R.drawable.meme3_banner,
+            R.drawable.meme4_banner,R.drawable.meme5_banner};
 
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
     List<String> favoritesList = new ArrayList<String>();
-
+    List<Recipe> myProfItems;
 
 
     @Override
@@ -35,31 +35,24 @@ public class RecipeDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
 
-        initFavoritesList();
-
         Intent intent = getIntent();
         String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
-
-
-
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
-        TextView textView = (TextView) findViewById(R.id.recipeName);
 
 
         if (message != null) {
+            TextView textView = (TextView) findViewById(R.id.recipeName);
             textView.setText(message);
 
-  }
+        } else if (messageFav != null) {
 
-        else if (messageFav != null) {
             String[] mixMsg = messageFav.split(";");
-
 
             String displayName = mixMsg[0];
             TextView nameView = (TextView) findViewById(R.id.recipeName);
             nameView.setText(displayName);
 
-            String displayDes = mixMsg[1]+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do";
+            String displayDes = mixMsg[1];
             TextView ingView = (TextView) findViewById(R.id.ingredientsTextArea);
             ingView.setText(displayDes);
             TextView desView = (TextView) findViewById(R.id.directionsTextArea);
@@ -70,6 +63,7 @@ public class RecipeDetailActivity extends Activity {
             imgView.setImageResource(imagesDetail[position]);
 
         }
+
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
         ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener()
@@ -95,11 +89,6 @@ public class RecipeDetailActivity extends Activity {
 
     }
 
-
-
-    private void initFavoritesList(){
-        favoritesList = SharedPreferencesUtility.getStringList(this, "favs");
-    }
 
     public void postReview()
     {

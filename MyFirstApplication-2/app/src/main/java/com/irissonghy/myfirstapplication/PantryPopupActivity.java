@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 import static com.irissonghy.myfirstapplication.R.layout.activity_pantry_popup;
@@ -157,4 +156,5 @@ private ArrayList selectedIngredientsArray;
         return super.onOptionsItemSelected(item);
     }
 }
+
 

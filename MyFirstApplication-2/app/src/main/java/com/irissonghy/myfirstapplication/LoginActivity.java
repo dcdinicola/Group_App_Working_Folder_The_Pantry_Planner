@@ -21,7 +21,7 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         // Since everyone has to pass through the login screen, we will initialize our data structures here
-        initData();
+        //initData();
         initRecipeData();
     }
 
@@ -48,7 +48,7 @@ public class LoginActivity extends Activity {
         startActivity(loginIntent);
         SharedPreferencesUtility.putString(this, "loginName", displayName);
     }
-    private void initData() {
+    /*private void initData() {
     List<String> favsList = new ArrayList<String>();
     favsList.add("Chicken Teriyaki");
     favsList.add("Duck Ramen");
@@ -57,7 +57,7 @@ public class LoginActivity extends Activity {
     favsList.add("Curry Rice");
     SharedPreferencesUtility.putStringList(this, "favs", favsList);
 
-    }
+    }*/
 
 
     private void initRecipeData() {
