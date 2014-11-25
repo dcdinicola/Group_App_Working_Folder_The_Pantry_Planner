@@ -49,7 +49,7 @@ public class RecipeDetailActivity extends Activity {
             TextView nameView = (TextView) findViewById(R.id.recipeName);
             nameView.setText(displayName);
 
-            String displayDes = mixMsg[1];
+            String displayDes = mixMsg[1]+ ". " + mixMsg[1];
             TextView ingView = (TextView) findViewById(R.id.ingredientsTextArea);
             ingView.setText(displayDes);
             TextView desView = (TextView) findViewById(R.id.directionsTextArea);
