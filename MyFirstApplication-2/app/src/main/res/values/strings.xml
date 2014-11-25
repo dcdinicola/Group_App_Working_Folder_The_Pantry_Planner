@@ -34,19 +34,19 @@
    </string-array>
    -->
    <string-array name = "titles">
-       <item>Deep Fried Chicken</item>
-       <item>Steamed Crab Cake</item>
-       <item>Pepper Steak</item>
-       <item>Strawberry Yogurt</item>
-       <item>Vegan Daylight</item>
+       <item>Deep Fried Shrimp</item>
+       <item>Steam Crab Cake</item>
+       <item>Blueberry Toast</item>
+       <item>BBQ Juicy Steak</item>
+       <item>Fish Cake Pasta</item>
    </string-array>
 
    <string-array name = "descriptions">
-        <item>Deep Fried Chicken needs raw chicken meet, carrot and potato</item>
-        <item>Prepare crab meet and raw broccoli </item>
-        <item>Enjoy super hot and spicy taste</item>
-        <item>Have children? Bribe them with yogurt</item>
-        <item>Treat yourself with a whole veggie breakfast </item>
+        <item>Deep Fried Shrimp needs raw shrimp, carrot and potato</item>
+        <item>Prepare crab meat and raw broccoli </item>
+        <item>Enjoy the sweet and fresh taste</item>
+        <item>Meat lover cannot miss it</item>
+        <item>Treat your guest with this special home-made pasta.</item>
    </string-array>
 
 

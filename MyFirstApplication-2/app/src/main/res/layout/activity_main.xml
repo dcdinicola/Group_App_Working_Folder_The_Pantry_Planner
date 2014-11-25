@@ -30,11 +30,11 @@
         android:onClick="goToPantryPopup"
         android:clickable="true" />
     <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:id="@+id/downArrowImage"
-        android:src="@drawable/downarrow"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="10dp"
+        android:src="@drawable/arrows_down" />
 
     <ListView
         android:layout_width="300dp"

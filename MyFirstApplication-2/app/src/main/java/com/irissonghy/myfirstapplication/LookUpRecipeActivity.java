@@ -9,8 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Arrays;
+
 
 public class LookUpRecipeActivity extends Activity {
+    Map<String, Integer> map = new HashMap<String, Integer>();
 
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
@@ -18,9 +23,15 @@ public class LookUpRecipeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_look_up_recipe);
-
+        map.put("Cheddar Pudding",0);
+        map.put("Cheese Crackers",1);
+        map.put("Veggie Soup",2);
+        map.put("Baked Potato",3);
+        map.put("Thai Rice",4);
+        map.put("Roasted Chicken",5);
 
     }
+
 
     public void openDetail(View view)
     {
@@ -28,7 +39,9 @@ public class LookUpRecipeActivity extends Activity {
         Intent intent = new Intent(this, RecipeDetailActivity.class);
         TextView recipeName = (TextView) findViewById(id);
         String displayName = recipeName.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, displayName);
+        String imgIndex = map.get(displayName).toString();
+        String recipeMsg = displayName + ";" + imgIndex;
+        intent.putExtra(EXTRA_MESSAGE, recipeMsg);
         startActivity(intent);
     }
 

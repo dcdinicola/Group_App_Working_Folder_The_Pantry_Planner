@@ -26,25 +26,23 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_height="20dp"
                 android:text="Large Text"
                 android:id="@+id/favListTitle"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="18dp"
                 android:layout_marginTop="5dp"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="#555"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:layout_height="40dp"
                 android:text="Small Text"
                 android:id="@+id/favListDescription"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="18dp"
                 android:layout_marginTop="5dp"
-                android:textSize="14sp"
+                android:textSize="13sp"
                 android:textColor="#777" />
 
         </LinearLayout>

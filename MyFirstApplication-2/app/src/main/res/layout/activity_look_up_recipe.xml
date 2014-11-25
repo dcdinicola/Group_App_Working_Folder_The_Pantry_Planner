@@ -16,7 +16,7 @@
         android:layout_height="55dp"
         android:text="RECIPE RESULTS"
         android:id="@+id/textView_recipeHeader"
-        android:background="#cdcdcd"
+        android:background="#bdbdbd"
         android:gravity="center"
         android:textColor="#fff"
         android:textAlignment="center"
@@ -44,7 +44,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp">
+            android:layout_marginTop="22dp">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -59,105 +59,112 @@
                     <TextView
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:text="RecipeOne"
+                        android:text="Cheddar Pudding"
                         android:textColor="#fff"
                         android:textAlignment="center"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/recipe_1"
+                        android:background="@drawable/result1"
                         android:id="@+id/recipeIcon1"
                         android:textSize="21sp"
                         android:textStyle="bold"
                         android:clickable="true"
                         android:onClick="openDetail"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:layout_gravity="center" />
                     <TextView
                         android:layout_width="150dp"
                         android:layout_height="150dp"
-                        android:text="RecipeTwo"
+                        android:text="Cheese Crackers"
                         android:textColor="#fff"
                         android:textAlignment="center"
-                        android:layout_marginLeft="10dp"
-                        android:background="@drawable/recipe_2"
+                        android:layout_marginLeft="12dp"
+                        android:background="@drawable/result2"
                         android:id="@+id/recipeIcon2"
                         android:textSize="21sp"
                         android:textStyle="bold"
                         android:clickable="true"
                         android:onClick="openDetail"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:layout_gravity="center" />
                 </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:layout_gravity="center_horizontal"
         android:gravity="center_horizontal">
 
         <TextView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:text="RecipeThree"
+            android:text="Veggie Soup"
             android:textColor="#fff"
             android:textAlignment="center"
             android:layout_marginRight="10dp"
-            android:background="@drawable/recipe_3"
+            android:background="@drawable/result3"
             android:id="@+id/recipeIcon3"
             android:textSize="21sp"
             android:textStyle="bold"
             android:clickable="true"
             android:onClick="openDetail"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_gravity="center" />
         <TextView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:text="RecipeFour"
+            android:text="Baked Potato"
             android:textColor="#fff"
             android:textAlignment="center"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/recipe_4"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/result4"
             android:id="@+id/recipeIcon4"
             android:textSize="21sp"
             android:textStyle="bold"
             android:clickable="true"
             android:onClick="openDetail"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_gravity="center" />
     </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="10dp">
 
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:text="RecipeFive"
+                android:text="Thai Rice"
                 android:textColor="#fff"
                 android:textAlignment="center"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/recipe_1"
+                android:background="@drawable/result5"
                 android:id="@+id/recipeIcon5"
                 android:textSize="21sp"
                 android:textStyle="bold"
                 android:clickable="true"
                 android:onClick="openDetail"
-                android:gravity="center" />
+                android:gravity="center"
+                android:layout_gravity="center" />
             <TextView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:text="RecipeSix"
+                android:text="Roasted Chicken"
                 android:textColor="#fff"
                 android:textAlignment="center"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/recipe_1"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/result6"
                 android:id="@+id/recipeIcon6"
                 android:textSize="21sp"
                 android:textStyle="bold"
                 android:clickable="true"
                 android:onClick="openDetail"
-                android:gravity="center" />
+                android:gravity="center"
+                android:layout_gravity="center" />
         </LinearLayout>
 </LinearLayout>
 </ScrollView>

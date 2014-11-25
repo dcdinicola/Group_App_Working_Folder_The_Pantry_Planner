@@ -55,7 +55,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:layout_marginTop = "5dp"
+            android:layout_marginTop = "3dp"
             android:layout_marginLeft="15dp">
             <ImageView
                 android:layout_width="30dp"
@@ -191,11 +191,13 @@
 
                 <TextView
                     android:layout_width="fill_parent"
-                    android:layout_height="80dp"
+                    android:layout_height="wrap_content"
                     android:id = "@+id/reviewTextArea"
                     android:background="#fff"
                     android:textSize="13sp"
                     android:textColor="#555"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
                     android:padding="5dp"/>
 
             </LinearLayout>

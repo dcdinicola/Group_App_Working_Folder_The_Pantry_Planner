@@ -20,8 +20,9 @@ import java.util.List;
 public class RecipeDetailActivity extends Activity {
 
     //banner images for detail page
-    int[] imagesDetail = {R.drawable.meme1_banner,R.drawable.meme2_banner,R.drawable.meme3_banner,
-            R.drawable.meme4_banner,R.drawable.meme5_banner};
+    int[] imagesDetail = {R.drawable.meme1_banner,R.drawable.meme2_banner,R.drawable.meme7_banner,R.drawable.meme6_banner,R.drawable.meme9_banner};
+
+    int[] imgResultsDetail = {R.drawable.result1_banner,R.drawable.result2_banner,R.drawable.result3_banner,R.drawable.result4_banner,R.drawable.result5_banner,R.drawable.result6_banner};
 
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
@@ -38,8 +39,16 @@ public class RecipeDetailActivity extends Activity {
 
 
         if (message != null) {
-            TextView textView = (TextView) findViewById(R.id.recipeName);
-            textView.setText(message);
+
+            String[] mixMsg1 = message.split(";");
+
+            String displayName1 = mixMsg1[0];
+            TextView nameView1 = (TextView) findViewById(R.id.recipeName);
+            nameView1.setText(displayName1);
+
+            int position1 = Integer.parseInt(mixMsg1[1]);
+            ImageView imgView1 = (ImageView) findViewById(R.id.recipeImage);
+            imgView1.setImageResource(imgResultsDetail[position1]);
 
         } else if (messageFav != null) {
 
@@ -91,6 +100,7 @@ public class RecipeDetailActivity extends Activity {
     {
         TextView review = (TextView) findViewById(R.id.reviewTextArea);
         review.setText(reviewText);
+        review.setBackgroundColor(0xFFF0F0F0);
     }
 
     public void showDialog(View v){
