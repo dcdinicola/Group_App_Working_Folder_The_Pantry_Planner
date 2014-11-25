@@ -46,7 +46,7 @@ public class AddRecipeActivity extends Activity {
         Toast.makeText(getApplicationContext(), "A new recipe has been added!",Toast.LENGTH_LONG).show();
 
 
-        Intent recipeIntent = new Intent(this,RecipeDetailActivity.class);
+        Intent recipeIntent = new Intent(this,RecipeDetailActivityTwo.class);
         String recipeMessage = String.valueOf(id);
 
         recipeIntent.putExtra(EXTRA_MESSAGE,recipeMessage);

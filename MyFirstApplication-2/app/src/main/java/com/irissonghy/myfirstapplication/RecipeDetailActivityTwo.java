@@ -9,73 +9,56 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class RecipeDetailActivity extends Activity {
 
-    //banner images for detail page
-    int[] imagesDetail = {R.drawable.meme1_banner,R.drawable.meme2_banner,R.drawable.meme3_banner,R.drawable.meme4_banner,R.drawable.meme5_banner,
-            R.drawable.meme6_banner,R.drawable.meme7_banner,R.drawable.meme8_banner,R.drawable.meme9_banner,R.drawable.meme10_banner};
+/**
+ * Created by lavanyakumar on 11/24/14.
+ */
+public class RecipeDetailActivityTwo extends Activity {
 
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
-    List<String> favoritesList = new ArrayList<String>();
+    List<Recipe> myProfItems;
 
-
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
 
-        initFavoritesList();
 
         Intent intent = getIntent();
-        String message = intent.getStringExtra(LookUpRecipeActivity.EXTRA_MESSAGE);
 
 
+        initRecipeList();
 
-        String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
-        TextView textView = (TextView) findViewById(R.id.recipeName);
+        String recipeMessage = intent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+        String profileMessage = intent.getStringExtra(ProfileActivity.EXTRA_MESSAGE);
+
+        TextView recipeNameText = (TextView) findViewById(R.id.recipeName);
+        TextView recipeIngredientsText = (TextView) findViewById(R.id.ingredientsTextArea);
+        TextView recipeDirectionsText = (TextView) findViewById(R.id.directionsTextArea);
+
+        int recipeId = (int) Long.parseLong(recipeMessage);
+        int profileId = (int) Long.parseLong(profileMessage);
+
+        recipeNameText.setText(myProfItems.get(recipeId).getRecipeName());
+        recipeIngredientsText.setText(myProfItems.get(recipeId).getRecipeIngredients());
+        recipeDirectionsText.setText(myProfItems.get(recipeId).getRecipeDirections());
+
+        recipeNameText.setText(myProfItems.get(profileId).getRecipeName());
+        recipeIngredientsText.setText(myProfItems.get(profileId).getRecipeIngredients());
+        recipeDirectionsText.setText(myProfItems.get(profileId).getRecipeDirections());
 
 
-        if (message != null) {
-            textView.setText(message);
-
-  }
-
-        else if (messageFav != null) {
-            String[] mixMsg = messageFav.split(";");
-
-
-            String displayName = mixMsg[0];
-            TextView nameView = (TextView) findViewById(R.id.recipeName);
-            nameView.setText(displayName);
-
-            String displayDes = mixMsg[1]+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do";
-            TextView ingView = (TextView) findViewById(R.id.ingredientsTextArea);
-            ingView.setText(displayDes);
-            TextView desView = (TextView) findViewById(R.id.directionsTextArea);
-            desView.setText(displayDes);
-
-            int position = Integer.parseInt(mixMsg[2]);
-            ImageView imgView = (ImageView) findViewById(R.id.recipeImage);
-            imgView.setImageResource(imagesDetail[position]);
-
-        }
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
-        ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener()
-        {
-            public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser)
-            {
+        ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratings, float rating, boolean fromUser) {
                 //Toast "Liked" message
                 Toast.makeText(getApplicationContext(), "Liked!", Toast.LENGTH_SHORT).show();
             }
@@ -96,11 +79,9 @@ public class RecipeDetailActivity extends Activity {
     }
 
 
-
-    private void initFavoritesList(){
-        favoritesList = SharedPreferencesUtility.getStringList(this, "favs");
+    private void initRecipeList() {
+        myProfItems = SharedPreferencesUtility.getRecipeList(this,"recipes");
     }
-
     public void postReview()
     {
         TextView review = (TextView) findViewById(R.id.reviewTextArea);
@@ -177,6 +158,4 @@ public class RecipeDetailActivity extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

@@ -111,7 +111,7 @@ public class ProfileActivity extends Activity {
     // it calls for an intent that starts up the recipe detail activity and sends the recipe's id over
     // to the activity with the message variable declared at the top of the activity
     public void openRecipeDetail(long id) {
-        Intent intent = new Intent(this, RecipeDetailActivity.class);
+        Intent intent = new Intent(this, RecipeDetailActivityTwo.class);
         String message = String.valueOf(id);
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);

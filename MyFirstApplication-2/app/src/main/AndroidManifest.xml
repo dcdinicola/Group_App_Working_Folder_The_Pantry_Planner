@@ -31,6 +31,10 @@
         </activity>
         <activity
             android:name="com.irissonghy.myfirstapplication.RecipeDetailActivity"
+            android:label="@string/title_activity_recipe_detail">
+        </activity>
+        <activity
+            android:name="com.irissonghy.myfirstapplication.RecipeDetailActivityTwo"
             android:label="@string/title_activity_recipe_detail"
             android:parentActivityName=".ProfileActivity">
         </activity>
