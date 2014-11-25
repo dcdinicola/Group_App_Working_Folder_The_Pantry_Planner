@@ -43,7 +43,7 @@ public class RecipeDetailActivity extends Activity {
         initRecipeList();
 
         String recipeMessage = intent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
-
+        String profileMessage = intent.getStringExtra(ProfileActivity.EXTRA_MESSAGE);
 
         String messageFav = intent.getStringExtra(FavoritesActivity.EXTRA_MESSAGE);
         TextView textView = (TextView) findViewById(R.id.recipeName);
@@ -52,7 +52,25 @@ public class RecipeDetailActivity extends Activity {
         if (message != null) {
             textView.setText(message);
 
-        } else if (messageFav != null) {
+        } else if(recipeMessage != null && profileMessage != null) {
+
+            TextView recipeNameText = (TextView) findViewById(R.id.recipeName);
+            TextView recipeIngredientsText = (TextView) findViewById(R.id.ingredientsTextArea);
+            TextView recipeDirectionsText = (TextView) findViewById(R.id.directionsTextArea);
+
+            int recipeId = (int) Long.parseLong(recipeMessage);
+            int profileId = (int) Long.parseLong(profileMessage);
+
+            recipeNameText.setText(myProfItems.get(recipeId).getRecipeName());
+            recipeIngredientsText.setText(myProfItems.get(recipeId).getRecipeIngredients());
+            recipeDirectionsText.setText(myProfItems.get(recipeId).getRecipeDirections());
+
+            recipeNameText.setText(myProfItems.get(profileId).getRecipeName());
+            recipeIngredientsText.setText(myProfItems.get(profileId).getRecipeIngredients());
+            recipeDirectionsText.setText(myProfItems.get(profileId).getRecipeDirections());
+
+        }
+        else if (messageFav != null) {
             String[] mixMsg = messageFav.split(";");
 
 
@@ -70,13 +88,7 @@ public class RecipeDetailActivity extends Activity {
             ImageView imgView = (ImageView) findViewById(R.id.recipeImage);
             imgView.setImageResource(imagesDetail[position]);
 
-        } else if (recipeMessage != null) {
-
-            int recipeId = (int) Long.parseLong(recipeMessage);
-            textView.setText(myProfItems.get(recipeId).getRecipeName());
-
         }
-
         //rating bar
         RatingBar ratings = (RatingBar) findViewById(R.id.recipeStar);
         ratings.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener()
