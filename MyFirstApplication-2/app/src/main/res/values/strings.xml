@@ -25,16 +25,12 @@
 
 
    <string-array name = "titles">
-       <item>Meme 1</item>
-       <item>Meme 2</item>
-       <item>Meme 3</item>
-       <item>Meme 4</item>
-       <item>Meme 5</item>
-       <item>Meme 6</item>
-       <item>Meme 7</item>
-       <item>Meme 8</item>
-       <item>Meme 9</item>
-       <item>Meme 10</item>
+       <item>Deep Fried Chicken</item>
+       <item>Steam Crab Cake</item>
+       <item>Pepper Steak</item>
+       <item>Strawberry Yogurt</item>
+       <item>Vegan Daylight</item>
+
    </string-array>
 
     <string-array name = "descriptions">
@@ -43,15 +39,7 @@
         <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</item>
         <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</item>
         <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</item>
-        <item>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</item>
     </string-array>
-
-
-
 
 
 </resources>
