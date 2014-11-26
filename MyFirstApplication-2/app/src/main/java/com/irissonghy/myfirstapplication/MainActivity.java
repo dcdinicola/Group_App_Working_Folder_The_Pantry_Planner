@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 
 public class MainActivity extends Activity {
     ListView SelectedIngredientsListView;
@@ -67,16 +65,21 @@ public class MainActivity extends Activity {
         Intent intent = new Intent(this, PantryPopupActivity.class);
         startActivity(intent);
 
-
     }
 
     //Upon returning to Main Activity, show list of items selected (the below code is not working)
 
- public void selectedIngredientsListView(View view) {
-    ArrayList<String> ingredients= new ArrayList<String>();
-    ingredients =getIntent().getExtras().getStringArrayList("string");
 
- }
+    //  public void setSelectedIngredientsListView(ListView selectedIngredientsListView) {
+    //    Bundle b = getIntent().getExtras();
+
+    //    if(b!=null){
+    //        String n =(String) b.get("ingredients");
+    //        selectedIngredientsListView.setText(n);
+    //       ArrayList<String> ingredients= new ArrayList<String>();
+    //        ingredients =getIntent().getExtras().getStringArrayList("string");
+
+// }
 
 
             // new intent to open AddRecipeActivity from main

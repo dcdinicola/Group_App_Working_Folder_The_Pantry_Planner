@@ -17,7 +17,7 @@ import static com.irissonghy.myfirstapplication.R.layout.activity_pantry_popup;
 
 public class PantryPopupActivity extends Activity{
       ListView PantrylistView;
-      ListView SelectedPantrylistView;
+     public static ListView SelectedPantrylistView;
       ArrayList selectedIngredientsArray;
 
 // provide initial values for ingredients (auto-fill the pantry)
@@ -38,7 +38,7 @@ public class PantryPopupActivity extends Activity{
           super.onCreate(savedInstanceState);
           setContentView(activity_pantry_popup);
           Intent intent = getIntent();
-          SelectedPantrylistView = (ListView) findViewById(R.id.SelectedPantryListView);
+
           PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
 // build ingredients string into an ArrayList in order to pass to main activity
@@ -47,7 +47,10 @@ public class PantryPopupActivity extends Activity{
           for (String i : ingredients) {
               ingredientsArray.add(i);
           }
-
+// add a boolean expression where if Add New Item button is clicked, calls an edit text for the user
+// to add to selectedIngredientsArray
+          // THIS IS SIMILAR TO THE TEAM EXAMPLE!
+     //     public Boolean setOnClickItemListener
           selectedIngredientsArray = new ArrayList<String>();
 
 
@@ -56,7 +59,8 @@ public class PantryPopupActivity extends Activity{
           final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
                   android.R.layout.simple_list_item_1, selectedIngredientsArray);
 
-   // sets SelectedPantrylistView (still working on moving that back to mainActivity)
+   // sets SelectedPantrylistView
+
           SelectedPantrylistView.setAdapter(selectedIngredientsAdapter);
           SelectedPantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -104,14 +108,23 @@ public class PantryPopupActivity extends Activity{
           );
       }
     // upon select, send selected ingredients back to main activity
+
     // upon cancel, returns to main activity with no selected ingredients
 
-
-public void goToMainActivity(View view) {
-   Intent intent = new Intent(this, MainActivity.class);
-   intent.putStringArrayListExtra("string", selectedIngredientsArray);
-   startActivity (intent);
+ public void goToMainActivity(View view) {
+     Intent intent = new Intent (this, MainActivity.class);
+     intent.putStringArrayListExtra("string", selectedIngredientsArray);
+     startActivity(intent);
  }
+
+ // if we decide to remove main activity
+ //
+ // public void goToLookUpRecipeActivity(View view) {
+ //
+ //     Intent intent = new Intent(this, LookUpRecipeActivity.class);
+ //     intent.putStringArrayListExtra("string", selectedIngredientsArray);
+ //     startActivity (intent);
+ //}
 
 
     @Override
