@@ -90,6 +90,7 @@ public class RecipeDetailActivityTwo extends Activity {
     {
         TextView review = (TextView) findViewById(R.id.reviewTextArea);
         review.setText(reviewText);
+        review.setBackgroundColor(0xFFF0F0F0);
     }
 
     public void showDialog(View v){
