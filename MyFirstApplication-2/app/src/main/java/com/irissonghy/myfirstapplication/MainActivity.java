@@ -8,12 +8,14 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 
 public class MainActivity extends Activity {
+    ListView SelectedIngredientsListView;
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -56,7 +58,7 @@ public class MainActivity extends Activity {
         String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);//get the intent and extract the username delivered by LoginActivity
         TextView userName = (TextView) findViewById(R.id.mainHeader);//set the text of textViewUsername on main page
         userName.setText("Select Food Material From " + displayName +"'s Pantry");
-        ArrayList<String> selectedArray = null;
+
 
     }
     // calls Pantry popup when user clicks "Select from Pantry"
@@ -64,9 +66,18 @@ public class MainActivity extends Activity {
 
         Intent intent = new Intent(this, PantryPopupActivity.class);
         startActivity(intent);
-        ArrayList<String> selectedArray = getIntent().getStringArrayListExtra("strings");
+
 
     }
+
+    //Upon returning to Main Activity, show list of items selected (the below code is not working)
+
+ public void selectedIngredientsListView(View view) {
+    ArrayList<String> ingredients= new ArrayList<String>();
+    ingredients =getIntent().getExtras().getStringArrayList("string");
+
+ }
+
 
             // new intent to open AddRecipeActivity from main
             public void goToAddRecipe(View view) {

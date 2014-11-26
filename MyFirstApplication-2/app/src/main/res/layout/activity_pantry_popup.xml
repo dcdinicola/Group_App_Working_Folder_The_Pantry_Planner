@@ -95,7 +95,7 @@
         android:layout_width="350dp"
         android:layout_height="20dp"
         android:id="@+id/space2"
-        android:layout_above="@+id/SelectedPantryList"
+        android:layout_above="@+id/SelectedPantryListView"
         android:layout_toRightOf="@+id/linearLayout"
         android:layout_toEndOf="@+id/linearLayout" />
 
@@ -103,7 +103,7 @@
         android:layout_width="350dp"
         android:layout_height="180dp"
         android:hint="Selected Items"
-        android:id="@+id/SelectedPantryList"
+        android:id="@+id/SelectedPantryListView"
         android:layout_gravity="center_horizontal"
         android:paddingLeft="20dp"
         android:paddingRight="5dp"

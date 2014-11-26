@@ -3,7 +3,6 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -19,9 +18,9 @@ import static com.irissonghy.myfirstapplication.R.layout.activity_pantry_popup;
 public class PantryPopupActivity extends Activity{
       ListView PantrylistView;
       ListView SelectedPantrylistView;
-private ArrayList selectedIngredientsArray;
+      ArrayList selectedIngredientsArray;
 
-
+// provide initial values for ingredients (auto-fill the pantry)
       String[] ingredients= {
             "Carrots", "Celery", "Onions", "Potatoes", "Pot Roast", "Ground Beef", "Chicken", "Chicken Breast", "Salami",
             "Prosciutto", "Beef","Pork", "Salmon","Shrimp", "Tilapia", "Turkey Breast", "Bacon",
@@ -32,23 +31,32 @@ private ArrayList selectedIngredientsArray;
             "Condensed Milk", "Jalapeno", "Red Pepper", "Green Pepper", "Breadcrumbs", "Lemons", "Limes", "Tomato",
             "Avocado", "Tortillas", "Butter", "Linguine"};
 
+// two list views.  PantrylistView consists of the sum of items in pantry
+// SelectedPantrylistView consists of those items selected by user
+
       protected void onCreate (Bundle savedInstanceState) {
           super.onCreate(savedInstanceState);
           setContentView(activity_pantry_popup);
           Intent intent = getIntent();
-          SelectedPantrylistView = (ListView) findViewById(R.id.SelectedPantryList);
+          SelectedPantrylistView = (ListView) findViewById(R.id.SelectedPantryListView);
           PantrylistView = (ListView) findViewById(R.id.PantrylistView);
+
+// build ingredients string into an ArrayList in order to pass to main activity
 
           final ArrayList<String> ingredientsArray = new ArrayList<String>();
           for (String i : ingredients) {
               ingredientsArray.add(i);
           }
+
           selectedIngredientsArray = new ArrayList<String>();
+
 
           final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                   android.R.layout.simple_list_item_1, ingredientsArray);
           final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
                   android.R.layout.simple_list_item_1, selectedIngredientsArray);
+
+   // sets SelectedPantrylistView (still working on moving that back to mainActivity)
           SelectedPantrylistView.setAdapter(selectedIngredientsAdapter);
           SelectedPantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -60,7 +68,6 @@ private ArrayList selectedIngredientsArray;
                  .withEndAction(new Runnable() {
                   @Override
                    public void run() {
-                        selectedIngredientsArray.remove(item);
                         selectedIngredientsAdapter.notifyDataSetChanged();
                         ingredientsArray.add(item);
                         adapter.notifyDataSetChanged();
@@ -69,7 +76,10 @@ private ArrayList selectedIngredientsArray;
                                     });
                                }
                        }
+
           );
+
+   // changes PantrylistView (removes selected items)
           PantrylistView.setAdapter(adapter);
           PantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
@@ -88,32 +98,21 @@ private ArrayList selectedIngredientsArray;
                                   view.setAlpha(1);
                               }
                           });
+
               }
       }
-          );}
-
-
-    public class MyCookingAdapter extends ArrayAdapter<String> {
-
-    String[] ingredients;
-
-    public MyCookingAdapter(Context context, String[] veggies) {
-        super(context, 0, veggies); // runs the Array Adapter constructor
-        this.ingredients  = veggies;
-    }
-
-}
-
+          );
+      }
     // upon select, send selected ingredients back to main activity
-    public void goToMainActivity(View view) {
-    Intent intent = new Intent(this, MainActivity.class);
-    intent.putStringArrayListExtra("strings", selectedIngredientsArray);
-    startActivity(intent);
-
-    // I will pass back selectedIngredientsArray
-    }
-
     // upon cancel, returns to main activity with no selected ingredients
+
+
+public void goToMainActivity(View view) {
+   Intent intent = new Intent(this, MainActivity.class);
+   intent.putStringArrayListExtra("string", selectedIngredientsArray);
+   startActivity (intent);
+ }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
