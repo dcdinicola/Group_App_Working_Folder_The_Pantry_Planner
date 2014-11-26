@@ -83,19 +83,6 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DIFFICULTY"
-        android:id="@+id/textView2"
-        android:textSize="16sp"
-        android:layout_below="@+id/recipeName"
-        android:layout_alignLeft="@+id/recipeName"
-        android:layout_alignStart="@+id/recipeName"
-        android:layout_marginTop="35dp"
-        android:textColor="#555"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="INGREDIENTS"
         android:id="@+id/textView3"
         android:textStyle="bold"

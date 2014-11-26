@@ -14,9 +14,6 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class RecipeDetailActivity extends Activity {
 
     //banner images for detail page
@@ -154,7 +151,6 @@ public class RecipeDetailActivity extends Activity {
             Intent intent=new Intent(this,ProfileActivity.class);
             intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
-
             return true;
         }
         else if (id == R.id.activity_favorites) {

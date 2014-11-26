@@ -3,6 +3,7 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -106,6 +107,12 @@ public class PantryPopupActivity extends Activity{
     // upon select, send selected ingredients back to main activity
     // upon cancel, returns to main activity with no selected ingredients
 
+public void showDialog (View v) {
+    //review dialog
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setTitle("Enter the name of your new item:");
+
+}
 
 public void goToMainActivity(View view) {
    Intent intent = new Intent(this, MainActivity.class);
@@ -134,8 +141,8 @@ public void goToMainActivity(View view) {
         else if (id == R.id.activity_profile) {
             // launch intent to go to user profile
             Intent intent=new Intent(this,ProfileActivity.class);
+            intent.putExtra("id", SharedPreferencesUtility.getString(this, "loginName"));
             startActivity (intent);
-
             return true;
         }
         else if (id == R.id.activity_favorites) {
