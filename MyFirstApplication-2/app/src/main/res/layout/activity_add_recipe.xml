@@ -57,7 +57,7 @@
         android:layout_below="@+id/textViewAddRecipe" />
     <Button
         android:layout_width="36dp"
-        android:layout_height ="36dp"
+        android:layout_height = "36dp"
         android:background="@drawable/ic_camera"
         android:id="@+id/camButton"
         android:layout_alignBottom="@+id/imageView2"
@@ -79,19 +79,6 @@
         android:layout_marginLeft="20dp"
         android:layout_below="@+id/textViewAddRecipe"
         android:hint="Recipe Name" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DIFFICULTY"
-        android:id="@+id/textView2"
-        android:textSize="16sp"
-        android:layout_below="@+id/recipeName"
-        android:layout_alignLeft="@+id/recipeName"
-        android:layout_alignStart="@+id/recipeName"
-        android:layout_marginTop="35dp"
-        android:textColor="#555"
-        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"

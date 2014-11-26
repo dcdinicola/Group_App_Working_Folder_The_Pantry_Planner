@@ -26,6 +26,10 @@ public class RecipeDetailActivityTwo extends Activity {
 
     List<Recipe> myProfItems;
 
+    int recipeId;
+    int profileId;
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_detail);
@@ -118,6 +122,94 @@ public class RecipeDetailActivityTwo extends Activity {
 
     }
 
+
+    public void deleteRecipeDialog() {
+
+        Intent intent = getIntent();
+
+
+        String recipeMessage = intent.getStringExtra(AddRecipeActivity.EXTRA_MESSAGE);
+        String profileMessage = intent.getStringExtra(ProfileActivity.EXTRA_MESSAGE);
+
+
+        if (recipeMessage != null) {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(RecipeDetailActivityTwo.this);
+
+            //dialog title
+            alertDialog.setTitle("Delete Item");
+
+            //dialog content
+            alertDialog.setMessage("Are you sure you want to delete this item?");
+
+            //"Yes" Button
+            alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    deleteRecipeItem();
+                }
+            });
+
+            // cancel
+            alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            // Showing Alert Message
+            alertDialog.show();
+        } else if (profileMessage != null) {
+            AlertDialog.Builder alertDialog = new AlertDialog.Builder(RecipeDetailActivityTwo.this);
+
+            //dialog title
+            alertDialog.setTitle("Delete Item");
+
+            //dialog content
+            alertDialog.setMessage("Are you sure you want to delete this item?");
+
+            //"Yes" Button
+            alertDialog.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    deleteProfileItem();
+                }
+            });
+
+            // cancel
+            alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
+                }
+            });
+
+            // Showing Alert Message
+            alertDialog.show();
+            }
+        }
+
+
+
+    public void deleteRecipeItem() {
+        myProfItems.remove(recipeId);
+        SharedPreferencesUtility.putRecipeList(this,"recipes", myProfItems);
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+
+        finish();
+    }
+
+    public void deleteProfileItem() {
+        myProfItems.remove(profileId);
+        SharedPreferencesUtility.putRecipeList(this,"recipes", myProfItems);
+
+        Intent intent = new Intent(this, ProfileActivity.class);
+        startActivity(intent);
+
+        finish();
+    }
+
+    public void deleteItem(View view) {
+        deleteRecipeDialog();
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
