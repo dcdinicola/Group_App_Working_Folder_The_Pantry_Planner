@@ -11,7 +11,7 @@
         android:layout_width="348dp"
         android:layout_height="wrap_content"
         android:text="This page allows you to update the ingredients in your pantry, update quantities of items in your pantry, and choose from those items in order to prepare a delicious meal."
-        android:id="@+id/recipeDetailDirections"
+        android:id="@+id/pantryDescription"
         android:layout_gravity="right"
         android:textColor="#555"
         android:paddingLeft="5dp"

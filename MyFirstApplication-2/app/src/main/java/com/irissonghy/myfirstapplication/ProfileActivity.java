@@ -90,7 +90,8 @@ public class ProfileActivity extends Activity {
         if(!userName.equals(SharedPreferencesUtility.getString(this, "loginName"))) {
             post_view.setVisibility(View.INVISIBLE);
             listView.setVisibility(View.INVISIBLE);
-
+            TextView profile_about = (TextView) findViewById(R.id.profileAbout);
+            profile_about.setText("I love cooking!");
         }
 
     }

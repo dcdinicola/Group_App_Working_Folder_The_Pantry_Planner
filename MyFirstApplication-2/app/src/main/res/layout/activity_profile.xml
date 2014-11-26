@@ -37,13 +37,13 @@
         android:textStyle="normal"
         android:gravity="center_horizontal"
         android:layout_below="@+id/imageView2"
-        android:layout_alignLeft="@+id/recipeDetailDirections"
-        android:layout_alignStart="@+id/recipeDetailDirections" />
+        android:layout_alignLeft="@+id/profileAbout"
+        android:layout_alignStart="@+id/profileAbout" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/recipeDetailDirections"
+        android:id="@+id/profileAbout"
         android:text="I'm a foodie."
         android:textColor="#999"
         android:layout_below="@+id/recipeName"
@@ -55,9 +55,9 @@
     <Space
         android:layout_width="fill_parent"
         android:layout_height="20dp"
-        android:layout_below="@+id/recipeDetailDirections"
-        android:layout_alignLeft="@+id/recipeDetailDirections"
-        android:layout_alignStart="@+id/recipeDetailDirections"
+        android:layout_below="@+id/profileAbout"
+        android:layout_alignLeft="@+id/profileAbout"
+        android:layout_alignStart="@+id/profileAbout"
         android:id="@+id/space2" />
 
     <TextView
@@ -66,7 +66,7 @@
         android:text="MY POSTS"
         android:id="@+id/textView3"
         android:textStyle="bold"
-        android:textSize="21sp"
+        android:textSize="18sp"
         android:layout_below="@+id/space2"
         android:layout_alignLeft="@+id/space2"
         android:layout_alignStart="@+id/space2"
@@ -84,6 +84,7 @@
         <ListView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:id="@+id/profileListViewItem"
             android:layout_below="@+id/textView3"
             android:background="#fff"

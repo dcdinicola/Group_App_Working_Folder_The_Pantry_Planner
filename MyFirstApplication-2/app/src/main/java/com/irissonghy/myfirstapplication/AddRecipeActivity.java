@@ -2,14 +2,10 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.MediaStore;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -71,7 +67,7 @@ public class AddRecipeActivity extends Activity {
 
         EditText recipeName = (EditText) findViewById(R.id.recipeName);
         EditText recipeIngredients = (EditText) findViewById(R.id.recipeDetailIngredients);
-        EditText recipeDirections = (EditText) findViewById(R.id.recipeDetailDirections);
+        EditText recipeDirections = (EditText) findViewById(R.id.profileAbout);
 
         recipes.add(new Recipe(recipeName.getText().toString(), recipeIngredients.getText().toString(), recipeDirections.getText().toString() ));
 
