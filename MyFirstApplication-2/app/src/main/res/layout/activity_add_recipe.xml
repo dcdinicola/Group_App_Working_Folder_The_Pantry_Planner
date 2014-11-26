@@ -57,7 +57,7 @@
         android:layout_below="@+id/textViewAddRecipe" />
     <Button
         android:layout_width="36dp"
-        android:layout_height ="36dp"
+        android:layout_height = "36dp"
         android:background="@drawable/ic_camera"
         android:id="@+id/camButton"
         android:layout_alignBottom="@+id/imageView2"
