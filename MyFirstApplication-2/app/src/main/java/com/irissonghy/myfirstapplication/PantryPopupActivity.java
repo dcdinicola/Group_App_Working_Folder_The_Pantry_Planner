@@ -3,7 +3,6 @@
 package com.irissonghy.myfirstapplication;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 import java.util.ArrayList;
 
 import static com.irissonghy.myfirstapplication.R.layout.activity_pantry_popup;
@@ -110,16 +110,15 @@ public class PantryPopupActivity extends Activity{
       }
     // upon select, send selected ingredients back to main activity
 
-<<<<<<< HEAD
-    // upon cancel, returns to main activity with no selected ingredients
-=======
-public void showDialog (View v) {
-    //review dialog
-    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-    builder.setTitle("Enter the name of your new item:");
 
-}
->>>>>>> FETCH_HEAD
+    // upon cancel, returns to main activity with no selected ingredients
+
+//public void showDialog (View v) {
+    //review dialog
+  //  AlertDialog.Builder builder = new AlertDialog.Builder(this);
+ //   builder.setTitle("Enter the name of your new item:");
+
+//}
 
  public void goToMainActivity(View view) {
      Intent intent = new Intent (this, MainActivity.class);
