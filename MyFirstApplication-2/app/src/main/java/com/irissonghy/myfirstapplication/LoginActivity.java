@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class LoginActivity extends Activity {
     }
 
     public void logIn(View view) {
-        Intent loginIntent = new Intent(this, PantryPopupActivity.class);
+        Intent loginIntent = new Intent(this, MainActivity.class);
         EditText userName = (EditText) findViewById(R.id.editTextName);
         String displayName = userName.getText().toString();
         loginIntent.putExtra(EXTRA_MESSAGE, displayName);

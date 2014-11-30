@@ -52,13 +52,6 @@
                     android:numStars="1"
                     android:rating="0.0" />
 
-                <ImageView
-                    android:layout_width="65dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/deleteItem"
-                    android:src="@drawable/trash_bin"
-                    android:layout_marginLeft="120dp"
-                    android:onClick="deleteItem"/>
             </LinearLayout>
         <LinearLayout
             android:orientation="horizontal"

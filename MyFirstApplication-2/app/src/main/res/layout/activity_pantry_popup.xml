@@ -81,7 +81,9 @@
         android:layout_toEndOf="@+id/linearLayout"
         android:layout_below="@+id/PantrylistView"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
     <ListView
         android:layout_width="350dp"
@@ -116,7 +118,8 @@
         android:textColor="#FFF"
         android:layout_toStartOf="@+id/textView"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/textView" />
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_marginRight="10dp" />
 
     <Button
         android:layout_width="70dp"

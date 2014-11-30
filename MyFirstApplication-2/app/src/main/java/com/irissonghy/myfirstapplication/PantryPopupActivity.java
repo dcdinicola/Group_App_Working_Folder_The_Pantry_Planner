@@ -52,6 +52,10 @@ public class PantryPopupActivity extends Activity{
 
           PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
+
+
+
+
 // build ingredients string into an ArrayList in order to pass to main activity
 
           final ArrayList<String> ingredientsArray = new ArrayList<String>();
@@ -130,11 +134,19 @@ public class PantryPopupActivity extends Activity{
 
 //}
 
+
  public void goToLookUpRecipeActivity(View view) {
      Intent intent = new Intent (this,LookUpRecipeActivity.class);
      intent.putStringArrayListExtra("string", selectedIngredientsArray);
      startActivity(intent);
  }
+
+// public void goToMainActivity(View view) {
+//     Intent intent = new Intent (this, MainActivity.class);
+//     intent.putStringArrayListExtra("string", selectedIngredientsArray);
+//     startActivity(intent);
+// }
+
 
  // if we decide to remove main activity
  //
