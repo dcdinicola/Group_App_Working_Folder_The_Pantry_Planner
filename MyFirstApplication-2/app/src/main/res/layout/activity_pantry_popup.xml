@@ -24,26 +24,7 @@
         android:layout_alignParentStart="true"
         android:textAlignment="center" />
 
-    <!--pseudocode:  this button will allow you to add items to your pantry
-    Clicking on it will allow you to add an ingredient to string ingredients, which will display
-    on the bottom of the list-->
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add New Item"
-        android:layout_alignParentTop="true"
-        android:id="@+id/buttonaddToPantry"
-        android:layout_centerHorizontal="true"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:layout_gravity="top"
-        android:onClick="goToPantryPopup"
-        android:background="#ff6c54"
-        android:textColor="#FFF"
-        android:layout_marginTop="80dp" />
+
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -85,21 +66,22 @@
         android:layout_height="240dp"
         android:id="@+id/PantrylistView"
         android:textColor="#ffffff"
-        android:layout_toRightOf="@+id/linearLayout"
         android:layout_toEndOf="@+id/linearLayout"
-        android:layout_alignTop="@+id/space"
-        android:layout_marginTop="15dp"
+        android:layout_below="@+id/pantryDescription"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_above="@+id/imageView_recipeImage2" />
+        android:layout_alignParentEnd="true" />
+
 
     <Space
         android:layout_width="350dp"
         android:layout_height="20dp"
         android:id="@+id/space2"
-        android:layout_above="@+id/SelectedPantryListView"
-        android:layout_toRightOf="@+id/linearLayout"
-        android:layout_toEndOf="@+id/linearLayout" />
+        android:layout_toEndOf="@+id/linearLayout"
+        android:layout_below="@+id/PantrylistView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <ListView
         android:layout_width="350dp"
@@ -115,38 +97,62 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/textView" />
 
+    <!--pseudocode:  this button will allow you to add items to your pantry
+ Clicking on it will allow you to add an ingredient to string ingredients, which will display
+ on the bottom of the list-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Item"
+        android:id="@+id/buttonaddToPantry"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_gravity="top"
+        android:onClick="goToPantryPopup"
+        android:background="#ff6c54"
+        android:textColor="#FFF"
+        android:layout_toStartOf="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/textView" />
+
     <Button
         android:layout_width="70dp"
         android:layout_height="wrap_content"
-        android:text="Select"
+        android:text="Look Up Recipe"
         android:id="@+id/button2"
         android:textSize="21sp"
         android:textStyle="bold"
         android:layout_gravity="center"
         android:textColor="#FFF"
         android:background="#ff6c54"
-        android:layout_alignParentBottom="true"
         android:onClick="goToMainActivity"
-        android:layout_alignLeft="@+id/buttonaddToPantry"
-        android:layout_alignStart="@+id/buttonaddToPantry" />
+        android:layout_toEndOf="@+id/textView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignTop="@+id/buttonaddToPantry"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_alignRight="@+id/space2"
+        android:layout_alignEnd="@+id/space2" />
 
-    <Button
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:text="Cancel"
-        android:id="@+id/button4"
-        android:layout_toEndOf="@+id/button2"
-        android:textSize="21sp"
-        android:textStyle="bold"
-        android:gravity="center|center_vertical|fill_vertical"
-        android:textColor="#FFF"
-        android:background="#ff6c54"
-        android:layout_gravity="bottom"
-        android:onClick="goToMainActivity"
-        android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/button2"
-        android:layout_alignTop="@+id/button2"
-        android:layout_marginLeft="10dp" />
+    <!--<Button-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="30dp"-->
+        <!--android:text="Cancel"-->
+        <!--android:id="@+id/button4"-->
+        <!--android:layout_toEndOf="@+id/textView"-->
+        <!--android:textSize="19sp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:gravity="center|center_vertical|fill_vertical"-->
+        <!--android:textColor="#FFF"-->
+        <!--android:background="#ff6c54"-->
+        <!--android:layout_gravity="bottom"-->
+        <!--android:onClick="goToMainActivity"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_toLeftOf="@+id/button2"-->
+        <!--android:layout_toStartOf="@+id/button2" />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -155,9 +161,8 @@
         android:id="@+id/textView"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_alignTop="@+id/imageView_recipeImage2"
-        android:layout_below="@+id/PantrylistView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/space2" />
 
     <!-- <NumberPicker
             android:layout_width="wrap_content"
