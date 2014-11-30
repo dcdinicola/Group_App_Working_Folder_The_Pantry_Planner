@@ -2,7 +2,7 @@
 
 //package com.irissonghy.myfirstapplication;
 //
-//import android.app.Activity;
+ //import android.app.Activity;
 //import android.content.Intent;
 //import android.os.Bundle;
 //import android.view.Menu;
@@ -53,8 +53,10 @@
 //        super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 //        Intent mainIntent = getIntent();
-//        String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);//get the intent and extract the username delivered by LoginActivity
-//        TextView userName = (TextView) findViewById(R.id.mainHeader);//set the text of textViewUsername on main page
+//        String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
+// get the intent and extract the username delivered by LoginActivity
+//        TextView userName = (TextView) findViewById(R.id.mainHeader);
+// set the text of textViewUsername on main page
 //        userName.setText("Select Food Material From " + displayName +"'s Pantry");
 //
 //

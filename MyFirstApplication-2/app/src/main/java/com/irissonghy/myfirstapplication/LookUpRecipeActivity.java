@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Arrays;
 
 
 public class LookUpRecipeActivity extends Activity {
@@ -57,7 +56,7 @@ public class LookUpRecipeActivity extends Activity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.activity_mainpage) {
-            Intent intent=new Intent(this,MainActivity.class);
+            Intent intent=new Intent(this,PantryPopupActivity.class);
             startActivity (intent);
             return true;
         }

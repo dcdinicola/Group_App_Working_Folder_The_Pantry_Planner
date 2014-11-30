@@ -102,7 +102,7 @@ public class AddRecipeActivity extends Activity {
 
         int id = item.getItemId();
         if (id == R.id.activity_mainpage) {
-            Intent intent=new Intent(this,MainActivity.class);
+            Intent intent=new Intent(this,PantryPopupActivity.class);
             startActivity (intent);
             return true;
         }

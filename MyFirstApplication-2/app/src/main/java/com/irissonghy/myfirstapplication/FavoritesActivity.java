@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -85,7 +84,7 @@ public class FavoritesActivity extends Activity {
 
         int id = item.getItemId();
         if (id == R.id.activity_mainpage) {
-            Intent intent=new Intent(this,MainActivity.class);
+            Intent intent=new Intent(this,PantryPopupActivity.class);
             startActivity (intent);
             return true;
         }
