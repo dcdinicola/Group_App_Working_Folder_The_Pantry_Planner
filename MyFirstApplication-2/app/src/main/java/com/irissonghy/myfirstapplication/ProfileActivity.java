@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -86,6 +87,8 @@ public class ProfileActivity extends Activity {
             post_view.setText("His/Her Posts:");
             TextView profile_about = (TextView) findViewById(R.id.profileAbout);
             profile_about.setText("I love cooking!");
+            ImageView avatar = (ImageView) findViewById(R.id.imageView2);
+            avatar.setImageResource(R.drawable.avatar_tommy);
         }
 
     }

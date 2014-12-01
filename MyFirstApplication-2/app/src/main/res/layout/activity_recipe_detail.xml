@@ -63,7 +63,7 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:id="@+id/recipePosterAvatar"
-                android:src = "@drawable/avatar"
+                android:src = "@drawable/avatar_tommy"
                 android:layout_marginTop="3dp" />
             <TextView
                 android:layout_width="wrap_content"
@@ -71,8 +71,8 @@
                 android:text="Tommy"
                 android:id="@+id/recipePoster"
                 android:textColor="#555"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="7dp"
                 android:textSize="16sp"
                 android:onClick = "userNameOnClick"/>
         </LinearLayout>
