@@ -20,6 +20,7 @@ public class PantryPopupActivity extends Activity {
       ListView PantrylistView;
       ListView SelectedPantrylistView;
       ArrayList selectedIngredientsArray;
+     // AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
 // provide initial values for ingredients (auto-fill the pantry)
       String[] ingredients= {
@@ -39,17 +40,9 @@ public class PantryPopupActivity extends Activity {
       setContentView(R.layout.activity_pantry_popup);
 
 
+
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
- //   protected void onCreate(Bundle savedInstanceState) {
- //       super.onCreate(savedInstanceState);
- //       setContentView(R.layout.activity_pantry_popup);
- //       Intent mainIntent = getIntent();
- //       String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
-// get the intent and extract the username delivered by LoginActivity
- //       TextView userName = (TextView) findViewById(R.id.mainHeader);
-// set the text of textViewUsername on main page
- //       userName.setText("Select Food Material From " + displayName +"'s Pantry");
 
 // two list views.  PantrylistView consists of the sum of items in pantry
 // SelectedPantrylistView consists of those items selected by user
@@ -126,7 +119,8 @@ public class PantryPopupActivity extends Activity {
       }
           );
       }
-    //** calls a method to add an item to an existing array ** //
+    //** calls a method to add an item to an existing array ** /
+
 //    public void addItem()
 //    {
 //        ArrayList<String> ingredientsArray.add(itemText);
@@ -195,7 +189,7 @@ public class PantryPopupActivity extends Activity {
 
         int id = item.getItemId();
         if (id == R.id.activity_mainpage) {
-            Intent intent=new Intent(this,PantryPopupActivity.class);
+            Intent intent=new Intent(this,MainActivity.class);
             startActivity (intent);
             return true;
         }
