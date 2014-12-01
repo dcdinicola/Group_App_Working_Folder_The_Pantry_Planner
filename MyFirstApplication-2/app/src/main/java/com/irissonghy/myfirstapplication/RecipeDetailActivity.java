@@ -21,6 +21,22 @@ public class RecipeDetailActivity extends Activity {
 
     int[] imgResultsDetail = {R.drawable.result1_banner,R.drawable.result2_banner,R.drawable.result3_banner,R.drawable.result4_banner,R.drawable.result5_banner,R.drawable.result6_banner};
 
+    String[] lookUpDescription = {"This cheddar pudding is very doable as our No.1 recommend home-cook recipe.",
+            "This cheese crackers recipe is loved by moms and housewives with kids who get hungry before dinner.",
+            "This veggie soup is uploaded by a vegetarian user who is a Yoga teacher and college professor.",
+            "Do you like potato dish? Come and try this simple recipe. All you need to do is to prepare some potatoes!",
+            "Never been to Thailand? Never mind, this Thai flavor rice will take you there!",
+            "This roasted chicken will not disappoint you and your family. Kids love it a lot!"
+    };
+
+    String[] lookUpIngredients = {"cheddar cheese, pudding powder,water,eggs, sugar,lemon,",
+            "flour,eggs, salt, sugar, black pepper, food colouring",
+            "tomato, potato, cabbage, spice, salt, black pepper, white pepper, red chili",
+            "potato, water, salt, sugar, flour, red beans, spice, hot pepper",
+            "rice, water, curry powder, sugar, milk",
+            "chicken, barbecue sauce, tomato, broccoli, salt, sugar"
+    };
+
     public String reviewText = "";
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
 
@@ -46,6 +62,11 @@ public class RecipeDetailActivity extends Activity {
             int position1 = Integer.parseInt(mixMsg1[1]);
             ImageView imgView1 = (ImageView) findViewById(R.id.recipeImage);
             imgView1.setImageResource(imgResultsDetail[position1]);
+
+            TextView ingView1 = (TextView) findViewById(R.id.ingredientsTextArea);
+            ingView1.setText(lookUpDescription[position1]);
+            TextView desView = (TextView) findViewById(R.id.directionsTextArea);
+            desView.setText(lookUpIngredients[position1]);
 
         } else if (messageFav != null) {
 

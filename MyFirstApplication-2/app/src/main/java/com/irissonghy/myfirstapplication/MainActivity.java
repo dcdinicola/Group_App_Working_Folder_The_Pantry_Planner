@@ -21,7 +21,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Intent mainIntent = getIntent();
         String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);//get the intent and extract the username delivered by LoginActivity
         TextView userName = (TextView) findViewById(R.id.mainHeader);//set the text of textViewUsername on main page

@@ -91,7 +91,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="60dp"
-            android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do."
+            android:text=""
             android:id = "@+id/ingredientsTextArea"
             android:background="#f0f0f0"
             android:layout_marginLeft="15dp"

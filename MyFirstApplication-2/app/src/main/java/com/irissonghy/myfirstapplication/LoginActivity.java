@@ -43,27 +43,18 @@ public class LoginActivity extends Activity {
 
     public void logIn(View view) {
         Intent loginIntent = new Intent(this, MainActivity.class);
+
         EditText userName = (EditText) findViewById(R.id.editTextName);
         String displayName = userName.getText().toString();
         loginIntent.putExtra(EXTRA_MESSAGE, displayName);
+
         startActivity(loginIntent);
+
         SharedPreferencesUtility.putString(this, "loginName", displayName);
     }
-    /*private void initData() {
-    List<String> favsList = new ArrayList<String>();
-    favsList.add("Chicken Teriyaki");
-    favsList.add("Duck Ramen");
-    favsList.add("Chicken & Cheddar Sandwich");
-    favsList.add("Cheesecake");
-    favsList.add("Curry Rice");
-    SharedPreferencesUtility.putStringList(this, "favs", favsList);
-
-    }*/
-
 
     private void initRecipeData() {
         List<Recipe> myProfItems = new ArrayList<Recipe>();
-
 
         myProfItems.add(new Recipe("Chicken Teriyaki", "chicken", "marinate the chicken in the teriyaki sauce"));
         myProfItems.add(new Recipe("Duck Ramen", "duck", "heat the duck with the ramen noodles"));
