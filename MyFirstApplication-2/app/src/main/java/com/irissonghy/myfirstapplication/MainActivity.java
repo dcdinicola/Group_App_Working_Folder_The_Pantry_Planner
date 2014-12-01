@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-//    ListView SelectedIngredientsListView;
+
 
 
     public final static String EXTRA_MESSAGE = "com.irissonghy.myfirstapplication.MESSAGE";
@@ -31,8 +31,8 @@ public class MainActivity extends Activity {
 
     // calls Pantry popup when user clicks "Go To My Pantry"
         public void goToPantryPopup (View view) {
-            Intent popupintent = new Intent(this, PantryPopupActivity.class);
-            startActivity(popupintent);
+            Intent popupIntent = new Intent(this, PantryPopupActivity.class);
+            startActivity(popupIntent);
 
     }
 

@@ -30,10 +30,12 @@ public class PantryPopupActivity extends Activity {
             "Condensed Milk", "Jalapeno", "Red Pepper", "Green Pepper", "Breadcrumbs", "Lemons", "Limes", "Tomato",
             "Avocado", "Tortillas", "Butter", "Linguine"};
 
+    public String itemText = "";
+
   protected void onCreate (Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_pantry_popup);
-      Intent mainIntent=getIntent();
+      Intent popupIntent = getIntent();
 
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
@@ -128,21 +130,21 @@ public class PantryPopupActivity extends Activity {
 
 //***** SHOW A DIALOGUE BOX to add an item to the PantryListView *****
 
-//public void showDialog (View v) {
-//    item dialog;
+//public void showDialog2 (View v) {
 //    AlertDialog.Builder builder = new AlertDialog.Builder(this);
 //    builder.setTitle("Enter the name of your new item:");
 //    final EditText inputBox = new EditText(this);
 //    builder.setView(inputBox);
 //    builder.setCancelable(true);
-//    builder.setPositiveButton("Add Item");
-//                new DialogInterface.OnClickListener()
+//    builder.setPositiveButton("Add Item",
+//            (dialogInterface, id) -> {
+//                itemText = inputBox.getText().toString();
+//
+//                ArrayList<String> ingredientsArray.add(itemText);
+//            });
 //                {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int id) {
-//                        reviewText = inputBox.getText().toString();
-//                        postReview();
-//}
+
+//
 
 //public void addItemToPantry()
 //{
@@ -150,17 +152,7 @@ public class PantryPopupActivity extends Activity {
 //    review.setText(itemText);
 //    review.setBackgroundColor(0xFFF0F0F0);
 //}
-//
-//    public void showDialog(View v){
-//        //review dialog
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Please write down your review:");
-//        //create input box for users to input review
-//        final EditText inputBox = new EditText(this);
-//        builder.setView(inputBox);
-//
 
-//                    }
 //                });
 //        builder.setNegativeButton("Cancel",
 //                new DialogInterface.OnClickListener()
@@ -171,7 +163,9 @@ public class PantryPopupActivity extends Activity {
 //                });
 //        builder.show();
 //
-//    }
+//                }
+//                 }
+
 
  public void goToLookupRecipe(View view) {
      Intent intent = new Intent (this,LookUpRecipeActivity.class);

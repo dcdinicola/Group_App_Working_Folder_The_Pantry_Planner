@@ -1,54 +1,33 @@
 <!-- Dan DiNicola -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.irissonghy.myfirstapplication.PantryPopupActivity"
     android:id="@+id/pantryPopupRelative"
     android:background="#fff">
 
-
+<!-- Provides text instructions to the user -->
     <TextView
-        android:layout_width="348dp"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
         android:text="Scroll down to select items from your pantry.  Or you can add items below."
         android:id="@+id/pantryDescription"
-        android:layout_gravity="right"
-        android:textColor="#555"
+        android:layout_alignParentTop="true"
         android:textSize="16sp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:layout_marginTop="10dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textAlignment="center" />
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentBottom="false"
+        android:layout_alignParentRight="false"
+        android:layout_alignWithParentIfMissing="false"
+        android:gravity="center"
+        android:layout_alignParentEnd="false"
+        android:textColor="#fff"
+        android:background="#bdbdbd"
+        android:paddingLeft="20dp" />
 
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout">
-
-    </LinearLayout>
-
-
-      <ImageView
-          android:layout_width="350dp"
-          android:layout_height="80dp"
-          android:id="@+id/imageView_recipeImage2"
-          android:layout_gravity="left"
-          android:background="#b2ff65"
-          android:layout_toEndOf="@+id/linearLayout"
-          android:layout_alignParentBottom="true"
-          android:layout_alignParentLeft="true"
-          android:layout_alignParentStart="true"
-          android:layout_marginBottom="77dp"
-          android:src="#ffffffff"
-          android:layout_alignParentRight="true"
-          android:layout_alignParentEnd="true" />
 
     <Space
         android:layout_width="fill_parent"
@@ -58,8 +37,7 @@
         android:layout_alignParentStart="true"
         android:id="@+id/space" />
 
-    <!--Currently unable to get list view to display white text-->
-
+<!-- Displays a scrollable list of ingredients (default) in your pantry-->
 
     <ListView
         android:layout_width="169dp"
@@ -97,9 +75,11 @@
         android:layout_above="@+id/button2"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_below="@+id/textView" />
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-    <!--pseudocode:  this button will allow you to add items to your pantry
+    <!--This button will allow you to add items to your pantry
  Clicking on it will allow you to add an ingredient to string ingredients, which will display
  on the bottom of the list-->
     <Button
@@ -113,13 +93,11 @@
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:layout_gravity="top"
-        android:onClick="showDialog"
+        android:onClick="showDialog2"
         android:background="#ff6c54"
         android:textColor="#FFF"
         android:layout_toStartOf="@+id/textView"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/linearLayout"
-        android:layout_toEndOf="@+id/linearLayout"
         android:layout_marginLeft="46dp" />
 
 
@@ -140,22 +118,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginRight="41dp" />
 
-    <!--<Button-->
-        <!--android:layout_width="70dp"-->
-        <!--android:layout_height="30dp"-->
-        <!--android:text="Cancel"-->
-        <!--android:id="@+id/button4"-->
-        <!--android:layout_toEndOf="@+id/textView"-->
-        <!--android:textSize="19sp"-->
-        <!--android:textStyle="bold"-->
-        <!--android:gravity="center|center_vertical|fill_vertical"-->
-        <!--android:textColor="#FFF"-->
-        <!--android:background="#ff6c54"-->
-        <!--android:layout_gravity="bottom"-->
-        <!--android:onClick="goToMainActivity"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_toLeftOf="@+id/button2"-->
-        <!--android:layout_toStartOf="@+id/button2" />-->
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -167,33 +130,6 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/space2" />
 
-    <!-- <NumberPicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/numberPicker"
-            android:layout_alignTop="@+id/expandableListView"
-            android:layout_toRightOf="@+id/button4"
-            android:layout_toEndOf="@+id/button4" />
 
-          <NumberPicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/numberPicker"
-            android:layout_alignTop="@+id/expandableListView"
-            android:layout_toRightOf="@+id/button4"
-            android:layout_toEndOf="@+id/button4" />
-    still unable to get number pickers working without causing a java error.
-
-           <NumberPicker
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:id="@+id/numberPicker"
-               android:layout_alignTop="@+id/expandableListView"
-               android:layout_toRightOf="@+id/button4"
-               android:layout_toEndOf="@+id/button4"
-
-
-
-               />-->
 
 </RelativeLayout>
