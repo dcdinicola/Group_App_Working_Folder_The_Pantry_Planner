@@ -81,8 +81,9 @@ public class ProfileActivity extends Activity {
 
 
         if(!userName.equals(SharedPreferencesUtility.getString(this, "loginName"))) {
-            post_view.setVisibility(View.INVISIBLE);
+            //post_view.setVisibility(View.INVISIBLE);
             listView.setVisibility(View.INVISIBLE);
+            post_view.setText("His/Her Posts:");
             TextView profile_about = (TextView) findViewById(R.id.profileAbout);
             profile_about.setText("I love cooking!");
         }
@@ -91,7 +92,6 @@ public class ProfileActivity extends Activity {
 
     //adding recipe names to the list variable
     private void initProfileRecipeList() {
-
 
         List<Recipe> recipes = SharedPreferencesUtility.getRecipeList(this, "recipes");
         for (Recipe r: recipes) {
@@ -108,17 +108,12 @@ public class ProfileActivity extends Activity {
         return recipe;
     }
 
-    // openRecipeDetail is called whenever a list item is clicked on
-    // it calls for an intent that starts up the recipe detail activity and sends the recipe's id over
-    // to the activity with the message variable declared at the top of the activity
     public void openRecipeDetail(long id) {
         Intent intent = new Intent(this, RecipeDetailActivityTwo.class);
         String message = String.valueOf(id);
         intent.putExtra(EXTRA_MESSAGE, message);
         startActivity(intent);
     }
-
-//ACTION BAR
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
