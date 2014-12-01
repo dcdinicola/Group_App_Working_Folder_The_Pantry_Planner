@@ -42,7 +42,7 @@ public class LoginActivity extends Activity {
     }
 
     public void logIn(View view) {
-        Intent loginIntent = new Intent(this, LookUpRecipeActivity.class);
+        Intent loginIntent = new Intent(this, MainActivity.class);
 
         EditText userName = (EditText) findViewById(R.id.editTextName);
         String displayName = userName.getText().toString();
