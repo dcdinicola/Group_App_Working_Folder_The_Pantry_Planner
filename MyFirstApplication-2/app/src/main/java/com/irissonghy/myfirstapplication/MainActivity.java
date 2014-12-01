@@ -70,47 +70,6 @@ public class MainActivity extends Activity {
     }
 
 
-
-
-//    Upon returning to Main Activity, show list of items selected (the below code is not working)
-//
-//
-//      public void setSelectedIngredientsListView(ListView selectedIngredientsListView) {
-//        Bundle b = getIntent().getExtras();
-//
-//        if(b!=null){
-//            String n =(String) b.get("ingredients");
-//            selectedIngredientsListView.setText(n);
-//           ArrayList<String> ingredients= new ArrayList<String>();
-//            ingredients =getIntent().getExtras().getStringArrayList("string");
-//
-//}
-//
-//
-//            new intent to open AddRecipeActivity from main
-//            public void goToAddRecipe(View view) {
-//                Intent intent = new Intent(this, AddRecipeActivity.class);
-//                startActivity(intent);
-//            }
-
-//    new intent to open FavoritesActivity from main
-//    public void goToFavorites (View view) {
-//        Intent intent=new Intent(this, FavoritesActivity.class);
-//        startActivity (intent);
-//
-//    }
-//    // new intent to open ProfileActivity from main
-//    public void goToProfile (View view) {
-//        Intent intent=new Intent(this, ProfileActivity.class);
-//        startActivity (intent);
-//
-//    }
-//    // new intent to open RecipeDetailActivity from main
-//    public void lookUpRecipe (View view) {
-//        Intent intent=new Intent(this, LookUpRecipeActivity.class);
-//        startActivity (intent);
-//
-//    }
 //
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
