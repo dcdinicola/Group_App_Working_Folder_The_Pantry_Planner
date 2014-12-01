@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -31,26 +30,27 @@ public class PantryPopupActivity extends Activity{
             "Condensed Milk", "Jalapeno", "Red Pepper", "Green Pepper", "Breadcrumbs", "Lemons", "Limes", "Tomato",
             "Avocado", "Tortillas", "Butter", "Linguine"};
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantry_popup);
-        Intent mainIntent = getIntent();
-        String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
+  protected void onCreate (Bundle savedInstanceState) {
+      super.onCreate(savedInstanceState);
+      setContentView(R.layout.activity_pantry_popup);
+//    Intent intent = getIntent();
+
+        PantrylistView = (ListView) findViewById(R.id.PantrylistView);
+
+ //   protected void onCreate(Bundle savedInstanceState) {
+ //       super.onCreate(savedInstanceState);
+ //       setContentView(R.layout.activity_pantry_popup);
+ //       Intent mainIntent = getIntent();
+ //       String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
 // get the intent and extract the username delivered by LoginActivity
-        TextView userName = (TextView) findViewById(R.id.mainHeader);
+ //       TextView userName = (TextView) findViewById(R.id.mainHeader);
 // set the text of textViewUsername on main page
-        userName.setText("Select Food Material From " + displayName +"'s Pantry");
+ //       userName.setText("Select Food Material From " + displayName +"'s Pantry");
 
 // two list views.  PantrylistView consists of the sum of items in pantry
 // SelectedPantrylistView consists of those items selected by user
 
-  //    protected void onCreate (Bundle savedInstanceState) {
- //         super.onCreate(savedInstanceState);
- //         setContentView(activity_pantry_popup);
-//          Intent intent = getIntent();
 
-          PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
 
 
@@ -135,7 +135,7 @@ public class PantryPopupActivity extends Activity{
 //}
 
 
- public void goToLookUpRecipeActivity(View view) {
+ public void goToLookupRecipe(View view) {
      Intent intent = new Intent (this,LookUpRecipeActivity.class);
      intent.putStringArrayListExtra("string", selectedIngredientsArray);
      startActivity(intent);

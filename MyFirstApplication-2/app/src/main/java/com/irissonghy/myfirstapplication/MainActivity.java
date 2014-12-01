@@ -27,11 +27,10 @@ public class MainActivity extends Activity {
         userName.setText("Welcome, " + displayName + "!");
     }
 
-    // calls Pantry popup when user clicks "Select from Pantry"
-    public void goToPantryPopup(View view) {
-
-        Intent intent = new Intent(this, PantryPopupActivity.class);
-        startActivity(intent);
+    // calls Pantry popup when user clicks "Go To My Pantry"
+        public void goToPantryPopupActivity(View view) {
+            Intent intent = new Intent(this, PantryPopupActivity.class);
+            startActivity(intent);
 
     }
 

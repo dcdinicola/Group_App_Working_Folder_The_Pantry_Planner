@@ -60,7 +60,7 @@
         android:textStyle="bold"
         android:background="@drawable/btnlogin"
         android:textColor="#FFF"
-        android:onClick="goToPantryPopup"
+        android:onClick="goToPantryPopupActivity"
         android:clickable="true" />
 
 
