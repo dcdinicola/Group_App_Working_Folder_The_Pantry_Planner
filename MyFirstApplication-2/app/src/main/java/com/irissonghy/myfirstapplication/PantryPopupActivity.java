@@ -14,6 +14,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+// ** Can't import an alert Dialog for some reason** //
+
 public class PantryPopupActivity extends Activity {
       ListView PantrylistView;
       ListView SelectedPantrylistView;
@@ -124,9 +126,13 @@ public class PantryPopupActivity extends Activity {
       }
           );
       }
+    //** calls a method to add an item to an existing array ** //
+//    public void addItem()
+//    {
+//        ArrayList<String> ingredientsArray.add(itemText);
+//    }
 
 
-    // upon cancel, returns to main activity with no selected ingredients
 
 //***** SHOW A DIALOGUE BOX to add an item to the PantryListView *****
 
@@ -139,8 +145,8 @@ public class PantryPopupActivity extends Activity {
 //    builder.setPositiveButton("Add Item",
 //            (dialogInterface, id) -> {
 //                itemText = inputBox.getText().toString();
+//                addItem();
 //
-//                ArrayList<String> ingredientsArray.add(itemText);
 //            });
 //                {
 
@@ -154,7 +160,9 @@ public class PantryPopupActivity extends Activity {
 //}
 
 //                });
-//        builder.setNegativeButton("Cancel",
+
+    // upon cancel, returns to main activity with no selected ingredients
+    //        builder.setNegativeButton("Cancel",
 //                new DialogInterface.OnClickListener()
 //                {
 //                    @Override
@@ -166,28 +174,12 @@ public class PantryPopupActivity extends Activity {
 //                }
 //                 }
 
-
  public void goToLookupRecipe(View view) {
      Intent intent = new Intent (this,LookUpRecipeActivity.class);
-     intent.putStringArrayListExtra("string", selectedIngredientsArray);
+  //   intent.putStringArrayListExtra("string", selectedIngredientsArray);
      startActivity(intent);
  }
 
-// public void goToMainActivity(View view) {
-//     Intent intent = new Intent (this, MainActivity.class);
-//     intent.putStringArrayListExtra("string", selectedIngredientsArray);
-//     startActivity(intent);
-// }
-
-
- // if we decide to remove main activity
- //
- // public void goToLookUpRecipeActivity(View view) {
- //
- //     Intent intent = new Intent(this, LookUpRecipeActivity.class);
- //     intent.putStringArrayListExtra("string", selectedIngredientsArray);
- //     startActivity (intent);
- //}
 
 
     @Override
