@@ -37,7 +37,7 @@ public class PantryPopupActivity extends Activity {
   protected void onCreate (Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_pantry_popup);
-      Intent popupIntent = getIntent();
+
 
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
