@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:background="@drawable/ceaser_salad"
-    tools:context="com.irissonghy.myfirstapplication.MainActivity">
+    android:background="@drawable/chicken_soup_picture"
+    tools:context="com.irissonghy.myfirstapplication.MainActivity" >
 
     <TextView
         android:layout_width="280dp"
@@ -40,12 +40,12 @@
         android:layout_marginTop="80dp"
         android:text="Go to My Pantry"
         android:id="@+id/openPantryButton"
-        android:textSize="21sp"
+        android:textSize="19sp"
         android:textStyle="bold"
-        android:background="@drawable/btnlogin"
+        android:background="#ff6c54"
         android:textColor="#FFF"
-        android:onClick="goToPantryPopupActivity"
-        android:clickable="true" />
+        android:onClick="goToPantryPopup"
+         />
 
 
 </LinearLayout>

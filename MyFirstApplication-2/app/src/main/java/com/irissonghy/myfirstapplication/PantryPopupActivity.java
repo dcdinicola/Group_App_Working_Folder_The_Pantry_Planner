@@ -14,7 +14,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class PantryPopupActivity extends Activity{
+public class PantryPopupActivity extends Activity {
       ListView PantrylistView;
       ListView SelectedPantrylistView;
       ArrayList selectedIngredientsArray;
@@ -33,7 +33,7 @@ public class PantryPopupActivity extends Activity{
   protected void onCreate (Bundle savedInstanceState) {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_pantry_popup);
-//    Intent intent = getIntent();
+      Intent mainIntent=getIntent();
 
         PantrylistView = (ListView) findViewById(R.id.PantrylistView);
 
@@ -122,18 +122,56 @@ public class PantryPopupActivity extends Activity{
       }
           );
       }
-    // upon select, send selected ingredients back to main activity
 
 
     // upon cancel, returns to main activity with no selected ingredients
 
-//public void showDialog (View v) {
-    //review dialog
-  //  AlertDialog.Builder builder = new AlertDialog.Builder(this);
- //   builder.setTitle("Enter the name of your new item:");
+//***** SHOW A DIALOGUE BOX to add an item to the PantryListView *****
 
+//public void showDialog (View v) {
+//    item dialog;
+//    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//    builder.setTitle("Enter the name of your new item:");
+//    final EditText inputBox = new EditText(this);
+//    builder.setView(inputBox);
+//    builder.setCancelable(true);
+//    builder.setPositiveButton("Add Item");
+//                new DialogInterface.OnClickListener()
+//                {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int id) {
+//                        reviewText = inputBox.getText().toString();
+//                        postReview();
 //}
 
+//public void addItemToPantry()
+//{
+//    TextView review = (TextView) findViewById(R.id.reviewTextArea);
+//    review.setText(itemText);
+//    review.setBackgroundColor(0xFFF0F0F0);
+//}
+//
+//    public void showDialog(View v){
+//        //review dialog
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Please write down your review:");
+//        //create input box for users to input review
+//        final EditText inputBox = new EditText(this);
+//        builder.setView(inputBox);
+//
+
+//                    }
+//                });
+//        builder.setNegativeButton("Cancel",
+//                new DialogInterface.OnClickListener()
+//                {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int id)
+//                    {}
+//                });
+//        builder.show();
+//
+//    }
 
  public void goToLookupRecipe(View view) {
      Intent intent = new Intent (this,LookUpRecipeActivity.class);
