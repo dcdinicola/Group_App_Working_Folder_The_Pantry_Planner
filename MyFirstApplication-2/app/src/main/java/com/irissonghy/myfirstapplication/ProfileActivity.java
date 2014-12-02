@@ -49,7 +49,8 @@ public class ProfileActivity extends Activity {
 
         //this associates the contents in the listview with the variable ListItem (myProfItems)
         ListView profileList = (ListView) findViewById(R.id.profileListViewItem);
-        SimpleAdapter profileAdapter = new SimpleAdapter(this, myProfItems, android.R.layout.simple_list_item_1, new String[]{"recipe"}, new int[]{android.R.id.text1});
+        SimpleAdapter profileAdapter = new SimpleAdapter(this, myProfItems, android.R.layout.simple_list_item_1,
+                new String[]{"recipe"}, new int[]{android.R.id.text1});
         profileList.setAdapter(profileAdapter);
 
         //look_up_recipe listView onClickListener, tells ProfileActivity what to do when recipe is selected)

@@ -14,16 +14,16 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-// ** Can't import an alert Dialog for some reason** //
-
 public class PantryPopupActivity extends Activity {
-      ListView PantrylistView;
-      ListView SelectedPantrylistView;
-      ArrayList selectedIngredientsArray;
-     // AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 
-// provide initial values for ingredients (auto-fill the pantry)
-      String[] ingredients= {
+    ListView pantryListView;
+    ListView selectedPantryListView ;
+
+    ArrayList<String> selectedIngredientsArray = new ArrayList<String>();
+    ArrayList<String> ingredientsArray = new ArrayList<String>();
+
+    // provide initial values for ingredients (auto-fill the pantry)
+    String[] ingredients= {
             "Carrots", "Celery", "Onions", "Potatoes", "Pot Roast", "Ground Beef", "Chicken", "Chicken Breast", "Salami",
             "Prosciutto", "Beef","Pork", "Salmon","Shrimp", "Tilapia", "Turkey Breast", "Bacon",
             "Multi-Grain Bread", "Wheat Bread", "French Bread", "Pepperoni", "Garlic", "Parsley", "Elbow Macaroni",
@@ -33,130 +33,104 @@ public class PantryPopupActivity extends Activity {
             "Condensed Milk", "Jalapeno", "Red Pepper", "Green Pepper", "Breadcrumbs", "Lemons", "Limes", "Tomato",
             "Avocado", "Tortillas", "Butter", "Linguine"};
 
-    public String itemText = "";
 
-  protected void onCreate (Bundle savedInstanceState) {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_pantry_popup);
+    protected void onCreate (Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pantry_popup);
 
+        Intent intent = getIntent();
 
+        pantryListView = (ListView) findViewById(R.id.PantrylistView);
 
-        PantrylistView = (ListView) findViewById(R.id.PantrylistView);
+        for (String i : ingredients)
+        {
+            ingredientsArray.add(i);
+        }
 
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, ingredientsArray);
+        final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, selectedIngredientsArray);
+        pantryListView.setAdapter(adapter);
 
-// two list views.  PantrylistView consists of the sum of items in pantry
-// SelectedPantrylistView consists of those items selected by user
-
-
-
-
-
-
-
-// build ingredients string into an ArrayList in order to pass to main activity
-
-          final ArrayList<String> ingredientsArray = new ArrayList<String>();
-          for (String i : ingredients) {
-              ingredientsArray.add(i);
-          }
-// add a boolean expression where if Add New Item button is clicked, calls an edit text for the user
-// to add to selectedIngredientsArray
-          // THIS IS SIMILAR TO THE TEAM EXAMPLE!
-     //     public Boolean setOnClickItemListener
-          selectedIngredientsArray = new ArrayList<String>();
-
-
-          final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                  android.R.layout.simple_list_item_1, ingredientsArray);
-          final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
-                  android.R.layout.simple_list_item_1, selectedIngredientsArray);
-
-   // sets SelectedPantrylistView
-
-          SelectedPantrylistView.setAdapter(selectedIngredientsAdapter);
-          SelectedPantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-              @Override
-              public void onItemClick(AdapterView<?> parent, final View view,
-                 int position, long id) {
-                 final String item = (String) parent.getItemAtPosition(position);
-                 view.animate().setDuration(2000).alpha(0)
-                 .withEndAction(new Runnable() {
-                  @Override
-                   public void run() {
-                        selectedIngredientsAdapter.notifyDataSetChanged();
-                        ingredientsArray.add(item);
-                        adapter.notifyDataSetChanged();
-                        view.setAlpha(1);
-                                       }
-                                    });
-                               }
-                       }
-
-          );
-
-   // changes PantrylistView (removes selected items)
-          PantrylistView.setAdapter(adapter);
-          PantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-              @Override
-              public void onItemClick(AdapterView<?> parent, final View view,
-                                      int position, long id) {
-                  final String item = (String) parent.getItemAtPosition(position);
-                  view.animate().setDuration(2000).alpha(0)
-                          .withEndAction(new Runnable() {
-                              @Override
-                              public void run() {
+        pantryListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, final View view,
+                                            int position, long id) {
+                        final String item = (String) parent.getItemAtPosition(position);
+                        view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
+                            @Override
+                            public void run() {
                                 ingredientsArray.remove(item);
                                 adapter.notifyDataSetChanged();
-                                  selectedIngredientsArray.add(item);
-                                  selectedIngredientsAdapter.notifyDataSetChanged();
-                                  view.setAlpha(1);
-                              }
-                          });
+                                selectedIngredientsArray.add(item);
+                                selectedIngredientsAdapter.notifyDataSetChanged();
+                                view.setAlpha(1);
+                            }
+                        });
+                    }
+                }
+        );
 
-              }
-      }
-          );
-      }
-    //** calls a method to add an item to an existing array ** /
 
-//    public void addItem()
+
+        selectedPantryListView = (ListView) findViewById(R.id.SelectedPantryListView);
+        selectedPantryListView.setAdapter(selectedIngredientsAdapter);
+
+        selectedPantryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+
+                                                          @Override
+                                                          public void onItemClick(AdapterView<?> parent, final View view,
+                                                                                  int position, long id) {
+                                                              final String item = (String) parent.getItemAtPosition(position);
+                                                              view.animate().setDuration(2000).alpha(0)
+                                                                      .withEndAction(new Runnable() {
+                                                                          @Override
+                                                                          public void run() {
+                                                                              selectedIngredientsAdapter.notifyDataSetChanged();
+                                                                              ingredientsArray.add(item);
+                                                                              adapter.notifyDataSetChanged();
+                                                                              view.setAlpha(1);
+                                                                          }
+                                                                      });
+                                                          }
+                                                      }
+
+        );
+
+    }
+
+//    public void postReview()
 //    {
-//        ArrayList<String> ingredientsArray.add(itemText);
+//        TextView review = (TextView) findViewById(R.id.reviewTextArea);
+//        review.setText(PantryListView);
+//        review.setBackgroundColor(0xFFF0F0F0);
 //    }
-
-
-
-//***** SHOW A DIALOGUE BOX to add an item to the PantryListView *****
-
-//public void showDialog2 (View v) {
-//    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//    builder.setTitle("Enter the name of your new item:");
-//    final EditText inputBox = new EditText(this);
-//    builder.setView(inputBox);
-//    builder.setCancelable(true);
-//    builder.setPositiveButton("Add Item",
-//            (dialogInterface, id) -> {
-//                itemText = inputBox.getText().toString();
-//                addItem();
 //
-//            });
+//    public void showDialog(View v){
+//        //review dialog
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//        builder.setTitle("Please enter the name of your new item:");
+//        //create input box for users to input review
+//        final EditText inputBox = new EditText(this);
+//        builder.setView(inputBox);
+//
+//        builder.setCancelable(true);
+//
+//        builder.setPositiveButton("Post",
+//                new DialogInterface.OnClickListener()
 //                {
-
-//
-
-//public void addItemToPantry()
-//{
-//    TextView review = (TextView) findViewById(R.id.reviewTextArea);
-//    review.setText(itemText);
-//    review.setBackgroundColor(0xFFF0F0F0);
-//}
-
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int id) {
+//                        PantryListView = inputBox.getText().toString();
+//                        postReview();
+//                    }
 //                });
-
-    // upon cancel, returns to main activity with no selected ingredients
-    //        builder.setNegativeButton("Cancel",
+//        builder.setNegativeButton("Cancel",
 //                new DialogInterface.OnClickListener()
 //                {
 //                    @Override
@@ -165,14 +139,13 @@ public class PantryPopupActivity extends Activity {
 //                });
 //        builder.show();
 //
-//                }
-//                 }
+//    }
 
- public void goToLookupRecipe(View view) {
-     Intent intent = new Intent (this,LookUpRecipeActivity.class);
-  //   intent.putStringArrayListExtra("string", selectedIngredientsArray);
-     startActivity(intent);
- }
+
+    public void goToLookupRecipe(View view) {
+        Intent intent = new Intent (this,LookUpRecipeActivity.class);
+        startActivity(intent);
+    }
 
 
 
@@ -189,7 +162,7 @@ public class PantryPopupActivity extends Activity {
 
         int id = item.getItemId();
         if (id == R.id.activity_mainpage) {
-            Intent intent=new Intent(this,MainActivity.class);
+            Intent intent=new Intent(this,PantryPopupActivity.class);
             startActivity (intent);
             return true;
         }
@@ -217,5 +190,3 @@ public class PantryPopupActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 }
-
-
