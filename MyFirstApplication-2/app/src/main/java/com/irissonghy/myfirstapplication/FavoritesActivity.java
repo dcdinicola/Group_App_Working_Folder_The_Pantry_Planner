@@ -65,6 +65,7 @@ public class FavoritesActivity extends Activity {
 
         String messageFav = memeTitles[position] + ";" +
                             memeDescriptions[position]+ ";" + position;
+
         intent.putExtra(EXTRA_MESSAGE, messageFav);
 
         startActivity(intent);

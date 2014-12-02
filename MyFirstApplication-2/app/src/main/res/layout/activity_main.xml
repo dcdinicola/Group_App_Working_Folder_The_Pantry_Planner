@@ -45,6 +45,7 @@
         android:background="#ff6c54"
         android:textColor="#FFF"
         android:onClick="goToPantryPopup"
+        android:clickable="true"
          />
 
 

@@ -41,7 +41,7 @@ public class ProfileActivity extends Activity {
         //want to apply the contextmenu for each individual recipe that is in the user's profileListView();
         registerForContextMenu((ListView) findViewById(R.id.profileListViewItem));
 
-        //filling in the list class variable (myProfItems) with the names of our recipes
+        //grab username from login
         initString();
 
         //initialize recipe list in profile screen
@@ -86,6 +86,7 @@ public class ProfileActivity extends Activity {
             //post_view.setVisibility(View.INVISIBLE);
             listView.setVisibility(View.INVISIBLE);
             post_view.setText("His/Her Posts:");
+
             TextView profile_about = (TextView) findViewById(R.id.profileAbout);
             profile_about.setText("I love cooking!");
             ImageView avatar = (ImageView) findViewById(R.id.imageView2);
@@ -93,6 +94,8 @@ public class ProfileActivity extends Activity {
         }
 
     }
+
+
 
     //adding recipe names to the list variable
     private void initProfileRecipeList() {

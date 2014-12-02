@@ -34,7 +34,10 @@ public class PantryPopupActivity extends Activity {
             "Avocado", "Tortillas", "Butter", "Linguine"};
 
 
-    protected void onCreate (Bundle savedInstanceState)
+
+
+
+protected void onCreate (Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry_popup);
@@ -47,6 +50,7 @@ public class PantryPopupActivity extends Activity {
         {
             ingredientsArray.add(i);
         }
+
 
         final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, ingredientsArray);
@@ -104,42 +108,8 @@ public class PantryPopupActivity extends Activity {
 
     }
 
-//    public void postReview()
-//    {
-//        TextView review = (TextView) findViewById(R.id.reviewTextArea);
-//        review.setText(PantryListView);
-//        review.setBackgroundColor(0xFFF0F0F0);
-//    }
-//
-//    public void showDialog(View v){
-//        //review dialog
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("Please enter the name of your new item:");
-//        //create input box for users to input review
-//        final EditText inputBox = new EditText(this);
-//        builder.setView(inputBox);
-//
-//        builder.setCancelable(true);
-//
-//        builder.setPositiveButton("Post",
-//                new DialogInterface.OnClickListener()
-//                {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int id) {
-//                        PantryListView = inputBox.getText().toString();
-//                        postReview();
-//                    }
-//                });
-//        builder.setNegativeButton("Cancel",
-//                new DialogInterface.OnClickListener()
-//                {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int id)
-//                    {}
-//                });
-//        builder.show();
-//
-//    }
+
+
 
 
     public void goToLookupRecipe(View view) {

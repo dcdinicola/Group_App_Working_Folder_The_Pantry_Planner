@@ -21,9 +21,9 @@ public class LoginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        // Since everyone has to pass through the login screen, we will initialize our data structures here
-        //initData();
+
         initRecipeData();
+
     }
 
     @Override
@@ -62,4 +62,5 @@ public class LoginActivity extends Activity {
 
         SharedPreferencesUtility.putRecipeList(this,"recipes", myProfItems);
     }
+
 }
