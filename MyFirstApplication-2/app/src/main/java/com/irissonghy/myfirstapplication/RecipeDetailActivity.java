@@ -65,8 +65,8 @@ public class RecipeDetailActivity extends Activity {
 
             TextView ingView1 = (TextView) findViewById(R.id.ingredientsTextArea);
             ingView1.setText(lookUpDescription[position1]);
-            TextView desView = (TextView) findViewById(R.id.directionsTextArea);
-            desView.setText(lookUpIngredients[position1]);
+            TextView desView1 = (TextView) findViewById(R.id.directionsTextArea);
+            desView1.setText(lookUpIngredients[position1]);
 
         } else if (messageFav != null) {
 

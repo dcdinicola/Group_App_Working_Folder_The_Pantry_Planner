@@ -14,12 +14,13 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-// ** Can't import an alert Dialog for some reason** //
-
 public class PantryPopupActivity extends Activity {
-      ListView PantrylistView;
-      ListView SelectedPantrylistView;
-      ArrayList selectedIngredientsArray;
+
+      ListView pantryListView;
+      ListView selectedPantryListView ;
+
+      ArrayList<String> selectedIngredientsArray = new ArrayList<String>();
+      ArrayList<String> ingredientsArray = new ArrayList<String>();
 
 // provide initial values for ingredients (auto-fill the pantry)
       String[] ingredients= {
@@ -32,56 +33,55 @@ public class PantryPopupActivity extends Activity {
             "Condensed Milk", "Jalapeno", "Red Pepper", "Green Pepper", "Breadcrumbs", "Lemons", "Limes", "Tomato",
             "Avocado", "Tortillas", "Butter", "Linguine"};
 
-    public String itemText = "";
 
-  protected void onCreate (Bundle savedInstanceState) {
+  protected void onCreate (Bundle savedInstanceState)
+  {
       super.onCreate(savedInstanceState);
       setContentView(R.layout.activity_pantry_popup);
 
+      Intent intent = getIntent();
 
-        PantrylistView = (ListView) findViewById(R.id.PantrylistView);
+      pantryListView = (ListView) findViewById(R.id.PantrylistView);
 
- //   protected void onCreate(Bundle savedInstanceState) {
- //       super.onCreate(savedInstanceState);
- //       setContentView(R.layout.activity_pantry_popup);
- //       Intent mainIntent = getIntent();
- //       String displayName = mainIntent.getStringExtra(LoginActivity.EXTRA_MESSAGE);
-// get the intent and extract the username delivered by LoginActivity
- //       TextView userName = (TextView) findViewById(R.id.mainHeader);
-// set the text of textViewUsername on main page
- //       userName.setText("Select Food Material From " + displayName +"'s Pantry");
+      for (String i : ingredients)
+      {
+          ingredientsArray.add(i);
+      }
 
-// two list views.  PantrylistView consists of the sum of items in pantry
-// SelectedPantrylistView consists of those items selected by user
+      final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+              android.R.layout.simple_list_item_1, ingredientsArray);
+      final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
+              android.R.layout.simple_list_item_1, selectedIngredientsArray);
+      pantryListView.setAdapter(adapter);
+
+      pantryListView.setOnItemClickListener(
+              new AdapterView.OnItemClickListener()
+              {
+                  @Override
+                  public void onItemClick(AdapterView<?> parent, final View view,
+                                          int position, long id) {
+                      final String item = (String) parent.getItemAtPosition(position);
+                      view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
+                          @Override
+                          public void run() {
+                              ingredientsArray.remove(item);
+                              adapter.notifyDataSetChanged();
+                              selectedIngredientsArray.add(item);
+                              selectedIngredientsAdapter.notifyDataSetChanged();
+                              view.setAlpha(1);
+                          }
+                      });
+                  }
+              }
+      );
 
 
 
+      selectedPantryListView = (ListView) findViewById(R.id.SelectedPantryListView);
+      selectedPantryListView.setAdapter(selectedIngredientsAdapter);
 
+      selectedPantryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-
-
-// build ingredients string into an ArrayList in order to pass to main activity
-
-          final ArrayList<String> ingredientsArray = new ArrayList<String>();
-          for (String i : ingredients) {
-              ingredientsArray.add(i);
-          }
-// add a boolean expression where if Add New Item button is clicked, calls an edit text for the user
-// to add to selectedIngredientsArray
-          // THIS IS SIMILAR TO THE TEAM EXAMPLE!
-     //     public Boolean setOnClickItemListener
-          selectedIngredientsArray = new ArrayList<String>();
-
-
-          final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                  android.R.layout.simple_list_item_1, ingredientsArray);
-          final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
-                  android.R.layout.simple_list_item_1, selectedIngredientsArray);
-
-   // sets SelectedPantrylistView
-
-          SelectedPantrylistView.setAdapter(selectedIngredientsAdapter);
-          SelectedPantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
               @Override
               public void onItemClick(AdapterView<?> parent, final View view,
@@ -102,81 +102,11 @@ public class PantryPopupActivity extends Activity {
 
           );
 
-   // changes PantrylistView (removes selected items)
-          PantrylistView.setAdapter(adapter);
-          PantrylistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+}
 
-              @Override
-              public void onItemClick(AdapterView<?> parent, final View view,
-                                      int position, long id) {
-                  final String item = (String) parent.getItemAtPosition(position);
-                  view.animate().setDuration(2000).alpha(0)
-                          .withEndAction(new Runnable() {
-                              @Override
-                              public void run() {
-                                ingredientsArray.remove(item);
-                                adapter.notifyDataSetChanged();
-                                  selectedIngredientsArray.add(item);
-                                  selectedIngredientsAdapter.notifyDataSetChanged();
-                                  view.setAlpha(1);
-                              }
-                          });
-
-              }
-      }
-          );
-      }
-    //** calls a method to add an item to an existing array ** //
-//    public void addItem()
-//    {
-//        ArrayList<String> ingredientsArray.add(itemText);
-//    }
-
-
-
-//***** SHOW A DIALOGUE BOX to add an item to the PantryListView *****
-
-//public void showDialog2 (View v) {
-//    AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//    builder.setTitle("Enter the name of your new item:");
-//    final EditText inputBox = new EditText(this);
-//    builder.setView(inputBox);
-//    builder.setCancelable(true);
-//    builder.setPositiveButton("Add Item",
-//            (dialogInterface, id) -> {
-//                itemText = inputBox.getText().toString();
-//                addItem();
-//
-//            });
-//                {
-
-//
-
-//public void addItemToPantry()
-//{
-//    TextView review = (TextView) findViewById(R.id.reviewTextArea);
-//    review.setText(itemText);
-//    review.setBackgroundColor(0xFFF0F0F0);
-//}
-
-//                });
-
-    // upon cancel, returns to main activity with no selected ingredients
-    //        builder.setNegativeButton("Cancel",
-//                new DialogInterface.OnClickListener()
-//                {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int id)
-//                    {}
-//                });
-//        builder.show();
-//
-//                }
-//                 }
 
  public void goToLookupRecipe(View view) {
      Intent intent = new Intent (this,LookUpRecipeActivity.class);
-  //   intent.putStringArrayListExtra("string", selectedIngredientsArray);
      startActivity(intent);
  }
 

@@ -24,15 +24,7 @@
     <string name="veggies">PantryPopupActivity</string>
 
 
-   <!--
-   <string-array name = "descriptions">
-       <item>Deep Fried Chicken needs raw chicken meet, carrot and potato</item>
-       <item>Prepare crab meet and raw broccoli </item>
-       <item>Enjoy super hot and spicy taste</item>
-       <item>Have children? Bribe them with yogurt</item>
-       <item>Treat yourself with a whole veggie breakfast </item>
-   </string-array>
-   -->
+
    <string-array name = "titles">
        <item>Deep Fried Shrimp</item>
        <item>Steam Crab Cake</item>
