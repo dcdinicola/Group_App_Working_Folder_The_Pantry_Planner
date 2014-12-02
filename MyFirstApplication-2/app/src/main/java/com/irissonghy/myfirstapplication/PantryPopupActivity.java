@@ -16,14 +16,14 @@ import java.util.ArrayList;
 
 public class PantryPopupActivity extends Activity {
 
-      ListView pantryListView;
-      ListView selectedPantryListView ;
+    ListView pantryListView;
+    ListView selectedPantryListView ;
 
-      ArrayList<String> selectedIngredientsArray = new ArrayList<String>();
-      ArrayList<String> ingredientsArray = new ArrayList<String>();
+    ArrayList<String> selectedIngredientsArray = new ArrayList<String>();
+    ArrayList<String> ingredientsArray = new ArrayList<String>();
 
-// provide initial values for ingredients (auto-fill the pantry)
-      String[] ingredients= {
+    // provide initial values for ingredients (auto-fill the pantry)
+    String[] ingredients= {
             "Carrots", "Celery", "Onions", "Potatoes", "Pot Roast", "Ground Beef", "Chicken", "Chicken Breast", "Salami",
             "Prosciutto", "Beef","Pork", "Salmon","Shrimp", "Tilapia", "Turkey Breast", "Bacon",
             "Multi-Grain Bread", "Wheat Bread", "French Bread", "Pepperoni", "Garlic", "Parsley", "Elbow Macaroni",
@@ -34,81 +34,81 @@ public class PantryPopupActivity extends Activity {
             "Avocado", "Tortillas", "Butter", "Linguine"};
 
 
-  protected void onCreate (Bundle savedInstanceState)
-  {
-      super.onCreate(savedInstanceState);
-      setContentView(R.layout.activity_pantry_popup);
+    protected void onCreate (Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pantry_popup);
 
-      Intent intent = getIntent();
+        Intent intent = getIntent();
 
-      pantryListView = (ListView) findViewById(R.id.PantrylistView);
+        pantryListView = (ListView) findViewById(R.id.PantrylistView);
 
-      for (String i : ingredients)
-      {
-          ingredientsArray.add(i);
-      }
+        for (String i : ingredients)
+        {
+            ingredientsArray.add(i);
+        }
 
-      final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-              android.R.layout.simple_list_item_1, ingredientsArray);
-      final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
-              android.R.layout.simple_list_item_1, selectedIngredientsArray);
-      pantryListView.setAdapter(adapter);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, ingredientsArray);
+        final ArrayAdapter<String> selectedIngredientsAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_list_item_1, selectedIngredientsArray);
+        pantryListView.setAdapter(adapter);
 
-      pantryListView.setOnItemClickListener(
-              new AdapterView.OnItemClickListener()
-              {
-                  @Override
-                  public void onItemClick(AdapterView<?> parent, final View view,
-                                          int position, long id) {
-                      final String item = (String) parent.getItemAtPosition(position);
-                      view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
-                          @Override
-                          public void run() {
-                              ingredientsArray.remove(item);
-                              adapter.notifyDataSetChanged();
-                              selectedIngredientsArray.add(item);
-                              selectedIngredientsAdapter.notifyDataSetChanged();
-                              view.setAlpha(1);
-                          }
-                      });
-                  }
-              }
-      );
-
-
-
-      selectedPantryListView = (ListView) findViewById(R.id.SelectedPantryListView);
-      selectedPantryListView.setAdapter(selectedIngredientsAdapter);
-
-      selectedPantryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        pantryListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener()
+                {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, final View view,
+                                            int position, long id) {
+                        final String item = (String) parent.getItemAtPosition(position);
+                        view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
+                            @Override
+                            public void run() {
+                                ingredientsArray.remove(item);
+                                adapter.notifyDataSetChanged();
+                                selectedIngredientsArray.add(item);
+                                selectedIngredientsAdapter.notifyDataSetChanged();
+                                view.setAlpha(1);
+                            }
+                        });
+                    }
+                }
+        );
 
 
-              @Override
-              public void onItemClick(AdapterView<?> parent, final View view,
-                 int position, long id) {
-                 final String item = (String) parent.getItemAtPosition(position);
-                 view.animate().setDuration(2000).alpha(0)
-                 .withEndAction(new Runnable() {
-                  @Override
-                   public void run() {
-                        selectedIngredientsAdapter.notifyDataSetChanged();
-                        ingredientsArray.add(item);
-                        adapter.notifyDataSetChanged();
-                        view.setAlpha(1);
-                                       }
-                                    });
-                               }
-                       }
 
-          );
+        selectedPantryListView = (ListView) findViewById(R.id.SelectedPantryListView);
+        selectedPantryListView.setAdapter(selectedIngredientsAdapter);
 
-}
+        selectedPantryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
- public void goToLookupRecipe(View view) {
-     Intent intent = new Intent (this,LookUpRecipeActivity.class);
-     startActivity(intent);
- }
+                                                          @Override
+                                                          public void onItemClick(AdapterView<?> parent, final View view,
+                                                                                  int position, long id) {
+                                                              final String item = (String) parent.getItemAtPosition(position);
+                                                              view.animate().setDuration(2000).alpha(0)
+                                                                      .withEndAction(new Runnable() {
+                                                                          @Override
+                                                                          public void run() {
+                                                                              selectedIngredientsAdapter.notifyDataSetChanged();
+                                                                              ingredientsArray.add(item);
+                                                                              adapter.notifyDataSetChanged();
+                                                                              view.setAlpha(1);
+                                                                          }
+                                                                      });
+                                                          }
+                                                      }
+
+        );
+
+    }
+
+
+    public void goToLookupRecipe(View view) {
+        Intent intent = new Intent (this,LookUpRecipeActivity.class);
+        startActivity(intent);
+    }
 
 
 
@@ -153,5 +153,3 @@ public class PantryPopupActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 }
-
-
