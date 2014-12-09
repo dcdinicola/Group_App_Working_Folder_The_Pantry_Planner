@@ -83,24 +83,24 @@ public class PantryPopupActivity extends Activity {
         selectedPantryListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 
-                                                          @Override
-                                                          public void onItemClick(AdapterView<?> parent, final View view,
-                                                                                  int position, long id) {
-                                                              final String item = (String) parent.getItemAtPosition(position);
-                                                              view.animate().setDuration(2000).alpha(0)
-                                                                      .withEndAction(new Runnable() {
-                                                                          @Override
-                                                                          public void run() {
-                                                                              selectedIngredientsAdapter.notifyDataSetChanged();
-                                                                              ingredientsArray.add(item);
-                                                                              adapter.notifyDataSetChanged();
-                                                                              view.setAlpha(1);
-                                                                          }
-                                                                      });
-                                                          }
-                                                      }
+             @Override
+             public void onItemClick(AdapterView<?> parent, final View view,
+                 int position, long id) {
+                 final String item = (String) parent.getItemAtPosition(position);
+                 view.animate().setDuration(2000).alpha(0).withEndAction(new Runnable() {
 
-        );
+                 @Override
+                 public void run() {
+                     selectedIngredientsAdapter.notifyDataSetChanged();
+                     ingredientsArray.add(item);
+                     adapter.notifyDataSetChanged();
+                     view.setAlpha(1);
+                 }
+             });
+        }
+    }
+
+  );
 
     }
 
